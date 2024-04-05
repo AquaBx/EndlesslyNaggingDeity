@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://qf2ffqxtxhmk"]
+
+[ext_resource type="PackedScene" uid="uid://h3snnioj2dm" path="res://player.tscn" id="1_ul0go"]
+[ext_resource type="PackedScene" uid="uid://db737kd26u4hp" path="res://object.tscn" id="2_ro6h2"]
+
+[node name="SceneTom" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_ul0go")]
+position = Vector2(155, 231)
+
+[node name="Object" parent="." instance=ExtResource("2_ro6h2")]
+position = Vector2(525, 212)
