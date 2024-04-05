@@ -6,21 +6,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g28ss"]
 radius = 35.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sfa70"]
-radius = 94.0213
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8k5v"]
+radius = 190.851
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2cuh2")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(36, 0)
-rotation = -1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g28ss")
 
 [node name="Node2D" type="Node2D" parent="."]
-unique_name_in_owner = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 
@@ -33,11 +28,9 @@ position = Vector2(0, -48)
 scale = Vector2(4, 4)
 texture = ExtResource("2_w0imc")
 
-[node name="ActionZone" type="Area2D" parent="Node2D"]
+[node name="ActionZone" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/ActionZone"]
-position = Vector2(36, 0)
-rotation = -1.57079
-shape = SubResource("CircleShape2D_sfa70")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionZone"]
+shape = SubResource("CircleShape2D_y8k5v")
