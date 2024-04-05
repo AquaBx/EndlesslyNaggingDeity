@@ -15,6 +15,7 @@ script = ExtResource("1_2cuh2")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(36, 0)
 rotation = -1.57079
+position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g28ss")
@@ -36,6 +37,7 @@ texture = ExtResource("2_w0imc")
 [node name="ActionZone" type="Area2D" parent="Node2D"]
 unique_name_in_owner = true
 collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/ActionZone"]
 position = Vector2(36, 0)
