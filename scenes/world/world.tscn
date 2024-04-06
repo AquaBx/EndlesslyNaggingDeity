@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv7c8lve82618"]
+[gd_scene load_steps=10 format=3 uid="uid://dv7c8lve82618"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_ll75m"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="2_7hejq"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="3_kafph"]
+[ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="3_yiq0n"]
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="4_gyl3i"]
 
 [sub_resource type="Animation" id="Animation_2sai3"]
@@ -88,6 +89,9 @@ script = ExtResource("1_ll75m")
 [node name="Player" parent="." instance=ExtResource("2_7hejq")]
 unique_name_in_owner = true
 position = Vector2(-127, 77)
+[node name="Interactable" type="Node2D" parent="."]
+[node name="Loupe" parent="Interactable" instance=ExtResource("3_yiq0n")]
+position = Vector2(-469, 65)
 
 [node name="Statics" type="Node2D" parent="."]
 
@@ -141,6 +145,7 @@ libraries = {
 }
 
 [connection signal="player_dead" from="Statics/House/Door" to="." method="_on_player_death"]
+[connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
 
 [editable path="Statics/House"]
