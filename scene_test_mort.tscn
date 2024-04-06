@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4ffbap4gc3l7"]
 
-[ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://Hazards/Car/CarSpawner.tscn" id="2_jfan3"]
+[ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/Hazards/Car/CarSpawner.tscn" id="2_jfan3"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="2_tseej"]
 
 [node name="scene-test-mort" type="Node2D"]
