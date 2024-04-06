@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpqngcmkmtkxk"]
+[gd_scene load_steps=8 format=3 uid="uid://d1qoilh7r5m2j"]
 
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
-[ext_resource type="Texture2D" uid="uid://00mvmqm1gwe3" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
-[ext_resource type="Texture2D" uid="uid://4y6icbp186ao" path="res://assets/door-top.png" id="3_330l1"]
+[ext_resource type="Texture2D" uid="uid://d30jgy0aktkst" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://csuxi14oewsti" path="res://assets/door-top.png" id="3_330l1"]
 [ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="4_qtn6r"]
+[ext_resource type="AudioStream" uid="uid://ccf58baabp1c2" path="res://assets/error.mp3" id="5_a0oer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nne0u"]
-size = Vector2(18, 39)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0spir"]
 light_mode = 2
@@ -84,6 +82,9 @@ polygon = PackedVector2Array(-8, -59, -8, -20, -104, -20, -104, 56, 105, 56, 105
 
 [node name="Door" parent="." instance=ExtResource("4_qtn6r")]
 position = Vector2(0, -19.5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("5_a0oer")
 
 [connection signal="area_entered" from="InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="InteriorDetect" to="." method="_on_interior_detect_area_exited"]
