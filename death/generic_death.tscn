@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://death/GenericDeath.gd" id="1_25k8a"]
 
-[node name="GenericDeath" type="Node"]
+[node name="GenericDeathScreen" type="Node"]
 script = ExtResource("1_25k8a")
 
 [node name="DeathOverlay" type="CanvasLayer" parent="."]

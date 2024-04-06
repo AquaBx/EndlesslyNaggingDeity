@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="2_tseej"]
 
 [node name="scene-test-mort" type="Node2D"]
-position = Vector2(542, 336)
+position = Vector2(668, 345)
 
 [node name="Player" parent="." instance=ExtResource("2_tseej")]
+position = Vector2(-129, -15)
 
-[node name="CarSpawner" parent="." instance=ExtResource("2_jfan3")]
-position = Vector2(213, -77)
+[node name="CarSpawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_jfan3")]
+position = Vector2(190, 10)
 scale = Vector2(5.81992, 4.94666)
+player = NodePath("../Player")

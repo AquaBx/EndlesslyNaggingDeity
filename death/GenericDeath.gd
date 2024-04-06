@@ -6,6 +6,3 @@ func _ready():
 
 func show_overlay():
 	%DeathOverlay.visible = true
-	
-func _on_player_respawn():
-	%DeathOverlay.visible = false
