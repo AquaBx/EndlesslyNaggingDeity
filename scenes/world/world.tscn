@@ -90,8 +90,9 @@ unique_name_in_owner = true
 
 [node name="Interactable" type="Node2D" parent="."]
 
-[node name="CarSpawner" parent="Interactable" instance=ExtResource("3_kafph")]
+[node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player") instance=ExtResource("3_kafph")]
 position = Vector2(0, -43)
+player = NodePath("../../Player")
 
 [node name="Statics" type="Node2D" parent="."]
 
