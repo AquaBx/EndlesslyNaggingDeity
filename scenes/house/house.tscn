@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpqngcmkmtkxk"]
 
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
-[ext_resource type="Texture2D" uid="uid://dc1yjx2in3pu2" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://00mvmqm1gwe3" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)

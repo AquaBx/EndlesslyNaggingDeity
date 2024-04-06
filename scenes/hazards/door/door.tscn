@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2pw0xcwxp4rs"]
 
 [ext_resource type="Script" path="res://scenes/hazards/door/Door.gd" id="1_r6ktq"]
-[ext_resource type="Texture2D" uid="uid://dajytxc82kcbc" path="res://assets/door-placeholder.png" id="2_6uo7o"]
-[ext_resource type="Texture2D" uid="uid://bil0pc2dfod55" path="res://assets/blood-splash.png" id="2_m8jcv"]
-[ext_resource type="Texture2D" uid="uid://q3jhfjtg76yq" path="res://assets/door-open-placeolder.png" id="3_7rmle"]
+[ext_resource type="Texture2D" uid="uid://bagn3u0xm0ilw" path="res://assets/door-placeholder.png" id="2_6uo7o"]
+[ext_resource type="Texture2D" uid="uid://cr3g4ve7o30yf" path="res://assets/blood-splash.png" id="2_m8jcv"]
+[ext_resource type="Texture2D" uid="uid://n0bj67yed1qv" path="res://assets/door-open-placeolder.png" id="3_7rmle"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awxdq"]
 size = Vector2(101.5, 54.25)
