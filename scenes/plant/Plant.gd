@@ -7,11 +7,11 @@ var is_cut = false
 func glow():
 	print("glowin")
 	if not is_cut:
-		pass
+		%Glow.show()
 	pass
 
 func unglow():
-	pass
+	%Glow.hide()
 
 func action():
 	is_cut = true

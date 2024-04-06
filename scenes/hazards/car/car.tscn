@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ojyxr3mk5r3j"]
+[gd_scene load_steps=9 format=3 uid="uid://ojyxr3mk5r3j"]
 
 [ext_resource type="Script" path="res://scenes/hazards/car/car.gd" id="1_sl1j0"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_0gb0j"]
-[ext_resource type="Texture2D" uid="uid://dsv18yu2pkb8j" path="res://assets/voiture.png" id="3_ka831"]
+[ext_resource type="Texture2D" uid="uid://fpy134dvrw7x" path="res://assets/voiture.png" id="3_ka831"]
+[ext_resource type="AudioStream" uid="uid://dvxyxngaba2p4" path="res://scenes/hazards/car/car.wav" id="4_gwfp1"]
 
 [sub_resource type="Animation" id="Animation_mixmh"]
 resource_name = "drive"
@@ -70,5 +71,11 @@ shape = SubResource("CapsuleShape2D_8giw2")
 wait_time = 20.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gwfp1")
+volume_db = -5.0
+autoplay = true
+max_distance = 1000.0
 
 [connection signal="timeout" from="lifespan" to="." method="_on_lifespan_timeout"]

@@ -5,11 +5,10 @@ const FRICTION = 10
 const SEUIL = 349
 
 var m_object:Object
-var frozen = false
+var frozen: bool = false
 
 func _physics_process(delta):
-	if frozen:
-		return
+	if(self.frozen): return
 	
 	var direction = Input.get_vector("left","right","forward","backward")
 	
