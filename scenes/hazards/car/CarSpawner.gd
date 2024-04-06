@@ -33,10 +33,12 @@ func car_touched_player(body):
 	player_death.emit("les voitures c'est vraiment pô nice ! \n Ainsi Dieu Surpprima les voitures")
 	queue_free()
 
-const DINO_DOLL = preload("res://dino_doll.tscn")
+const DINO_DOLL: Resource = preload("res://scenes/player/doll/dino_doll.tscn")
 
 func play_car_death_animation():
 	player.get_node("Dino").hide()
-	var dino_doll = DINO_DOLL.instanciate()
+	var dino_doll = DINO_DOLL.instantiate()
+	dino_doll.global_position = player.global_position
 	add_sibling(dino_doll)
-	
+	await get_tree().create_timer(5).timeout
+	dino_doll.queue_free()

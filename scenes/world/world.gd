@@ -21,3 +21,4 @@ func _on_player_death(death_message: String):
 	
 	%Player.position = %PlayerSpawn.position
 	%Player.frozen = false
+	%Player.get_node("Dino").show()
