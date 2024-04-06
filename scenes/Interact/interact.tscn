@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dktekeg5qv7p6"]
+
+[ext_resource type="Script" path="res://scenes/Interact/Interact.gd" id="1_ee2xc"]
+[ext_resource type="Texture2D" uid="uid://dkwkakwebyqto" path="res://assets/BtnA.png" id="2_i3wtl"]
+[ext_resource type="Texture2D" uid="uid://dsv8gohkivod7" path="res://assets/BtnE.png" id="3_upbm0"]
+[ext_resource type="FontFile" uid="uid://csexv0llk5wlr" path="res://assets/PixelifySans-Regular.ttf" id="4_k6v20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d1kw8"]
+font = ExtResource("4_k6v20")
+font_size = 64
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 24
+shadow_color = Color(0, 0, 0, 0.752941)
+
+[node name="Interact" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ee2xc")
+
+[node name="BtnA" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-20, 2)
+texture = ExtResource("2_i3wtl")
+
+[node name="BtnE" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-20, 2)
+texture = ExtResource("3_upbm0")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -11.0
+offset_right = 68.0
+offset_bottom = 12.0
+scale = Vector2(0.25, 0.25)
+text = "Intéragir"
+label_settings = SubResource("LabelSettings_d1kw8")
