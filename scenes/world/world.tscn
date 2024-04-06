@@ -146,4 +146,7 @@ position = Vector2(-335, 80)
 
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
+[connection signal="player_dead" from="Statics/House/Door" to="." method="_on_player_death"]
 [connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
+
+[editable path="Statics/House"]

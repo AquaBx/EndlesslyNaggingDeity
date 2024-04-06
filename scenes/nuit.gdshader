@@ -6,5 +6,5 @@ void fragment() {
 	vec4 pixelColor = texture(TEXTURE,UV);
 	COLOR = pixelColor;
 	COLOR.rgb = COLOR.rrr;
-	COLOR*=vec4(0.2,0.6,1,1);
+	COLOR*=vec4(0.35,0.45,0.75,1);
 }
