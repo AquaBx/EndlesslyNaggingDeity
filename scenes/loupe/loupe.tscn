@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bjhdovtkoafey"]
+
+[node name="Loupe" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="CollisionShape2D"]
