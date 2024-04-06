@@ -5,11 +5,11 @@
 
 [sub_resource type="Curve2D" id="Curve2D_72f23"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 94.3882, 16.0232, -94.3882, -16.0232, 0, -99, -2.33333, -0.333333, 2.33333, 0.333333, 0, -234, 0, 0, 0, 0, 0, -310, -102.068, -48.2116, 102.068, 48.2116, 3, -233, 0, 0, 0, 0, 3, -99, -35.2798, -7.53164, 35.2798, 7.53164, 2, -47, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.998871, 1.99774, -0.998871, -1.99774, 2, -85, -5.99323, 22.974, 5.99323, -22.974, 0, -188, 1.99774, -21.4757, -1.99774, 21.4757, 1, -323)
 }
-point_count = 8
+point_count = 5
 
-[node name="Node2D" type="Node2D"]
+[node name="DinoDoll" type="Node2D"]
 script = ExtResource("1_2ty5e")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -17,8 +17,9 @@ curve = SubResource("Curve2D_72f23")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
+position = Vector2(1, -323)
 rotation = -2.75382
-progress = 802.09
+progress = 326.425
 rotates = false
 loop = false
 
