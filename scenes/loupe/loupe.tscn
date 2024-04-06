@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjhdovtkoafey"]
+[gd_scene load_steps=10 format=3 uid="uid://bjhdovtkoafey"]
 
 [ext_resource type="Script" path="res://scenes/loupe/loupe.gd" id="1_uk2fa"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_1570u"]
-[ext_resource type="Texture2D" uid="uid://b7pnsiuc7gxnr" path="res://assets/loupe.png" id="2_ch2ge"]
+[ext_resource type="Texture2D" uid="uid://d3l01fhjfw0nt" path="res://assets/loupe.png" id="2_ch2ge"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_bn3a4"]
+[ext_resource type="Shader" path="res://utils/glow.gdshader" id="5_mopti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcgg5"]
 radius = 5.0
@@ -29,6 +30,11 @@ tracks/0/keys = {
 _data = {
 "pickup": SubResource("Animation_jj201")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pem5t"]
+shader = ExtResource("5_mopti")
+shader_parameter/line_color = Vector4(1, 1, 0, 1)
+shader_parameter/line_thickness = 1.0
 
 [node name="Loupe" type="StaticBody2D"]
 collision_layer = 3
@@ -58,4 +64,13 @@ position = Vector2(-1, 4)
 
 [node name="Interact" parent="." instance=ExtResource("3_bn3a4")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, 22)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interact"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_pem5t")
+position = Vector2(0, -44)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ch2ge")
+hframes = 6
