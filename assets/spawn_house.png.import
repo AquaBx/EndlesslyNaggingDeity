@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6854d0v31la7"
-path="res://.godot/imported/spawn_house.png-e99c5a35680690dc82ed95b2a547dfd6.ctex"
+path="res://.godot/imported/spawn_house.png-7fb445d456fa210981e509ded3fd65b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spawn_house.png"
-dest_files=["res://.godot/imported/spawn_house.png-e99c5a35680690dc82ed95b2a547dfd6.ctex"]
+source_file="res://Assets/spawn_house.png"
+dest_files=["res://.godot/imported/spawn_house.png-7fb445d456fa210981e509ded3fd65b4.ctex"]
 
 [params]
 
