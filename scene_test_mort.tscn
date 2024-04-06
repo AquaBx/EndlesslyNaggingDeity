@@ -6,8 +6,8 @@
 [node name="scene-test-mort" type="Node2D"]
 position = Vector2(668, 345)
 
-[node name="Door" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_b5qfn")]
-player = NodePath("../Player")
-
 [node name="Player" parent="." instance=ExtResource("2_tseej")]
 position = Vector2(-129, -15)
+
+[node name="Door" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_b5qfn")]
+player = NodePath("../Player")
