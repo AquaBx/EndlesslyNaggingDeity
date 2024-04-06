@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo8nlgfjpcuko"]
+[gd_scene load_steps=10 format=3 uid="uid://bo8nlgfjpcuko"]
 
 [ext_resource type="Script" path="res://scenes/plant/Plant.gd" id="1_rp5fc"]
 [ext_resource type="Texture2D" uid="uid://8r82udpcdak4" path="res://assets/plante.png" id="2_ufejm"]
 [ext_resource type="Texture2D" uid="uid://dof0ujwxxjyox" path="res://assets/plante-statique.png" id="3_r4tu1"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_t2nts"]
+[ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sy6nk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmkf2"]
 radius = 11.0
@@ -61,3 +62,7 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_5vvgs")
 position = Vector2(0, 1)
 texture = ExtResource("3_r4tu1")
+
+[node name="Interact" parent="." instance=ExtResource("5_sy6nk")]
+unique_name_in_owner = true
+position = Vector2(0, 25)
