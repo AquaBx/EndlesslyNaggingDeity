@@ -1,15 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bo8nlgfjpcuko"]
 
 [ext_resource type="Script" path="res://scenes/plant/Plant.gd" id="1_rp5fc"]
-[ext_resource type="Texture2D" uid="uid://525xjj62h8po" path="res://assets/plante.png" id="2_ufejm"]
-[ext_resource type="Texture2D" uid="uid://dck5g2qsjaixg" path="res://assets/plante-statique.png" id="3_r4tu1"]
+[ext_resource type="Texture2D" uid="uid://8r82udpcdak4" path="res://assets/plante.png" id="2_ufejm"]
+[ext_resource type="Texture2D" uid="uid://dof0ujwxxjyox" path="res://assets/plante-statique.png" id="3_r4tu1"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_t2nts"]
+[ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sy6nk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmkf2"]
 radius = 11.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tdgm8"]
-radius = 37.0
 
 [sub_resource type="Animation" id="Animation_auldi"]
 resource_name = "cut"
@@ -37,20 +35,12 @@ shader_parameter/line_color = Vector4(1, 1, 0, 1)
 shader_parameter/line_thickness = 1.0
 
 [node name="Plant" type="StaticBody2D"]
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_rp5fc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_nmkf2")
-
-[node name="ActionArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="ActionBox" type="CollisionShape2D" parent="ActionArea"]
-position = Vector2(0, 8)
-shape = SubResource("CircleShape2D_tdgm8")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -72,3 +62,7 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_5vvgs")
 position = Vector2(0, 1)
 texture = ExtResource("3_r4tu1")
+
+[node name="Interact" parent="." instance=ExtResource("5_sy6nk")]
+unique_name_in_owner = true
+position = Vector2(0, 25)
