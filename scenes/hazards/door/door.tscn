@@ -19,20 +19,21 @@ script = ExtResource("1_r6ktq")
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
-position = Vector2(-23, 0)
+position = Vector2(-24, 5)
 texture = ExtResource("2_m8jcv")
-
-[node name="DoorClosed" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-texture_filter = 1
-texture = ExtResource("5_lgkvr")
 
 [node name="DoorOpen" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
-position = Vector2(-16, 0)
+position = Vector2(-16, 6)
 texture = ExtResource("6_we3gn")
+
+[node name="DoorClosed" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, 6)
+texture = ExtResource("5_lgkvr")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

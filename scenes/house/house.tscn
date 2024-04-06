@@ -3,12 +3,10 @@
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
 [ext_resource type="Texture2D" uid="uid://djri8508uk1wj" path="res://assets/spawn_house.png" id="2_xy7vv"]
 [ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="3_3aed5"]
+[ext_resource type="Texture2D" uid="uid://ct0cjlsj5fh4f" path="res://assets/door-top.png" id="3_dixat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nne0u"]
-size = Vector2(18, 39)
 
 [node name="House" type="Node2D"]
 script = ExtResource("1_b4ad7")
@@ -41,21 +39,13 @@ frame = 2
 [node name="Mur" type="CollisionPolygon2D" parent="Interior"]
 polygon = PackedVector2Array(-12, -59, -12, -20, -104, -20, -104, 56, 105, 56, 105, -20, 12, -20, 12, -59, 119, -59, 119, 60, -119, 60, -119, -59)
 
-[node name="Door_b" type="StaticBody2D" parent="Interior"]
-visible = false
+[node name="DoorTop" type="Node2D" parent="Interior"]
 position = Vector2(30, -38)
-collision_layer = 0
-collision_mask = 0
 
-[node name="Door" type="Sprite2D" parent="Interior/Door_b"]
+[node name="Sprite2D" type="Sprite2D" parent="Interior/DoorTop"]
 texture_filter = 1
-texture = ExtResource("2_xy7vv")
-hframes = 4
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interior/Door_b"]
-position = Vector2(0, -39.5)
-shape = SubResource("RectangleShape2D_nne0u")
+position = Vector2(-30, -15.5)
+texture = ExtResource("3_dixat")
 
 [node name="Door" parent="." instance=ExtResource("3_3aed5")]
 position = Vector2(0, -39.5)
