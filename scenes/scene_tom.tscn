@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="1_ul0go"]
 [ext_resource type="PackedScene" uid="uid://db737kd26u4hp" path="res://scenes/object/object.tscn" id="2_ro6h2"]
-[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="3_jf8db"]
+[ext_resource type="PackedScene" uid="uid://d1qoilh7r5m2j" path="res://scenes/house/house.tscn" id="3_jf8db"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="4_byp18"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="5_7hmr3"]
 

@@ -1,8 +1,35 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=15 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
 [ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://scenes/player/step1.wav" id="4_yeqpe"]
+[ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://scenes/player/step2.wav" id="5_0k54i"]
+
+[sub_resource type="Shader" id="Shader_fqgw5"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+
+uniform float brightness = 1.0;
+uniform float contrast = 1.0;
+uniform float saturation = 1.0;
+
+void fragment() {
+    vec3 c = textureLod(screen_texture, SCREEN_UV, 0.0).rgb;
+
+    c.rgb = mix(vec3(0.0), c.rgb, brightness);
+    c.rgb = mix(vec3(0.5), c.rgb, contrast);
+    c.rgb = mix(vec3(dot(vec3(1.0), c.rgb) * 0.33333), c.rgb, saturation);
+
+    COLOR.rgb = c;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06bbx"]
+shader = SubResource("Shader_fqgw5")
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/saturation = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgsaf"]
 radius = 8.0
@@ -64,7 +91,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.1,
 "start_offset": 0.0,
-"stream": null
+"stream": ExtResource("4_yeqpe")
 }],
 "times": PackedFloat32Array(0.2)
 }
@@ -79,11 +106,22 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": null
+"stream": ExtResource("5_0k54i")
 }],
 "times": PackedFloat32Array(0.6)
 }
 tracks/2/use_blend = true
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gauche")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlbt8"]
 _data = {
@@ -99,11 +137,12 @@ radius = 37.1079
 size = Vector2(26, 8)
 
 [node name="Player" type="CharacterBody2D"]
+use_parent_material = true
 collision_layer = 11
 script = ExtResource("1_n73ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(36, 0)
+material = SubResource("ShaderMaterial_06bbx")
 rotation = -1.57079
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
@@ -115,7 +154,14 @@ shape = SubResource("CircleShape2D_hgsaf")
 
 [node name="Dino" type="Node2D" parent="."]
 unique_name_in_owner = true
+use_parent_material = true
 script = ExtResource("2_55r2h")
+
+[node name="Gauche" type="AudioStreamPlayer2D" parent="Dino"]
+stream = ExtResource("4_yeqpe")
+
+[node name="Droite" type="AudioStreamPlayer2D" parent="Dino"]
+stream = ExtResource("5_0k54i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dino"]
 libraries = {
@@ -127,9 +173,10 @@ scale = Vector2(1.4006, 0.888636)
 
 [node name="Sprite2D" type="Sprite2D" parent="Dino"]
 texture_filter = 1
+use_parent_material = true
 texture = ExtResource("3_uqmll")
 hframes = 37
-frame = 14
+frame = 6
 
 [node name="ActionZone" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -150,6 +197,8 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingZone"]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_hfiv7")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="ActionZone" to="." method="_on_action_zone_body_exited"]
