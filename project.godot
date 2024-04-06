@@ -15,6 +15,14 @@ run/main_scene="res://player.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Achievements="*res://utils/achievements.gd"
+
+[dotnet]
+
+project/assembly_name="EndlesslyNaggingDeity"
+
 [input]
 
 forward={
