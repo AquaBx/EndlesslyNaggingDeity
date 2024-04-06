@@ -5,22 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://q3jhfjtg76yq" path="res://assets/door-open-placeolder.png" id="3_7rmle"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awxdq"]
-size = Vector2(112, 108.5)
+size = Vector2(129, 108.5)
 
 [node name="Door" type="Area2D"]
+position = Vector2(-4, 1)
 script = ExtResource("1_r6ktq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(325, 385.25)
+position = Vector2(-0.5, 52)
 shape = SubResource("RectangleShape2D_awxdq")
 
 [node name="Door-placeholder" type="Sprite2D" parent="."]
-position = Vector2(338, 241)
+position = Vector2(-1, -123)
+scale = Vector2(0.532787, 0.48996)
 texture = ExtResource("2_6uo7o")
 
 [node name="Door-open-placeolder" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(251.5, 215.5)
+position = Vector2(-127, -123)
 scale = Vector2(0.504098, 0.487952)
 texture = ExtResource("3_7rmle")
 
