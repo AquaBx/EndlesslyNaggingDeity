@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxrn7yaqv3x0a"]
+[gd_scene load_steps=3 format=3 uid="uid://c30dm700paorp"]
 
 [ext_resource type="Texture2D" uid="uid://b6odpisjyqro8" path="res://assets/bat_B.png" id="1_rqqla"]
 
@@ -12,5 +12,6 @@ texture = ExtResource("1_rqqla")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(0, 36.5)
 shape = SubResource("RectangleShape2D_s5535")

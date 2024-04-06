@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctpk5ragpmckg"]
+[gd_scene load_steps=2 format=3 uid="uid://c8csrmegbsxhf"]
 
 [ext_resource type="Texture2D" uid="uid://bmn3bx4kmgojr" path="res://assets/bat_C_1.png" id="1_rq8p8"]
 
@@ -9,4 +9,5 @@ texture = ExtResource("1_rq8p8")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
 polygon = PackedVector2Array(-85, -24, -85, 72, 35, 72, 35, 68, 85, 68, 85, -8, 35, -8, 35, -24)
