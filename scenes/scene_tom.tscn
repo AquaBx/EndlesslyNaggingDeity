@@ -10,6 +10,10 @@
 y_sort_enabled = true
 scale = Vector2(3, 3)
 
+[node name="Loupe" parent="." instance=ExtResource("5_7hmr3")]
+y_sort_enabled = true
+position = Vector2(120.333, 370)
+
 [node name="House" parent="." instance=ExtResource("3_jf8db")]
 position = Vector2(183, 352.667)
 
@@ -21,6 +25,3 @@ position = Vector2(525, 212)
 
 [node name="CarSpawner" parent="." instance=ExtResource("4_byp18")]
 position = Vector2(-112.667, 232.667)
-
-[node name="Loupe" parent="." instance=ExtResource("5_7hmr3")]
-position = Vector2(120.333, 370)
