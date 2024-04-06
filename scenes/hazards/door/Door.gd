@@ -13,6 +13,5 @@ func _on_body_entered(body):
 	$"BloodSplash".visible = true
 	player.frozen = true
 	player.visible = false
-	player.global_position = global_position + Vector2(-150, -60)
 	print(global_position, player.global_position)
 	
