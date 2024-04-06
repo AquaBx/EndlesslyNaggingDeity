@@ -7,11 +7,11 @@ signal player_dead
 func _on_body_entered(body):
 	print("collided")
 	
+	body.frozen = true
 	await get_tree().create_timer(.5).timeout
 	%DoorClosed.visible = false
 	%DoorOpen.visible = true
 	%BloodSplash.visible = true
-	body.frozen = true
 	body.visible = false
 	
 	await get_tree().create_timer(2.).timeout
