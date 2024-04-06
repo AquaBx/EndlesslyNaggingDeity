@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="Texture2D" uid="uid://bhqj1rh0p7531" path="res://assets/dino.png" id="3_uqmll"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgsaf"]
 radius = 8.0
@@ -52,6 +52,7 @@ radius = 37.1079
 size = Vector2(26, 8)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 collision_layer = 3
 script = ExtResource("1_n73ct")
 
@@ -74,6 +75,7 @@ libraries = {
 }
 
 [node name="Shadow" type="Sprite2D" parent="Dino"]
+scale = Vector2(1.4006, 0.888636)
 
 [node name="Sprite2D" type="Sprite2D" parent="Dino"]
 texture_filter = 1
