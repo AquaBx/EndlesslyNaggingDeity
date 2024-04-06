@@ -1,39 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2pw0xcwxp4rs"]
+[gd_scene load_steps=7 format=3 uid="uid://b2pw0xcwxp4rs"]
 
 [ext_resource type="Script" path="res://scenes/hazards/door/Door.gd" id="1_r6ktq"]
-[ext_resource type="Texture2D" uid="uid://dajytxc82kcbc" path="res://assets/door-placeholder.png" id="2_6uo7o"]
-[ext_resource type="Texture2D" uid="uid://bil0pc2dfod55" path="res://assets/blood-splash.png" id="2_m8jcv"]
-[ext_resource type="Texture2D" uid="uid://q3jhfjtg76yq" path="res://assets/door-open-placeolder.png" id="3_7rmle"]
+[ext_resource type="Texture2D" uid="uid://cr3g4ve7o30yf" path="res://assets/blood-splash.png" id="2_m8jcv"]
+[ext_resource type="Texture2D" uid="uid://otgnr58n0c7w" path="res://assets/door.png" id="3_xthm3"]
+[ext_resource type="Texture2D" uid="uid://cjmckm2od8d62" path="res://assets/door-open.png" id="4_rdqwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w256"]
+size = Vector2(20, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awxdq"]
-size = Vector2(101.5, 54.25)
+size = Vector2(22, 4.125)
 
 [node name="Door" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_r6ktq")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_5w256")
+
 [node name="BloodSplash" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
-position = Vector2(-72, -94)
-scale = Vector2(4.57692, 4.57692)
+position = Vector2(-23, -14)
 texture = ExtResource("2_m8jcv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(41.25, 26.875)
+[node name="DoorClosed" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -14)
+texture = ExtResource("3_xthm3")
+
+[node name="DoorOpen" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-16, -14)
+texture = ExtResource("4_rdqwc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.9375)
 shape = SubResource("RectangleShape2D_awxdq")
-
-[node name="Door-placeholder" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(42.8361, -96.3886)
-scale = Vector2(4.11639, 3.78551)
-texture = ExtResource("2_6uo7o")
-
-[node name="Door-open-placeolder" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(-39.4795, -95.4379)
-scale = Vector2(3.95205, 3.82547)
-texture = ExtResource("3_7rmle")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
