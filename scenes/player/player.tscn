@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=12 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://35fprd68i1gp" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://assets/step1.wav" id="3_7gthi"]
+[ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://assets/step2.wav" id="4_5ol86"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgsaf"]
 radius = 8.0
@@ -38,6 +40,36 @@ tracks/0/keys = {
 "update": 1,
 "values": [6, 7, 8, 9, 10, 11, 12, 13]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gauche")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.1,
+"start_offset": 0.0,
+"stream": ExtResource("3_7gthi")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/1/use_blend = true
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Droite")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_5ol86")
+}],
+"times": PackedFloat32Array(0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlbt8"]
 _data = {
@@ -52,7 +84,7 @@ radius = 37.1079
 size = Vector2(26, 8)
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 11
 script = ExtResource("1_n73ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
