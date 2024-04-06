@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=10 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
@@ -108,6 +108,7 @@ libraries = {
 }
 
 [node name="Shadow" type="Sprite2D" parent="Dino"]
+scale = Vector2(1.4006, 0.888636)
 
 [node name="Sprite2D" type="Sprite2D" parent="Dino"]
 texture_filter = 1
