@@ -13,5 +13,5 @@ func _on_body_entered(body):
 	$"BloodSplash".visible = true
 	player.frozen = true
 	player.visible = false
-	print(global_position, player.global_position)
+
 	
