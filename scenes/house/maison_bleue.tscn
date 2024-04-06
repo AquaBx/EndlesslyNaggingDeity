@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxrn7yaqv3x0a"]
+
+[ext_resource type="Texture2D" uid="uid://b6odpisjyqro8" path="res://assets/bat_B.png" id="1_rqqla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5535"]
+size = Vector2(120, 97)
+
+[node name="Maison Bleue" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_rqqla")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 36.5)
+shape = SubResource("RectangleShape2D_s5535")

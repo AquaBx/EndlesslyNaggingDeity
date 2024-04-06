@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxsysmhm8yds8"]
+
+[ext_resource type="PackedScene" uid="uid://blt7o8tujkg8a" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
+[ext_resource type="PackedScene" uid="uid://cxrn7yaqv3x0a" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
+[ext_resource type="PackedScene" uid="uid://ctpk5ragpmckg" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
+[ext_resource type="PackedScene" uid="uid://bgs0qmmnbcmyk" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
+[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
+[ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
+[ext_resource type="Texture2D" uid="uid://dajc8ku6nm8es" path="res://assets/road.png" id="7_s70g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2ac6"]
+size = Vector2(4000, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unan1"]
+size = Vector2(4000, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhoka"]
+size = Vector2(159.5, 620)
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+z_as_relative = false
+offset_left = -1917.0
+offset_top = -437.0
+offset_right = 3203.0
+offset_bottom = 656.0
+color = Color(0.921569, 0.980392, 0.894118, 1)
+
+[node name="Immeuble 1" parent="." instance=ExtResource("1_08rpx")]
+position = Vector2(60, -6)
+
+[node name="Immeuble 2" parent="." instance=ExtResource("1_08rpx")]
+position = Vector2(470, -11)
+
+[node name="Maison Bleue 1" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(760, 49)
+
+[node name="Maison Bleue 2" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(180, 49)
+
+[node name="Maison Rouge 1" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(-85, 46)
+
+[node name="Maison Rouge 2" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(615, 37)
+
+[node name="Maison Jaune 1" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(325, 37)
+
+[node name="House" parent="." instance=ExtResource("5_pwkoy")]
+position = Vector2(65, 332)
+
+[node name="PlayerSpawn" type="Marker2D" parent="House"]
+
+[node name="Player" parent="." instance=ExtResource("6_1w2bk")]
+position = Vector2(65, 331)
+
+[node name="Road" type="Sprite2D" parent="."]
+z_index = -1
+z_as_relative = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(643, 195)
+scale = Vector2(1.28, 1)
+texture = ExtResource("7_s70g1")
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 48)
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="SouthWall" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/SouthWall"]
+position = Vector2(541, 470)
+shape = SubResource("RectangleShape2D_d2ac6")
+
+[node name="NorthWall" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/NorthWall"]
+position = Vector2(541, -306.5)
+shape = SubResource("RectangleShape2D_unan1")
+
+[node name="WestWall" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/WestWall"]
+position = Vector2(-1379.5, 82)
+shape = SubResource("RectangleShape2D_xhoka")
+
+[node name="EastWall" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/EastWall"]
+position = Vector2(2461.25, 82)
+shape = SubResource("RectangleShape2D_xhoka")
