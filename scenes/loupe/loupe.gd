@@ -2,12 +2,15 @@ extends Node2D
 
 func _ready():
 	%Interact.visible = false
+	$Node2D.play_animation_loop()
+	
 
 func action():
-	$Node2D/AnimationPlayer.play("pickup")
+	pass
 	
 func glow():
 	%Interact.visible = true
 	
 func unglow():
 	%Interact.visible = false
+

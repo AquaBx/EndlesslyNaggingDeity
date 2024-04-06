@@ -8,3 +8,6 @@ func play_walk_animation():
 	
 func play_drive_animation():
 	$AnimationPlayer.play("drive")
+
+func play_animation_loop():
+	$AnimationPlayer.play("pickup")
