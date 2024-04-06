@@ -3,9 +3,11 @@ extends Node2D
 @export var player : CharacterBody2D
 const SPAWNER_LENGTH = 100
 
+signal player_death
+
 func spawn_car():
 	var new_car = preload("res://scenes/hazards/car/car.tscn").instantiate()
-	new_car.get_node("Area2D").body_entered.connect(death)
+	new_car.get_node("Area2D").body_entered.connect(car_touched_player)
 	new_car.position = Vector2(0, 0)
 	print(global_position, new_car.position)
 	
@@ -24,15 +26,6 @@ func spawn_car():
 	print(new_car.global_position)
 	add_child(new_car)
 
-
-
-func death(body):
-	
-	const gdeath = preload("res://death/generic_death.tscn")
-	var deathOverlay = gdeath.instantiate()
-	deathOverlay.show_overlay()
-	add_child(deathOverlay)
-	
-	await get_tree().create_timer(5.0).timeout
-	
+func car_touched_player(body):
+	player_death.emit("les voitures c'est vraiment pô nice ! \n Ainsi Dieu Surpprima les voitures")
 	queue_free()
