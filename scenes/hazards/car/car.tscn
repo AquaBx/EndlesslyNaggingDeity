@@ -79,4 +79,5 @@ volume_db = -5.0
 autoplay = true
 max_distance = 1000.0
 
+
 [connection signal="timeout" from="lifespan" to="." method="_on_lifespan_timeout"]
