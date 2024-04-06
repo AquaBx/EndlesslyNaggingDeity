@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yadkghnsuexo"
-path="res://.godot/imported/dino1.png-1674f684140c618ca2492539cf591d16.ctex"
+uid="uid://cxvmb22jc04c3"
+path="res://.godot/imported/voiture.png-c20a578068ac27b9288d46d97f087a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dino1.png"
-dest_files=["res://.godot/imported/dino1.png-1674f684140c618ca2492539cf591d16.ctex"]
+source_file="res://Assets/voiture.png"
+dest_files=["res://.godot/imported/voiture.png-c20a578068ac27b9288d46d97f087a65.ctex"]
 
 [params]
 
