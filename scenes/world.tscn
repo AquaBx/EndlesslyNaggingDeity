@@ -167,6 +167,7 @@ position = Vector2(368, 90)
 position = Vector2(137, 328)
 
 [node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player", "CarSpawnWest", "CarSpawnEast") instance=ExtResource("7_otisb")]
+position = Vector2(0, 0)
 player = NodePath("../../Player")
 CarSpawnWest = NodePath("../../CarSpawnWest")
 CarSpawnEast = NodePath("../../CarSpawnEast")
@@ -263,10 +264,10 @@ libraries = {
 }
 
 [node name="CarSpawnWest" type="Marker2D" parent="."]
-position = Vector2(-1712, 207)
+position = Vector2(-1712, 199)
 
 [node name="CarSpawnEast" type="Marker2D" parent="."]
-position = Vector2(3178, 178)
+position = Vector2(3178, 175)
 
 [connection signal="player_dead" from="House/Door" to="." method="_on_player_death"]
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
