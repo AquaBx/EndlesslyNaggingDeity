@@ -5,7 +5,7 @@ const FRICTION = 10
 const SEUIL = 349
 
 var m_object:Object
-var frozen: bool = true
+var frozen: bool = false
 
 func _physics_process(delta):
 	if(self.frozen): return

@@ -104,6 +104,7 @@ libraries = {
 }
 
 [node name="Shadow" type="Sprite2D" parent="Dino"]
+scale = Vector2(1.4006, 0.888636)
 
 [node name="Sprite2D" type="Sprite2D" parent="Dino"]
 texture_filter = 1

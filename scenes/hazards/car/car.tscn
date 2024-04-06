@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/hazards/car/car.gd" id="1_sl1j0"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_0gb0j"]
-[ext_resource type="Texture2D" uid="uid://dlulvb2emfj5y" path="res://assets/voiture.png" id="3_ka831"]
+[ext_resource type="Texture2D" uid="uid://dsv18yu2pkb8j" path="res://assets/voiture.png" id="3_ka831"]
 
 [sub_resource type="Animation" id="Animation_mixmh"]
 resource_name = "drive"
