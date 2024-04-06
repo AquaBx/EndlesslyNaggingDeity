@@ -12,7 +12,7 @@ func spawn_car():
 	var dir = [-1, 1].pick_random()  # determine if the car goes to the left or right
 	print(dir)
 	new_car.direction = dir
-	print(player.position)
+
 	var ctrans = get_canvas_transform()
 	if dir == 1:
 		new_car.position.y += 20
@@ -20,7 +20,7 @@ func spawn_car():
 	else:
 		#new_car.global_position.x = player.global_position.x + 20
 		new_car.position.x += SPAWNER_LENGTH
-		new_car.scale = Vector2(-1, 1)
+		new_car.scale.x *= -1
 	print(new_car.global_position)
 	add_child(new_car)
 
