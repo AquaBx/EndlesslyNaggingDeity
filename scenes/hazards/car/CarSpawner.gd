@@ -1,6 +1,9 @@
 extends Node2D
 
 @export var player : CharacterBody2D
+@export var CarSpawnWest : Marker2D
+@export var CarSpawnEast : Marker2D
+
 const SPAWNER_LENGTH = 100
 
 signal player_death
@@ -17,10 +20,9 @@ func spawn_car():
 
 	var ctrans = get_canvas_transform()
 	if dir == 1:
-		new_car.position.y += 20
-		#new_car.global_position.x = player.global_position.x - 20
+		new_car.global_position = CarSpawnWest.global_position
 	else:
-		#new_car.global_position.x = player.global_position.x + 20
+		new_car.global_position = CarSpawnEast.global_position
 		new_car.position.x += SPAWNER_LENGTH
 		new_car.scale.x *= -1
 	print(new_car.global_position)
@@ -28,4 +30,5 @@ func spawn_car():
 
 func car_touched_player(body):
 	player_death.emit("les voitures c'est vraiment pô nice ! \n Ainsi Dieu Surpprima les voitures")
+	await get_tree().create_timer(2).timeout
 	queue_free()

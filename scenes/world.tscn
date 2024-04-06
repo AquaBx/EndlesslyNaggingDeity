@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://deym8dkb2pokv" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
-[ext_resource type="PackedScene" uid="uid://ojyxr3mk5r3j" path="res://scenes/hazards/car/car.tscn" id="7_larbv"]
+[ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
 [ext_resource type="Texture2D" uid="uid://sp5ueyf1hviy" path="res://assets/road.png" id="7_s70g1"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
@@ -166,7 +166,10 @@ position = Vector2(368, 90)
 [node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
 position = Vector2(137, 328)
 
-[node name="Car" parent="Interactable" instance=ExtResource("7_larbv")]
+[node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player", "CarSpawnWest", "CarSpawnEast") instance=ExtResource("7_otisb")]
+player = NodePath("../../Player")
+CarSpawnWest = NodePath("../../CarSpawnWest")
+CarSpawnEast = NodePath("../../CarSpawnEast")
 
 [node name="Batiments" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -268,5 +271,6 @@ position = Vector2(3178, 178)
 [connection signal="player_dead" from="House/Door" to="." method="_on_player_death"]
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="plant_cut" from="Interactable/Plant" to="." method="_on_player_death"]
+[connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
 
 [editable path="House"]
