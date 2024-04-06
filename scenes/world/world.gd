@@ -27,3 +27,4 @@ func _on_player_death(death_message: String):
 	await get_tree().create_timer(2.).timeout
 	%DeathLabel.hide()
 	%DeathLabel.set("theme_override_colors/font_color",Color(255, 255, 255, 1))
+
