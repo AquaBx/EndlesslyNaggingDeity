@@ -14,7 +14,7 @@ var achievements := {
 }
 
 func get_info(id: String) -> AchievementInfo:
-	return self.res.achievements[id]
+	return self.achievements[id]
 
 func set_success(id: String, val: bool) -> void:
-	self.res.achievements[id].succeeded = val
+	self.achievements[id].succeded = val
