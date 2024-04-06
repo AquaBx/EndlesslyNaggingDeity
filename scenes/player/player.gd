@@ -11,6 +11,7 @@ func _physics_process(delta):
 	
 	if direction.x != 0.0:
 		%Dino.scale.x = int(direction.x > 0)*2 -1
+		%ActionZone.scale.x = int(direction.x > 0)*2 -1
 	
 	var acceleration = direction * SPEED \
 					 - velocity * FRICTION
