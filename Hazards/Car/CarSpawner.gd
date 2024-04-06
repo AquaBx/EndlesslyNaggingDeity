@@ -4,11 +4,13 @@ extends Node2D
 
 func _on_timer_timeout():
 	var new_car = preload("res://Hazards/Car/car.tscn").instantiate()
+	new_car.get_node("Area2D").body_entered.connect(death)
 	add_child(new_car)
 
 
 
-func _on_area_2d_body_entered(body):
+func death(body):
+	
 	const gdeath = preload("res://death/generic_death.tscn")
 	var deathOverlay = gdeath.instantiate()
 	deathOverlay.show_overlay()
