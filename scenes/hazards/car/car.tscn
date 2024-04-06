@@ -1,10 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://ojyxr3mk5r3j"]
+[gd_scene load_steps=9 format=3 uid="uid://ojyxr3mk5r3j"]
 
 [ext_resource type="Script" path="res://scenes/hazards/car/car.gd" id="1_sl1j0"]
-[ext_resource type="Texture2D" path="res://assets/car_placeholder.png" id="2_hjngl"]
+[ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_0gb0j"]
+[ext_resource type="Texture2D" uid="uid://bv3xfuxmo7vt5" path="res://assets/car_placeholder.png" id="2_hjngl"]
+[ext_resource type="Texture2D" uid="uid://dyaskry2kuad7" path="res://assets/voiture.png" id="3_ka831"]
+
+[sub_resource type="Animation" id="Animation_mixmh"]
+resource_name = "drive"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mmbjx"]
+_data = {
+"drive": SubResource("Animation_mixmh")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvad4"]
-size = Vector2(47, 29)
+size = Vector2(44.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p04j"]
 size = Vector2(5, 29)
@@ -12,13 +35,37 @@ size = Vector2(5, 29)
 [node name="Car" type="StaticBody2D"]
 script = ExtResource("1_sl1j0")
 
+[node name="Car" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1.5, -0.500001)
+scale = Vector2(0.0579531, 0.0584677)
+script = ExtResource("2_0gb0j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car"]
+root_node = NodePath("../Shadow")
+libraries = {
+"": SubResource("AnimationLibrary_mmbjx")
+}
+
+[node name="Shadow" type="Sprite2D" parent="Car"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Car"]
+texture_filter = 1
+position = Vector2(-25.883, -8.55171)
+scale = Vector2(14.1717, 14.1717)
+texture = ExtResource("3_ka831")
+flip_h = true
+hframes = 3
+frame = 2
+
 [node name="CarPlaceholder" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1.5, -0.500001)
 scale = Vector2(0.0579531, 0.0584677)
 texture = ExtResource("2_hjngl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -0.5)
+position = Vector2(-1.25, 1)
 shape = SubResource("RectangleShape2D_yvad4")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -26,7 +73,8 @@ collision_layer = 3
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(27.5, -0.5)
+position = Vector2(24, 1)
+scale = Vector2(1, 0.716006)
 shape = SubResource("RectangleShape2D_4p04j")
 
 [node name="lifespan" type="Timer" parent="."]
