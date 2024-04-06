@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://8nq7ldle0d06"]
+
+[ext_resource type="Texture2D" uid="uid://jwd0vx8jl3j2" path="res://icon.svg" id="1_d3mj7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_30fji"]
+line_spacing = 0.0
+font_size = 11
+
+[node name="Notification" type="PanelContainer"]
+offset_right = 397.0
+offset_bottom = 74.0
+size_flags_horizontal = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HorizontalLayout" type="GridContainer" parent="MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+columns = 3
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HorizontalLayout"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_d3mj7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Spacing" type="ReferenceRect" parent="MarginContainer/HorizontalLayout"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+border_color = Color(1, 0.486275, 0.419608, 1)
+border_width = 0.0
+
+[node name="TextLayout" type="GridContainer" parent="MarginContainer/HorizontalLayout"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/HorizontalLayout/TextLayout"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "123456789 123456789 123456789 1234"
+vertical_alignment = 1
+justification_flags = 160
+clip_text = true
+text_overrun_behavior = 3
+max_lines_visible = 1
+
+[node name="Description" type="Label" parent="MarginContainer/HorizontalLayout/TextLayout"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 32)
+layout_mode = 2
+text = "123456789 123456789 123456789 123456789 123456789_
+123456789 123456789 123456789 123456789 123456789_"
+label_settings = SubResource("LabelSettings_30fji")
+text_overrun_behavior = 3
+max_lines_visible = 2
