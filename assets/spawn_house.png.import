@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7kpx0epo0m7u"
-path="res://.godot/imported/dino.png-66c5335947261999ffd188b9c2301b2b.ctex"
+uid="uid://b6854d0v31la7"
+path="res://.godot/imported/spawn_house.png-e99c5a35680690dc82ed95b2a547dfd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dino.png"
-dest_files=["res://.godot/imported/dino.png-66c5335947261999ffd188b9c2301b2b.ctex"]
+source_file="res://assets/spawn_house.png"
+dest_files=["res://.godot/imported/spawn_house.png-e99c5a35680690dc82ed95b2a547dfd6.ctex"]
 
 [params]
 
