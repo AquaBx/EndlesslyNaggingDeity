@@ -13,7 +13,7 @@ func glow():
 func unglow():
 	%Glow.hide()
 
-func action():
+func action(player):
 	is_cut = true
 	unglow()
 	print("action")
