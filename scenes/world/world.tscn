@@ -87,16 +87,20 @@ script = ExtResource("1_ll75m")
 
 [node name="Player" parent="." instance=ExtResource("2_7hejq")]
 unique_name_in_owner = true
-
-[node name="Interactable" type="Node2D" parent="."]
-
-[node name="CarSpawner" parent="Interactable" instance=ExtResource("3_kafph")]
-position = Vector2(0, -43)
+position = Vector2(-127, 77)
 
 [node name="Statics" type="Node2D" parent="."]
 
 [node name="House" parent="Statics" instance=ExtResource("4_gyl3i")]
 position = Vector2(-119, 59)
+
+[node name="Door" parent="Statics/House" index="2" node_paths=PackedStringArray("player")]
+player = NodePath("../../../Player")
+
+[node name="Interactable" type="Node2D" parent="."]
+
+[node name="CarSpawner" parent="Interactable" instance=ExtResource("3_kafph")]
+position = Vector2(0, -43)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -136,4 +140,7 @@ libraries = {
 "": SubResource("AnimationLibrary_5fvhu")
 }
 
+[connection signal="player_dead" from="Statics/House/Door" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
+
+[editable path="Statics/House"]
