@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3jht7vcxvoiw"]
+
+[ext_resource type="Script" path="res://utils/notification/NotificationCenter.gd" id="1_oaihq"]
+
+[node name="NotificationCenter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oaihq")
+
+[node name="NotificationFadeout" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="NotificationFadeout" to="." method="_on_notification_fadeout_timeout"]
