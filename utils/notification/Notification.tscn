@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8nq7ldle0d06"]
 
-[ext_resource type="Texture2D" uid="uid://jwd0vx8jl3j2" path="res://icon.svg" id="1_d3mj7"]
+[ext_resource type="Texture2D" uid="uid://jwd0vx8jl3j2" path="res://Assets/icon.svg" id="1_d3mj7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_30fji"]
 line_spacing = 0.0
