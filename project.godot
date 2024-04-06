@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EndlesslyNaggingDeity"
-run/main_scene="res://scene_test_mort.tscn"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://assets/icon.svg"
 
 Achievements="*res://utils/achievements.gd"
 Test="*res://utils/test.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -61,3 +65,5 @@ interact={
 
 2d_physics/layer_1="Décors"
 2d_physics/layer_2="Interaction"
+2d_physics/layer_3="Batiment"
+2d_physics/layer_4="voiture"
