@@ -61,3 +61,5 @@ interact={
 
 2d_physics/layer_1="Décors"
 2d_physics/layer_2="Interaction"
+2d_physics/layer_3="Batiment"
+2d_physics/layer_4="voiture"
