@@ -163,7 +163,7 @@ shape = SubResource("RectangleShape2D_xhoka")
 position = Vector2(368, 90)
 
 [node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
-position = Vector2(129, 291)
+position = Vector2(137, 328)
 
 [node name="Batiments" type="Node2D" parent="."]
 y_sort_enabled = true
