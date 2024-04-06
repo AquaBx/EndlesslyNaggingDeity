@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://assets/step1.wav" id="3_7gthi"]
+[ext_resource type="AudioStream" path="res://assets/step1.wav" id="3_7gthi"]
 [ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
-[ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://assets/step2.wav" id="4_5ol86"]
+[ext_resource type="AudioStream" path="res://assets/step2.wav" id="4_5ol86"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgsaf"]
 radius = 8.0
