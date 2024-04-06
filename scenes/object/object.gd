@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-func action():
+func action(player):
 	print("action")
 
 func glow():
