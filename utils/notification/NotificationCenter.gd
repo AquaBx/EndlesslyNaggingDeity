@@ -1,10 +1,6 @@
 extends Control
 
 const NotificationScene = preload("res://utils/notification/Notification.tscn")
-var notifications = []
-
-func _ready() -> void:
-	push_notif("Hello You", "bruh\toujours plus de lignes", "res://Assets/dino1.png")
 
 func push_notif(_title: String, _description: String, _icon: String) -> void:
 	var notif = NotificationScene.instantiate()
