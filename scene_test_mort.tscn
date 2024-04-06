@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4ffbap4gc3l7"]
+[gd_scene load_steps=2 format=3 uid="uid://b4ffbap4gc3l7"]
 
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="2_tseej"]
 [ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="3_b5qfn"]
@@ -8,6 +8,5 @@ position = Vector2(668, 345)
 
 [node name="Player" parent="." instance=ExtResource("2_tseej")]
 position = Vector2(-129, -15)
-
 [node name="Door" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_b5qfn")]
 player = NodePath("../Player")

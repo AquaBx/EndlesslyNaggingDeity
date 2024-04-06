@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qf2ffqxtxhmk"]
+[gd_scene load_steps=5 format=3 uid="uid://qf2ffqxtxhmk"]
 
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="1_ul0go"]
 [ext_resource type="PackedScene" uid="uid://db737kd26u4hp" path="res://scenes/object/object.tscn" id="2_ro6h2"]
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="3_jf8db"]
+[ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="4_byp18"]
 
 [node name="SceneTom" type="Node2D"]
 y_sort_enabled = true
@@ -16,3 +17,6 @@ position = Vector2(155, 231)
 
 [node name="Object" parent="." instance=ExtResource("2_ro6h2")]
 position = Vector2(525, 212)
+
+[node name="CarSpawner" parent="." instance=ExtResource("4_byp18")]
+position = Vector2(-112.667, 232.667)
