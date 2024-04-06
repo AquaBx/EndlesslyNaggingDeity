@@ -1,13 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpqngcmkmtkxk"]
+[gd_scene load_steps=6 format=3 uid="uid://cpqngcmkmtkxk"]
 
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
-[ext_resource type="Texture2D" uid="uid://dc1yjx2in3pu2" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://00mvmqm1gwe3" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://4y6icbp186ao" path="res://assets/door-top.png" id="3_330l1"]
+[ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="4_qtn6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nne0u"]
-size = Vector2(18, 39)
 
 [node name="House" type="Node2D"]
 script = ExtResource("1_b4ad7")
@@ -42,23 +41,16 @@ frame = 2
 visible = false
 polygon = PackedVector2Array(-12, -59, -12, -20, -104, -20, -104, 56, 105, 56, 105, -20, 12, -20, 12, -59, 119, -59, 119, 60, -119, 60, -119, -59)
 
-[node name="Door" type="StaticBody2D" parent="Interior"]
-collision_layer = 0
-collision_mask = 0
+[node name="DoorTop" type="Node2D" parent="Interior"]
 
-[node name="Door" type="Sprite2D" parent="Interior/Door"]
+[node name="Sprite2D" type="Sprite2D" parent="Interior/DoorTop"]
 texture_filter = 1
-texture = ExtResource("2_rn4df")
-hframes = 4
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interior/Door"]
-visible = false
-position = Vector2(0, -39.5)
-shape = SubResource("RectangleShape2D_nne0u")
+position = Vector2(0, -53.5)
+texture = ExtResource("3_330l1")
 
 [node name="Exterior" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="ExtWalls" type="Sprite2D" parent="Exterior"]
 texture_filter = 1
@@ -68,6 +60,9 @@ hframes = 4
 [node name="Mur2" type="CollisionPolygon2D" parent="Exterior"]
 visible = false
 polygon = PackedVector2Array(-8, -59, -8, -20, -104, -20, -104, 56, 105, 56, 105, -20, 9, -20, 9, -59, 119, -59, 119, 60, -119, 60, -119, -59)
+
+[node name="Door" parent="." instance=ExtResource("4_qtn6r")]
+position = Vector2(0, -19.5)
 
 [connection signal="area_entered" from="InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="InteriorDetect" to="." method="_on_interior_detect_area_exited"]
