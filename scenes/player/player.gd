@@ -15,7 +15,7 @@ func _physics_process(delta):
 	
 	var acceleration = direction * SPEED \
 					 - velocity * FRICTION
-					
+
 	velocity += acceleration * delta
 	if velocity.length() < 10:
 		velocity = Vector2(0,0)
