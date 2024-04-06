@@ -22,7 +22,7 @@ Test="*res://utils/test.gd"
 
 [display]
 
-window/main_scene="res://scene_test_mort.tscn"
+window/stretch/mode="viewport"
 
 [dotnet]
 

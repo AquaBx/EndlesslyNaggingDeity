@@ -1,0 +1,150 @@
+[gd_scene load_steps=11 format=3 uid="uid://dv7c8lve82618"]
+
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_ll75m"]
+[ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="2_7hejq"]
+[ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="3_kafph"]
+[ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="3_yiq0n"]
+[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="4_gyl3i"]
+[ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="6_1ki7j"]
+
+[sub_resource type="Animation" id="Animation_2sai3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%DeathLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ec3l6"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jgw0c"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%DeathLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fvhu"]
+_data = {
+"RESET": SubResource("Animation_2sai3"),
+"fade in": SubResource("Animation_ec3l6"),
+"fade out": SubResource("Animation_jgw0c")
+}
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+scale = Vector2(3, 3)
+script = ExtResource("1_ll75m")
+
+[node name="Player" parent="." instance=ExtResource("2_7hejq")]
+unique_name_in_owner = true
+
+[node name="Interactable" type="Node2D" parent="."]
+
+[node name="Loupe" parent="Interactable" instance=ExtResource("3_yiq0n")]
+position = Vector2(-469, 65)
+
+[node name="CarSpawner" parent="Interactable" instance=ExtResource("3_kafph")]
+position = Vector2(0, -43)
+
+[node name="Statics" type="Node2D" parent="."]
+
+[node name="House" parent="Statics" instance=ExtResource("4_gyl3i")]
+position = Vector2(-119, 59)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-119, 60)
+
+[node name="DeathScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="DeathScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="DeathLabel" type="Label" parent="DeathScreen"]
+unique_name_in_owner = true
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+
+[node name="DeathScreenAnimationPlayer" type="AnimationPlayer" parent="DeathScreen"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_5fvhu")
+}
+
+[node name="Plant" parent="." instance=ExtResource("6_1ki7j")]
+position = Vector2(-335, 80)
+
+[connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
+[connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
+[connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
