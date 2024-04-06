@@ -76,6 +76,6 @@ autostart = true
 stream = ExtResource("4_gwfp1")
 volume_db = -5.0
 autoplay = true
-max_distance = 1000.0
+max_distance = 500.0
 
 [connection signal="timeout" from="lifespan" to="." method="_on_lifespan_timeout"]
