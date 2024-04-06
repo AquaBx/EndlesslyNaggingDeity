@@ -16,6 +16,13 @@ func unglow():
 func action(player):
 	is_cut = true
 	unglow()
-	print("action")
+
 	%Anim.play("cut")
-	plant_cut.emit()
+	
+	await get_tree().create_timer(2.).timeout
+		
+	plant_cut.emit("Dieu est content de vous 😊")
+	await get_tree().create_timer(1.).timeout
+	is_cut = false
+	$Node2D/Sprite.set("frame",0)
+	
