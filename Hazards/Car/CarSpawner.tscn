@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://gmg71yk5wc2o"]
+[gd_scene load_steps=4 format=3 uid="uid://gmg71yk5wc2o"]
 
 [ext_resource type="Script" path="res://Hazards/Car/CarSpawner.gd" id="1_1njqf"]
+[ext_resource type="Script" path="res://Hazards/Car/Timer.gd" id="2_hvwmo"]
 [ext_resource type="PackedScene" uid="uid://ojyxr3mk5r3j" path="res://Hazards/Car/car.tscn" id="2_tttw0"]
 
 [node name="CarSpawner" type="Node2D"]
@@ -10,8 +11,11 @@ position = Vector2(337, 152)
 script = ExtResource("1_1njqf")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
+script = ExtResource("2_hvwmo")
 
 [node name="Car" parent="." instance=ExtResource("2_tttw0")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
