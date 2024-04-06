@@ -11,6 +11,7 @@ func _on_player_death(death_message: String):
 	%DeathLabel.text = death_message
 	
 	%DeathScreenAnimationPlayer.play("fade in")	
+
 	
 	await get_tree().create_timer(1.).timeout
 	
