@@ -85,6 +85,7 @@ _data = {
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+scale = Vector2(3, 3)
 script = ExtResource("1_ll75m")
 
 [node name="Player" parent="." instance=ExtResource("2_7hejq")]
