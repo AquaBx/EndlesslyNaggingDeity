@@ -1,14 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=10 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://b7kpx0epo0m7u" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="Texture2D" uid="uid://b7kpx0epo0m7u" path="res://Assets/dino.png" id="3_uqmll"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g28ss"]
-radius = 35.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sfa70"]
-radius = 94.0213
+[sub_resource type="CircleShape2D" id="CircleShape2D_hgsaf"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_30qrf"]
 resource_name = "idle"
@@ -48,6 +45,12 @@ _data = {
 "walk": SubResource("Animation_72td6")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfa70"]
+radius = 37.1079
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfiv7"]
+size = Vector2(26, 8)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_n73ct")
 
@@ -57,18 +60,8 @@ rotation = -1.57079
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g28ss")
-
-[node name="ActionZone" type="Area2D" parent="."]
-unique_name_in_owner = true
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionZone"]
-position = Vector2(36, 0)
-rotation = -1.57079
-shape = SubResource("CircleShape2D_sfa70")
-debug_color = Color(0, 0.623529, 0.529412, 0.419608)
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_hgsaf")
 
 [node name="Dino" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -80,15 +73,34 @@ libraries = {
 }
 
 [node name="Shadow" type="Sprite2D" parent="Dino"]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Dino"]
 texture_filter = 1
-position = Vector2(0, -48)
-scale = Vector2(4, 4)
 texture = ExtResource("3_uqmll")
 hframes = 14
 frame = 5
 
+[node name="ActionZone" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionZone"]
+position = Vector2(22, 0)
+rotation = -1.57079
+shape = SubResource("CircleShape2D_sfa70")
+debug_color = Color(0, 0.623529, 0.529412, 0.419608)
+
+[node name="BuildingZone" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingZone"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_hfiv7")
+
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="ActionZone" to="." method="_on_action_zone_body_exited"]
+[connection signal="body_entered" from="BuildingZone" to="." method="_on_action_zone_body_entered"]
+[connection signal="body_exited" from="BuildingZone" to="." method="_on_action_zone_body_exited"]
