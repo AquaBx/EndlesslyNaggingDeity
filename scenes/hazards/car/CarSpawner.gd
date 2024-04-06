@@ -4,7 +4,7 @@ extends Node2D
 const SPAWNER_LENGTH = 100
 
 func spawn_car():
-	var new_car = preload("res://hazards/car/car.tscn").instantiate()
+	var new_car = preload("res://scenes/hazards/car/car.tscn").instantiate()
 	new_car.get_node("Area2D").body_entered.connect(death)
 	new_car.position = Vector2(0, 0)
 	print(global_position, new_car.position)
