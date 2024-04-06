@@ -9,9 +9,5 @@ position = Vector2(668, 345)
 
 [node name="Player" parent="." instance=ExtResource("2_tseej")]
 position = Vector2(-129, -15)
-
 [node name="Door" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_b5qfn")]
-position = Vector2(185, -1)
 player = NodePath("../Player")
-
-[node name="Plant" parent="." instance=ExtResource("3_hp7jy")]
