@@ -35,5 +35,6 @@ func _on_action_zone_body_entered(body):
 		m_object.glow()
 
 func _on_action_zone_body_exited(body):
-	m_object.unglow()
+	if m_object != null:
+		m_object.unglow()
 	m_object = null
