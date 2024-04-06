@@ -8,7 +8,7 @@ func _ready():
 	%Interact.visible = false
 
 func glow():
-	print("glowin")
+
 	if not is_cut:
 		%Glow.show()
 	%Interact.visible = true
