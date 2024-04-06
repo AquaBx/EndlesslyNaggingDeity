@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1qoilh7r5m2j"]
+[gd_scene load_steps=7 format=3 uid="uid://d1qoilh7r5m2j"]
 
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
-[ext_resource type="Texture2D" uid="uid://d30jgy0aktkst" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_akw40"]
+[ext_resource type="Texture2D" uid="uid://081wxlk07qal" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)
@@ -15,6 +16,13 @@ light_mode = 2
 [node name="House" type="Node2D"]
 use_parent_material = true
 script = ExtResource("1_b4ad7")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(0, 69)
+scale = Vector2(14.88, 2.97644)
+texture = ExtResource("2_akw40")
 
 [node name="InteriorDetect" type="Area2D" parent="."]
 visible = false
