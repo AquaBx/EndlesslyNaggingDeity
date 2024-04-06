@@ -18,6 +18,7 @@ func unglow():
 	%Interact.visible = false
 
 func action(player):
+	player.frozen=true
 	is_cut = true
 	unglow()
 
@@ -29,4 +30,5 @@ func action(player):
 	await get_tree().create_timer(1.).timeout
 	is_cut = false
 	$Node2D/Sprite.set("frame",0)
+
 	
