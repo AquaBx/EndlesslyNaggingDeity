@@ -103,9 +103,6 @@ position = Vector2(0, -43)
 [node name="House" parent="Statics" instance=ExtResource("4_gyl3i")]
 position = Vector2(-119, 59)
 
-[node name="Door" parent="Statics/House" index="3" node_paths=PackedStringArray("player")]
-player = NodePath("../../../Player")
-
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-119, 60)
