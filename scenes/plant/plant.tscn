@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo8nlgfjpcuko"]
+[gd_scene load_steps=10 format=3 uid="uid://bo8nlgfjpcuko"]
 
 [ext_resource type="Script" path="res://scenes/plant/Plant.gd" id="1_rp5fc"]
 [ext_resource type="Texture2D" uid="uid://525xjj62h8po" path="res://assets/plante.png" id="2_ufejm"]
+[ext_resource type="Texture2D" uid="uid://dck5g2qsjaixg" path="res://assets/plante-statique.png" id="3_r4tu1"]
+[ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_t2nts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmkf2"]
 radius = 11.0
@@ -28,6 +30,11 @@ tracks/0/keys = {
 _data = {
 "cut": SubResource("Animation_auldi")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vvgs"]
+shader = ExtResource("3_t2nts")
+shader_parameter/line_color = Vector4(1, 1, 0, 1)
+shader_parameter/line_thickness = 1.0
 
 [node name="Plant" type="StaticBody2D"]
 collision_layer = 2
@@ -58,4 +65,10 @@ texture_filter = 1
 texture = ExtResource("2_ufejm")
 hframes = 11
 
-[node name="Glow" type="Sprite2D" parent="Node2D"]
+[node name="Glow" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_5vvgs")
+position = Vector2(0, 1)
+texture = ExtResource("3_r4tu1")
