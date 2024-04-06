@@ -2,26 +2,10 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_2cuh2"]
 [ext_resource type="Script" path="res://Dino.gd" id="2_fflky"]
-[ext_resource type="Texture2D" path="res://Assets/dino.png" id="2_psavh"]
+[ext_resource type="Texture2D" uid="uid://b7kpx0epo0m7u" path="res://Assets/dino.png" id="2_psavh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g28ss"]
 radius = 35.0
-
-[sub_resource type="Animation" id="Animation_72td6"]
-resource_name = "walk"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [6, 7, 8, 9, 10, 11, 12, 13]
-}
 
 [sub_resource type="Animation" id="Animation_30qrf"]
 resource_name = "idle"
@@ -37,6 +21,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_72td6"]
+resource_name = "walk"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11, 12, 13]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlbt8"]
@@ -88,3 +88,6 @@ collision_mask = 2
 position = Vector2(36, 0)
 rotation = -1.57079
 shape = SubResource("CircleShape2D_sfa70")
+
+[connection signal="body_entered" from="Dino/ActionZone" to="." method="_on_action_zone_body_entered"]
+[connection signal="body_exited" from="Dino/ActionZone" to="." method="_on_action_zone_body_exited"]

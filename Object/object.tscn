@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db737kd26u4hp"]
 
-[ext_resource type="Script" path="res://object.gd" id="1_6pv67"]
+[ext_resource type="Script" path="res://Object/object.gd" id="1_6pv67"]
 [ext_resource type="Texture2D" uid="uid://jwd0vx8jl3j2" path="res://icon.svg" id="1_aeaxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxok0"]
@@ -15,7 +15,14 @@ script = ExtResource("1_6pv67")
 position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_qxok0")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Visual" type="Node2D" parent="."]
 
-[node name="Icon" type="Sprite2D" parent="Node2D"]
+[node name="Glow" type="Sprite2D" parent="Visual"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_aeaxc")
+
+[node name="Icon" type="Sprite2D" parent="Visual"]
 texture = ExtResource("1_aeaxc")
