@@ -4,14 +4,18 @@ extends StaticBody2D
 signal plant_cut
 var is_cut = false
 
+func _ready():
+	%Interact.visible = false
+
 func glow():
 	print("glowin")
 	if not is_cut:
 		%Glow.show()
-	pass
+	%Interact.visible = true
 
 func unglow():
 	%Glow.hide()
+	%Interact.visible = false
 
 func action(player):
 	is_cut = true
