@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 signal player_dead
 
 func _ready():
@@ -28,6 +27,5 @@ func action(player):
 	player_dead.emit("Tu est mort à cause d'une porte ! Dieu décida donc de détruire les portes.")
 	
 	await get_tree().create_timer(1).timeout
-	
 	
 	queue_free()

@@ -43,6 +43,15 @@ func _on_action_zone_body_exited(_body):
 		m_object.unglow()
 	m_object = null
 
+	
+func set_day(c : bool):
+	if c:
+		material.set_shader_parameter("day",true)
+	else:
+		material.set_shader_parameter("day",false)
+
+
 func _on_interior_detect_area_exited(_area: Area2D) -> void:
 	# on quitte la maison
 	$Camera2D.make_current()
+
