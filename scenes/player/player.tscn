@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=16 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
-[ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://scenes/player/step1.wav" id="4_yeqpe"]
-[ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://scenes/player/step2.wav" id="5_0k54i"]
+[ext_resource type="Texture2D" uid="uid://35fprd68i1gp" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://d2uyi1oa3x042" path="res://scenes/player/step1.wav" id="4_yeqpe"]
+[ext_resource type="AudioStream" uid="uid://fuv13m5hmias" path="res://scenes/player/step2.wav" id="5_0k54i"]
+[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_p5pty"]
 
 [sub_resource type="Shader" id="Shader_fqgw5"]
 code = "shader_type canvas_item;
@@ -199,6 +200,12 @@ position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_hfiv7")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.19209e-07, 13)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_p5pty")
 
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="ActionZone" to="." method="_on_action_zone_body_exited"]
