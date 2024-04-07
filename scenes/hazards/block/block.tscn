@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://m17wjiq3t5l1"]
+[gd_scene load_steps=10 format=3 uid="uid://m17wjiq3t5l1"]
 
 [ext_resource type="Texture2D" uid="uid://ds3ghlr7dvdwm" path="res://assets/block.png" id="1_pfotk"]
 [ext_resource type="Script" path="res://scenes/hazards/block/block.gd" id="1_qamqr"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_rlppg"]
+[ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_u4ou8"]
 [ext_resource type="Texture2D" uid="uid://clfmh4fsbj3r2" path="res://assets/block-statique.png" id="4_rf11e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34xiv"]
@@ -56,12 +57,14 @@ libraries = {
 "": SubResource("AnimationLibrary_xvev4")
 }
 
-[node name="Glow" type="Node2D" parent="."]
+[node name="Interact" parent="." instance=ExtResource("3_u4ou8")]
 unique_name_in_owner = true
-position = Vector2(0, -35)
+visible = false
+position = Vector2(44, 36)
 
-[node name="Sprite2D" type="Sprite2D" parent="Glow"]
+[node name="Sprite2D" type="Sprite2D" parent="Interact"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_mjsup")
-position = Vector2(0, 13)
+position = Vector2(-88, -116)
+scale = Vector2(2, 2)
 texture = ExtResource("4_rf11e")

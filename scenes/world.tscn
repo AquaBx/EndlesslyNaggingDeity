@@ -166,7 +166,7 @@ shape = SubResource("RectangleShape2D_xhoka")
 [node name="Interactable" type="Node2D" parent="."]
 
 [node name="Loupe" parent="Interactable" instance=ExtResource("9_njd3f")]
-position = Vector2(791, 349)
+position = Vector2(1436, 67)
 
 [node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
 position = Vector2(137, 328)

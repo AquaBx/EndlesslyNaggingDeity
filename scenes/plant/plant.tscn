@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bo8nlgfjpcuko"]
+[gd_scene load_steps=12 format=3 uid="uid://bo8nlgfjpcuko"]
 
 [ext_resource type="Script" path="res://scenes/plant/Plant.gd" id="1_rp5fc"]
-[ext_resource type="Texture2D" uid="uid://bd2q8qyd20cdr" path="res://assets/plante.png" id="2_ufejm"]
-[ext_resource type="Texture2D" uid="uid://tnmdaa6qyv88" path="res://assets/plante-statique.png" id="3_r4tu1"]
+[ext_resource type="Texture2D" uid="uid://dybfrrytfoxgc" path="res://assets/plante.png" id="2_ufejm"]
+[ext_resource type="Texture2D" uid="uid://d2eo1lq3pv6ps" path="res://assets/plante-statique.png" id="3_r4tu1"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_t2nts"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sy6nk"]
-[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_3cpke"]
-[ext_resource type="AudioStream" uid="uid://j4agoa2y706w" path="res://assets/plant.wav" id="6_llbsr"]
+[ext_resource type="Texture2D" uid="uid://dtaa0uf58cgud" path="res://assets/shadow.png" id="6_3cpke"]
+[ext_resource type="AudioStream" uid="uid://6xtna7ypk718" path="res://assets/plant.wav" id="6_llbsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmkf2"]
 radius = 11.0
@@ -69,25 +69,27 @@ libraries = {
 
 [node name="Sprite" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
+position = Vector2(0, 0.5)
 texture = ExtResource("2_ufejm")
 hframes = 11
 
-[node name="Glow" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-texture_filter = 1
-material = SubResource("ShaderMaterial_5vvgs")
-position = Vector2(0, 1)
-texture = ExtResource("3_r4tu1")
-
 [node name="Interact" parent="." instance=ExtResource("5_sy6nk")]
 unique_name_in_owner = true
-position = Vector2(0, 25)
+visible = false
+position = Vector2(-22, 29)
+
+[node name="Glow" type="Sprite2D" parent="Interact"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_5vvgs")
+position = Vector2(44, -54)
+scale = Vector2(2, 2)
+texture = ExtResource("3_r4tu1")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 14)
 scale = Vector2(-1.24459, 1.0195)
 texture = ExtResource("6_3cpke")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 12.0
