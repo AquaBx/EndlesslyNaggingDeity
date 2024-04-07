@@ -34,9 +34,11 @@ func _physics_process(delta):
 		m_object.action(self)
 
 func _on_action_zone_body_entered(body):
+	print(body)
 	if body.has_method("action") and body.has_method("glow"):
 		m_object = body
 		m_object.glow()
+		print("cest good")
 
 func _on_action_zone_body_exited(_body):
 	if m_object != null:

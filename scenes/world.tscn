@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://qicqb3g6owtj"]
+[gd_scene load_steps=22 format=3 uid="uid://qicqb3g6owtj"]
 
 [ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vok7g"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
-[ext_resource type="Texture2D" uid="uid://sp5ueyf1hviy" path="res://assets/road.png" id="7_s70g1"]
+[ext_resource type="Texture2D" uid="uid://krvjqa0x3wih" path="res://assets/road.png" id="7_s70g1"]
 [ext_resource type="PackedScene" uid="uid://m17wjiq3t5l1" path="res://scenes/hazards/block/block.tscn" id="8_3iyxq"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
+[ext_resource type="PackedScene" uid="uid://dpnojl70n0bw7" path="res://scenes/echaffaudage/echauf2.tscn" id="9_q5ncd"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
+[ext_resource type="PackedScene" uid="uid://dw6ogyreqsc7r" path="res://scenes/pool.tscn" id="14_2o8j1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2ac6"]
 size = Vector2(4000, 156)
@@ -180,6 +182,10 @@ CarSpawnEast = NodePath("../../CarSpawnEast")
 [node name="Block" parent="Interactable" instance=ExtResource("8_3iyxq")]
 position = Vector2(867, 6)
 
+[node name="StaticBody2D" parent="Interactable" instance=ExtResource("9_q5ncd")]
+y_sort_enabled = true
+position = Vector2(1052, 283)
+
 [node name="Batiments" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -237,6 +243,9 @@ position = Vector2(605, 38)
 [node name="Maison Jaune 1" parent="Batiments" instance=ExtResource("4_7701m")]
 position = Vector2(313, 10)
 
+[node name="Pool" parent="Batiments" instance=ExtResource("14_2o8j1")]
+position = Vector2(1070, 386)
+
 [node name="DeathScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
@@ -244,10 +253,6 @@ unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0196, 0.939204)
@@ -287,5 +292,6 @@ position = Vector2(3178, 175)
 [connection signal="plant_cut" from="Interactable/Plant" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]
+[connection signal="played_ded_echaff" from="Interactable/StaticBody2D" to="." method="_on_player_death"]
 
 [editable path="House"]
