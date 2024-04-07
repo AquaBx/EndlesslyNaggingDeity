@@ -51,11 +51,19 @@ texture = ExtResource("2_rn4df")
 hframes = 4
 frame = 2
 
+[node name="IntWalls2" type="Sprite2D" parent="Interior"]
+texture_filter = 1
+texture = ExtResource("2_rn4df")
+hframes = 4
+frame = 2
+
 [node name="Mur" type="CollisionPolygon2D" parent="Interior"]
 visible = false
 polygon = PackedVector2Array(-12, -59, -12, -20, -104, -20, -104, 56, 105, 56, 105, -20, 12, -20, 12, -59, 119, -59, 119, 60, -119, 60, -119, -59)
 
 [node name="DoorTop" type="Node2D" parent="Interior"]
+visible = false
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Interior/DoorTop"]
 texture_filter = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dy07gw77tsaue"]
 
-[ext_resource type="Texture2D" path="res://assets/bat_A.png" id="1_4kdkf"]
-[ext_resource type="Texture2D" path="res://assets/square_shadow.png" id="2_m626n"]
+[ext_resource type="Texture2D" uid="uid://btv81scisdbcl" path="res://assets/bat_A.png" id="1_4kdkf"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_m626n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irobv"]
 size = Vector2(120, 120)
