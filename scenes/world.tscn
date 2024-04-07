@@ -115,6 +115,10 @@ offset_right = 3403.0
 offset_bottom = 701.0
 color = Color(0.921569, 0.980392, 0.894118, 1)
 
+[node name="HouseInteriorCamera" type="Camera2D" parent="."]
+position = Vector2(65, 309)
+zoom = Vector2(4.4, 4.4)
+
 [node name="House" parent="." instance=ExtResource("5_pwkoy")]
 position = Vector2(24, 323)
 scale = Vector2(1.34286, 1.34286)
@@ -298,6 +302,9 @@ position = Vector2(-1712, 199)
 [node name="CarSpawnEast" type="Marker2D" parent="."]
 position = Vector2(3178, 175)
 
+[connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
+[connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
+
 [node name="Shadow" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3, 5)
@@ -433,3 +440,4 @@ position = Vector2(1341.67, -1.38889)
 [connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]
 
 [editable path="House"]
+[editable path="Player"]
