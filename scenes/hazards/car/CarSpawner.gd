@@ -1,6 +1,9 @@
 extends Node2D
 
 @export var player : CharacterBody2D
+@export var CarSpawnWest : Marker2D
+@export var CarSpawnEast : Marker2D
+
 const SPAWNER_LENGTH = 100
 const CAR: Resource = preload("res://scenes/hazards/car/car.tscn")
 var new_car
@@ -11,18 +14,15 @@ func spawn_car():
 	new_car = CAR.instantiate()
 
 	new_car.get_node("Area2D").body_entered.connect(car_touched_player)
-	new_car.position = Vector2(0, 0)
 	
 	var dir = [-1, 1].pick_random()  # determine if the car goes to the left or right
 	new_car.direction = dir
 
 	var ctrans = get_canvas_transform()
 	if dir == 1:
-		new_car.position.y += 20
-		#new_car.global_position.x = player.global_position.x - 20
+		new_car.global_position = CarSpawnWest.global_position
 	else:
-		#new_car.global_position.x = player.global_position.x + 20
-		new_car.position.x += SPAWNER_LENGTH
+		new_car.global_position = CarSpawnEast.global_position
 		new_car.scale.x *= -1
 	add_child(new_car)
 
@@ -36,6 +36,7 @@ func car_touched_player(body):
 	await get_tree().create_timer(5).timeout
 	dino_doll.queue_free()
 	player_death.emit("les voitures c'est vraiment pô nice ! \n Ainsi Dieu Surpprima les voitures")
+	await get_tree().create_timer(2).timeout
 	queue_free()
 
 const DINO_DOLL: Resource = preload("res://scenes/player/doll/dino_doll.tscn")
