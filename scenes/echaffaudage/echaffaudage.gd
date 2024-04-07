@@ -29,6 +29,6 @@ func action(player):
 	await get_tree().create_timer(2).timeout
 	player.get_node("Dino").hide()
 	#await get_tree().create_timer(1).timeout
-	echauff_tombe.emit("il est tombed")
+	echauff_tombe.emit("il est tombé sur toi, dommage...")
 	await get_tree().create_timer(2).timeout
 	queue_free()

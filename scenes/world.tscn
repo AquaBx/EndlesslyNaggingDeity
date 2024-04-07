@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://qicqb3g6owtj"]
+[gd_scene load_steps=31 format=3 uid="uid://qicqb3g6owtj"]
 
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_6schm"]
 [ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b0b2vluqwafga" path="res://scenes/props/Beennn.tscn" id="14_mvakx"]
 [ext_resource type="PackedScene" uid="uid://bps0el8daeilj" path="res://scenes/lampadaire.tscn" id="15_7bdgl"]
 [ext_resource type="PackedScene" uid="uid://bs7x2qm5xqr0l" path="res://utils/dialogue/DialogueCenter.tscn" id="21_ceb3x"]
+[ext_resource type="PackedScene" uid="uid://d3jht7vcxvoiw" path="res://utils/notification/NotificationCenter.tscn" id="22_e8wcx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtvfj"]
 shader = ExtResource("1_6schm")
@@ -229,9 +230,6 @@ use_parent_material = true
 
 [node name="Niche" parent="Interactable" instance=ExtResource("12_n2p2g")]
 position = Vector2(255, 90)
-
-[node name="CanvasLayer" parent="Interactable/Niche" index="4"]
-visible = false
 
 [node name="Batiments" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -534,6 +532,8 @@ use_parent_material = true
 position = Vector2(1341.67, -1.38889)
 
 [node name="DialogueCenter" parent="." instance=ExtResource("21_ceb3x")]
+
+[node name="NotificationCenter" parent="." instance=ExtResource("22_e8wcx")]
 
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]

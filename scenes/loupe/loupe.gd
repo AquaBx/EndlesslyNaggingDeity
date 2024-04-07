@@ -16,7 +16,7 @@ func action(player):
 	await get_tree().create_timer(3.0).timeout
 	player.get_node("Camera2D").zoom = old_zoom
 		
-	interactloupe.emit("Tu t'es brûlé avec une loupe ! Dieu supprima donc les loupes de ce monde.")
+	interactloupe.emit("Tu t'es brûlé avec une loupe ! Dieu supprima donc le soleil de ce monde.")
 	queue_free()
 
 func glow():

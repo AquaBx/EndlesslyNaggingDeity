@@ -34,7 +34,7 @@ func _on_player_death(death_message: String):
 
 	%Player.global_position = %PlayerSpawn.global_position
 	%Player.get_node("Dino").rotation = 0
-	if not first_death or death_message == "Dieu est content de vous 😊":
+	if not first_death or death_message == "Dieu est fier de vous 😊":
 		%Player.frozen = false
 
 	%Player.get_node("Dino").show()
@@ -44,8 +44,12 @@ func _on_player_death(death_message: String):
 
 	%DeathLabel.hide()
 	%DeathLabel.set("theme_override_colors/font_color",Color(255, 255, 255, 1))
+	
+	#if death_message == "Dieu est fier de vous 😊":
+		#var info = Achievements.get_info("bontoutou")
+		#$NotificationCenter.push_notif("bontoutou", info.description, info.icon)
 
-	if death_message != "Dieu est content de vous 😊" and first_death:
+	if death_message != "Dieu est fier de vous 😊" and first_death:
 		print("passe")
 		first_death = false
 		god_descends()
