@@ -29,6 +29,7 @@ func spawn_car():
 func car_touched_player(_body):
 	new_car.car_speed = 0
 	
+	player.frozen = true
 	player.get_node("Dino").hide()
 	var dino_doll = DINO_DOLL.instantiate()
 	dino_doll.global_position = player.global_position

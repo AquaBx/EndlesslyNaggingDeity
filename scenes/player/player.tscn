@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://35fprd68i1gp" path="res://assets/dino.png" id="3_uqmll"]
-[ext_resource type="AudioStream" uid="uid://d2uyi1oa3x042" path="res://scenes/player/step1.wav" id="4_yeqpe"]
-[ext_resource type="AudioStream" uid="uid://fuv13m5hmias" path="res://scenes/player/step2.wav" id="5_0k54i"]
-[ext_resource type="AudioStream" uid="uid://bm2xiaup14rnn" path="res://assets/fire.wav" id="5_1i81q"]
-[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_p5pty"]
+[ext_resource type="Texture2D" uid="uid://jfn1g0yuedn2" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://bo2ttq3cfbw07" path="res://scenes/player/step1.wav" id="4_yeqpe"]
+[ext_resource type="AudioStream" uid="uid://b8ux6m8ums46p" path="res://scenes/player/step2.wav" id="5_0k54i"]
+[ext_resource type="AudioStream" uid="uid://bup5yq5a8i8y3" path="res://assets/fire.wav" id="5_1i81q"]
+[ext_resource type="Texture2D" uid="uid://dtaa0uf58cgud" path="res://assets/shadow.png" id="6_p5pty"]
 
 [sub_resource type="Shader" id="Shader_fqgw5"]
 code = "shader_type canvas_item;
@@ -222,11 +222,9 @@ use_parent_material = true
 script = ExtResource("2_55r2h")
 
 [node name="Gauche" type="AudioStreamPlayer2D" parent="Dino"]
-stream = ExtResource("4_yeqpe")
 volume_db = -5.0
 
 [node name="Droite" type="AudioStreamPlayer2D" parent="Dino"]
-stream = ExtResource("5_0k54i")
 volume_db = -5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dino"]
@@ -272,7 +270,6 @@ shape = SubResource("RectangleShape2D_hfiv7")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_1i81q")
 volume_db = 12.0
 
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]

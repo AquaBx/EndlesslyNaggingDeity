@@ -115,7 +115,15 @@ offset_right = 3403.0
 offset_bottom = 701.0
 color = Color(0.921569, 0.980392, 0.894118, 1)
 
+[node name="CarSpawnWest" type="Marker2D" parent="."]
+position = Vector2(-1712, 199)
+
+[node name="CarSpawnEast" type="Marker2D" parent="."]
+position = Vector2(3178, 175)
+
+[node name="House" parent="." instance=ExtResource("5_pwkoy")]
 [node name="HouseInteriorCamera" type="Camera2D" parent="."]
+
 position = Vector2(65, 309)
 zoom = Vector2(4.4, 4.4)
 
@@ -176,6 +184,7 @@ shape = SubResource("RectangleShape2D_xhoka")
 [node name="Interactable" type="Node2D" parent="."]
 
 [node name="Loupe" parent="Interactable" instance=ExtResource("9_njd3f")]
+
 position = Vector2(791, 360)
 scale = Vector2(1.41281, 1.41281)
 
@@ -248,6 +257,14 @@ position = Vector2(605, 38)
 [node name="Maison Jaune 1" parent="Batiments" instance=ExtResource("4_7701m")]
 position = Vector2(313, 10)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.12, 16.36)
+color = Color(0, 0, 0, 0)
+
 [node name="Maison Rouge2" parent="Batiments" instance=ExtResource("3_hlfdj")]
 position = Vector2(669, 439)
 
@@ -257,25 +274,9 @@ position = Vector2(518, 398)
 [node name="Immeuble 4" parent="Batiments" instance=ExtResource("1_08rpx")]
 position = Vector2(812, 501)
 
-[node name="DeathScreen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
 
-[node name="ColorRect" type="ColorRect" parent="DeathScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 109.0
-offset_top = 45.0
-offset_right = 109.0
-offset_bottom = 45.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.0196, 0.939204)
-color = Color(0, 0, 0, 0)
-
-[node name="DeathLabel" type="Label" parent="DeathScreen"]
+[node name="DeathLabel" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -287,20 +288,14 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
 
-[node name="DeathScreenAnimationPlayer" type="AnimationPlayer" parent="DeathScreen"]
+[node name="DeathScreenAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_5fvhu")
 }
-
-[node name="CarSpawnWest" type="Marker2D" parent="."]
-position = Vector2(-1712, 199)
-
-[node name="CarSpawnEast" type="Marker2D" parent="."]
-position = Vector2(3178, 175)
 
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
