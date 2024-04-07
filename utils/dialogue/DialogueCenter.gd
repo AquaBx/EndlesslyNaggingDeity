@@ -32,4 +32,8 @@ const dialogues = {
 }
 
 func play_dialogue(character: String, id: String) -> void:
-	pass
+	self.visible = true
+	for line in dialogues[character][id]:
+		$Sprite2D/RichTextLabel.text = line
+		await get_tree().create_timer(4).timeout
+	self.visible = false
