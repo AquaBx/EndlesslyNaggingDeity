@@ -23,7 +23,7 @@ func action(player):
 	
 	await get_tree().create_timer(2.).timeout
 		
-	plant_cut.emit("Dieu est content de vous 😊")
+	plant_cut.emit("Dieu est fier de vous 😊")
 	await get_tree().create_timer(1.).timeout
 	is_cut = false
 	$Node2D/Sprite.set("frame",0)
