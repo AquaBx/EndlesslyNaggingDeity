@@ -10,6 +10,7 @@ _data = {
 point_count = 5
 
 [node name="DinoDoll" type="Node2D"]
+z_index = 20
 use_parent_material = true
 script = ExtResource("1_2ty5e")
 

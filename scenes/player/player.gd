@@ -43,9 +43,8 @@ func _on_action_zone_body_exited(_body):
 		m_object.unglow()
 	m_object = null
 	
-	
-func setLighten(c : bool):
+func set_day(c : bool):
 	if c:
-		set("use_parent_material",false)
+		material.set_shader_parameter("day",true)
 	else:
-		set("use_parent_material",true)
+		material.set_shader_parameter("day",false)

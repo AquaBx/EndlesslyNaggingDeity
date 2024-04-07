@@ -1,20 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpqngcmkmtkxk"]
+[gd_scene load_steps=12 format=3 uid="uid://d1qoilh7r5m2j"]
 
+[ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_55a30"]
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
-[ext_resource type="Texture2D" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
-[ext_resource type="Texture2D" path="res://assets/door-top.png" id="3_330l1"]
+[ext_resource type="Texture2D" uid="uid://d30jgy0aktkst" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://csuxi14oewsti" path="res://assets/door-top.png" id="3_330l1"]
 [ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="4_qtn6r"]
-[ext_resource type="Texture2D" path="res://assets/square_shadow.png" id="5_nvlog"]
+[ext_resource type="Texture2D" uid="uid://b1ut0j4p11x67" path="res://assets/mask_maison.png" id="5_5k6on"]
 [ext_resource type="AudioStream" uid="uid://ccf58baabp1c2" path="res://assets/error.mp3" id="5_a0oer"]
+[ext_resource type="Texture2D" uid="uid://705oe0buua82" path="res://assets/square_shadow.png" id="5_nvlog"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk826"]
+shader = ExtResource("1_55a30")
+shader_parameter/day = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0spir"]
-light_mode = 2
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpbth"]
+shader = ExtResource("1_55a30")
+shader_parameter/day = false
+shader_parameter/mask = ExtResource("5_5k6on")
 
 [node name="House" type="Node2D"]
-use_parent_material = true
+material = SubResource("ShaderMaterial_wk826")
 script = ExtResource("1_b4ad7")
 
 [node name="InteriorDetect" type="Area2D" parent="."]
@@ -56,26 +64,12 @@ texture = ExtResource("3_330l1")
 
 [node name="Exterior" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-visible = false
-use_parent_material = true
 
 [node name="ExtWalls" type="Sprite2D" parent="Exterior"]
 texture_filter = 1
-use_parent_material = true
+material = SubResource("ShaderMaterial_xpbth")
 texture = ExtResource("2_rn4df")
 hframes = 4
-
-[node name="Polygon2D" type="Polygon2D" parent="Exterior"]
-material = SubResource("CanvasItemMaterial_0spir")
-use_parent_material = true
-color = Color(0.619608, 1, 1, 0.372549)
-polygon = PackedVector2Array(-104, 26, -104, 45, 59, 45, 59, 26)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Exterior"]
-material = SubResource("CanvasItemMaterial_0spir")
-use_parent_material = true
-color = Color(0.619608, 1, 1, 0.372549)
-polygon = PackedVector2Array(68, 26, 68, 45, 105, 45, 105, 26)
 
 [node name="Mur2" type="CollisionPolygon2D" parent="Exterior"]
 visible = false
@@ -84,16 +78,15 @@ polygon = PackedVector2Array(-8, -59, -8, -20, -104, -20, -104, 56, 105, 56, 105
 [node name="Door" parent="." instance=ExtResource("4_qtn6r")]
 position = Vector2(0, -19.5)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("5_a0oer")
+
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
 position = Vector2(0, 71.25)
 scale = Vector2(14.875, 3.34375)
 texture = ExtResource("5_nvlog")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Door"]
-stream = ExtResource("5_a0oer")
-
 
 [connection signal="area_entered" from="InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="InteriorDetect" to="." method="_on_interior_detect_area_exited"]
