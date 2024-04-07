@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://gmg71yk5wc2o"]
 
-[ext_resource type="Script" path="res://scenes/hazards/car/CarSpawner.gd" id="1_1njqf"]
+[ext_resource type="Script" path="res://scenes/hazards/car/CarSpawner.gd" id="1_54xmx"]
 [ext_resource type="Script" path="res://scenes/hazards/car/Timer.gd" id="2_hvwmo"]
 
 [node name="CarSpawner" type="Node2D"]
 light_mask = 0
 visibility_layer = 2
 position = Vector2(-7, -2)
-script = ExtResource("1_1njqf")
+script = ExtResource("1_54xmx")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
