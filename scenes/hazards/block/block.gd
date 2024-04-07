@@ -9,7 +9,7 @@ func action(player):
 	await get_tree().create_timer(.25).timeout
 	%AnimationPlayer.play("mariojump")
 	
-	player_death.emit("Dieu n'aime pas que vous vous preniez pour un plombier.\nDieu a donc retiré les blocs bonus de ce monde.")
+	player_death.emit("Dieu n'aime pas que vous vous cassiez la tête.\nDieu a donc retiré les blocs bonus de ce monde.")
 	await get_tree().create_timer(1).timeout
 	queue_free()
 
