@@ -203,8 +203,10 @@ use_parent_material = true
 script = ExtResource("2_55r2h")
 
 [node name="Gauche" type="AudioStreamPlayer2D" parent="Dino"]
+stream = ExtResource("4_yeqpe")
 
 [node name="Droite" type="AudioStreamPlayer2D" parent="Dino"]
+stream = ExtResource("5_0k54i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dino"]
 libraries = {
