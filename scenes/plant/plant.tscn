@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_t2nts"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sy6nk"]
 [ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_3cpke"]
+[ext_resource type="AudioStream" uid="uid://j4agoa2y706w" path="res://assets/plant.wav" id="6_llbsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmkf2"]
 radius = 11.0
