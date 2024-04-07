@@ -27,5 +27,6 @@ func action(player):
 	player_dead.emit("Tu est mort à cause d'une porte ! Dieu décida donc de détruire les portes.")
 	
 	await get_tree().create_timer(1).timeout
-	
+  
+	player.visible = true
 	queue_free()

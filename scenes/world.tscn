@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="13_j0mbw"]
 [ext_resource type="PackedScene" uid="uid://dw6ogyreqsc7r" path="res://scenes/pool.tscn" id="14_2o8j1"]
 [ext_resource type="PackedScene" uid="uid://b0b2vluqwafga" path="res://scenes/props/Beennn.tscn" id="14_mvakx"]
+
 [ext_resource type="PackedScene" uid="uid://bps0el8daeilj" path="res://scenes/lampadaire.tscn" id="15_7bdgl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtvfj"]
@@ -132,12 +133,13 @@ position = Vector2(-1712, 199)
 position = Vector2(3178, 175)
 
 [node name="HouseInteriorCamera" type="Camera2D" parent="."]
-position = Vector2(65, 309)
-zoom = Vector2(4.4, 4.4)
+position = Vector2(5, 340)
+scale = Vector2(9.522, 3.881)
+zoom = Vector2(3.585, 3.585)
 
 [node name="House" parent="." instance=ExtResource("5_pwkoy")]
-position = Vector2(24, 323)
-scale = Vector2(1.34286, 1.34286)
+position = Vector2(5, 340)
+scale = Vector2(1.51352, 1.51352)
 
 [node name="Exterior" parent="House" index="2"]
 visible = false
@@ -148,7 +150,7 @@ position = Vector2(-40.2127, 34.2552)
 
 [node name="Player" parent="." instance=ExtResource("6_1w2bk")]
 unique_name_in_owner = true
-position = Vector2(23, 373)
+position = Vector2(5, 399)
 
 [node name="Road" type="Sprite2D" parent="."]
 z_index = -1
@@ -201,7 +203,7 @@ position = Vector2(791, 360)
 scale = Vector2(1.41281, 1.41281)
 
 [node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
-position = Vector2(24, 333)
+position = Vector2(4, 356)
 
 [node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player", "CarSpawnWest", "CarSpawnEast") instance=ExtResource("7_otisb")]
 position = Vector2(0, 0)
@@ -338,6 +340,12 @@ libraries = {
 "": SubResource("AnimationLibrary_5fvhu")
 }
 
+[node name="CarSpawnWest" type="Marker2D" parent="."]
+position = Vector2(-1712, 199)
+
+[node name="CarSpawnEast" type="Marker2D" parent="."]
+position = Vector2(3178, 175)
+
 [node name="Shadow" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3, 5)
@@ -350,6 +358,7 @@ position = Vector2(113, 131)
 scale = Vector2(0.72, 0.72)
 
 [node name="Beennn" parent="Props" instance=ExtResource("14_mvakx")]
+
 use_parent_material = true
 
 [node name="Beennn2" parent="Props" instance=ExtResource("14_mvakx")]
@@ -423,6 +432,18 @@ position = Vector2(802.778, 311.111)
 [node name="Beennn16" parent="Props" instance=ExtResource("14_mvakx")]
 use_parent_material = true
 position = Vector2(759.722, 300)
+
+[node name="Beennn" parent="Props/Beennn16" instance=ExtResource("14_mvakx")]
+position = Vector2(24.9999, -4.16667)
+
+[node name="Beennn" parent="Props/Beennn16/Beennn" instance=ExtResource("14_mvakx")]
+position = Vector2(25, 0)
+
+[node name="Beennn" parent="Props/Beennn16/Beennn/Beennn" instance=ExtResource("14_mvakx")]
+position = Vector2(-36.1111, 16.6667)
+
+[node name="Beennn" parent="Props/Beennn16/Beennn/Beennn/Beennn" instance=ExtResource("14_mvakx")]
+position = Vector2(29.1667, -1.38889)
 
 [node name="Beennn19" parent="Props" instance=ExtResource("14_mvakx")]
 use_parent_material = true
