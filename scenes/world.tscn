@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
-[ext_resource type="Texture2D" uid="uid://sp5ueyf1hviy" path="res://assets/road.png" id="7_s70g1"]
+[ext_resource type="Texture2D" uid="uid://dajc8ku6nm8es" path="res://assets/road.png" id="7_s70g1"]
 [ext_resource type="PackedScene" uid="uid://m17wjiq3t5l1" path="res://scenes/hazards/block/block.tscn" id="8_3iyxq"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
@@ -111,6 +111,10 @@ offset_top = -392.0
 offset_right = 3403.0
 offset_bottom = 701.0
 color = Color(0.921569, 0.980392, 0.894118, 1)
+
+[node name="HouseInteriorCamera" type="Camera2D" parent="."]
+position = Vector2(65, 309)
+zoom = Vector2(4.4, 4.4)
 
 [node name="House" parent="." instance=ExtResource("5_pwkoy")]
 position = Vector2(65, 309)
@@ -282,6 +286,8 @@ position = Vector2(-1712, 199)
 [node name="CarSpawnEast" type="Marker2D" parent="."]
 position = Vector2(3178, 175)
 
+[connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
+[connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
 [connection signal="player_dead" from="House/Door" to="." method="_on_player_death"]
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="plant_cut" from="Interactable/Plant" to="." method="_on_player_death"]
@@ -289,3 +295,4 @@ position = Vector2(3178, 175)
 [connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]
 
 [editable path="House"]
+[editable path="Player"]

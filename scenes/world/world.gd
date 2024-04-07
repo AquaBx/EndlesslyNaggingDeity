@@ -3,18 +3,18 @@ extends Node2D
 func _ready():
 	#%DeathScreen.get_child(0).color = Color(0,0,0,0)
 	#%DeathLabel.hide()
-	pass
+	$HouseInteriorCamera.make_current()
 
 func _on_player_death(death_message: String):
 	%Player.frozen = true
 	%DeathLabel.text = death_message
 	
 	%DeathScreenAnimationPlayer.play("fade in")	
-	
+
 	await get_tree().create_timer(1.).timeout
 	
 	%DeathLabel.show()
-	
+
 	await get_tree().create_timer(2.).timeout
 	%DeathScreenAnimationPlayer.play("fade out")
 	
@@ -27,3 +27,6 @@ func _on_player_death(death_message: String):
 	%DeathLabel.hide()
 	%DeathLabel.set("theme_override_colors/font_color",Color(255, 255, 255, 1))
 
+func _on_interior_detect_area_entered(_area: Area2D) -> void:
+	# the player entered the house
+	$HouseInteriorCamera.make_current()
