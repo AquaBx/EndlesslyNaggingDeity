@@ -22,6 +22,7 @@ func _on_player_death(death_message: String):
 	%DeathScreenAnimationPlayer.play("fade out")
 	
 	%Player.global_position = %PlayerSpawn.global_position
+	%Player.get_node("Dino").rotation = 0
 	%Player.frozen = false
 	
 	await get_tree().create_timer(2.).timeout
