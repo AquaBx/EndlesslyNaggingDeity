@@ -42,3 +42,10 @@ func _on_action_zone_body_exited(_body):
 	if m_object != null:
 		m_object.unglow()
 	m_object = null
+	
+	
+func setLighten(c : bool):
+	if c:
+		set("use_parent_material",false)
+	else:
+		set("use_parent_material",true)

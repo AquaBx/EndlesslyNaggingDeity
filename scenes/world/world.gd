@@ -1,9 +1,15 @@
 extends Node2D
+var shader = preload("res://scenes/nuit.gdshader")
 
 func _ready():
 	#%DeathScreen.get_child(0).color = Color(0,0,0,0)
 	#%DeathLabel.hide()
+
 	pass
+
+func deathloupe(death_message: String):
+	_on_player_death(death_message)
+	material.set_shader_parameter("day",false)
 
 func _on_player_death(death_message: String):
 	%Player.frozen = true
