@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
 [ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://scenes/player/step1.wav" id="4_yeqpe"]
 [ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://scenes/player/step2.wav" id="5_0k54i"]
-[ext_resource type="AudioStream" uid="uid://c52a7mnaln5a2" path="res://assets/fire.wav" id="5_1i81q"]
+[ext_resource type="AudioStream" path="res://assets/fire.wav" id="5_1i81q"]
 
 [sub_resource type="Shader" id="Shader_fqgw5"]
 code = "shader_type canvas_item;

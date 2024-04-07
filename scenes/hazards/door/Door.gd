@@ -16,13 +16,14 @@ func action(player):
 	print("collided")
 	
 	player.frozen = true
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(.3).timeout
+	$AudioStreamPlayer2D.play()
+	await get_tree().create_timer(.2).timeout
 	unglow()
 	%DoorClosed.visible = false
 	%DoorOpen.visible = true
 	%BloodSplash.visible = true
 	player.visible = false
-	$AudioStreamPlayer2D.play()
 	
 	await get_tree().create_timer(2.).timeout
 	player_dead.emit("Tu est mort à cause d'une porte ! Dieu décida donc de détruire les portes.")
