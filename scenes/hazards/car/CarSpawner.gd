@@ -18,7 +18,7 @@ func spawn_car():
 	var dir = [-1, 1].pick_random()  # determine if the car goes to the left or right
 	new_car.direction = dir
 
-	var ctrans = get_canvas_transform()
+	#var ctrans = get_canvas_transform()
 	if dir == 1:
 		new_car.global_position = CarSpawnWest.global_position
 	else:
@@ -26,7 +26,7 @@ func spawn_car():
 		new_car.scale.x *= -1
 	add_child(new_car)
 
-func car_touched_player(body):
+func car_touched_player(_body):
 	new_car.car_speed = 0
 	
 	player.get_node("Dino").hide()

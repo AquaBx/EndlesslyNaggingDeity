@@ -1,16 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://qicqb3g6owtj"]
+[gd_scene load_steps=19 format=3 uid="uid://bhmvf4mf8bjc7"]
 
-[ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
+[ext_resource type="PackedScene" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vok7g"]
-
-[ext_resource type="PackedScene" uid="uid://c30dm700paorp" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
-[ext_resource type="PackedScene" uid="uid://c8csrmegbsxhf" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
-[ext_resource type="PackedScene" uid="uid://deym8dkb2pokv" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
-[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
+[ext_resource type="PackedScene" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
+[ext_resource type="PackedScene" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
+[ext_resource type="PackedScene" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
+[ext_resource type="PackedScene" uid="uid://d1qoilh7r5m2j" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
-[ext_resource type="Texture2D" uid="uid://bypliyhhfywf6" path="res://assets/road.png" id="7_s70g1"]
-
+[ext_resource type="Texture2D" uid="uid://dhxu32jeyxlyq" path="res://assets/road.png" id="7_s70g1"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
 
