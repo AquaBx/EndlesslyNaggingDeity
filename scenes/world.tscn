@@ -139,6 +139,7 @@ scale = Vector2(1.34286, 1.34286)
 
 [node name="PlayerSpawn" type="Marker2D" parent="House"]
 unique_name_in_owner = true
+position = Vector2(-87.1275, 33.5105)
 
 [node name="Player" parent="." instance=ExtResource("6_1w2bk")]
 unique_name_in_owner = true
