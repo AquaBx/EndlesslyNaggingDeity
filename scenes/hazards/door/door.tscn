@@ -1,10 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2pw0xcwxp4rs"]
 
 [ext_resource type="Script" path="res://scenes/hazards/door/Door.gd" id="1_r6ktq"]
-
-[ext_resource type="Texture2D" uid="uid://chepnlyg77xw3" path="res://assets/blood-splash.png" id="2_m8jcv"]
-[ext_resource type="Texture2D" uid="uid://d1wa22lds5gc" path="res://assets/door.png" id="3_xthm3"]
-[ext_resource type="Texture2D" uid="uid://ccsqk7j6qnegt" path="res://assets/door-open.png" id="4_rdqwc"]
+[ext_resource type="Texture2D" uid="uid://cft752n8ri044" path="res://assets/dino1.png" id="2_3pofd"]
+[ext_resource type="Texture2D" uid="uid://t8r3rumrhgcv" path="res://assets/door.png" id="3_xthm3"]
+[ext_resource type="Texture2D" uid="uid://d22hmfdaio1ak" path="res://assets/door-open.png" id="4_rdqwc"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sj7hi"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="5_sloko"]
 
@@ -22,16 +21,18 @@ collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_r6ktq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
-shape = SubResource("RectangleShape2D_5w256")
-
-[node name="BloodSplash" type="Sprite2D" parent="."]
+[node name="dino_dead" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
-position = Vector2(-23, -14)
-texture = ExtResource("2_p7fo4")
+position = Vector2(-12, -15)
+scale = Vector2(1.22146, 0.654179)
+texture = ExtResource("2_3pofd")
+offset = Vector2(-10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_5w256")
 
 [node name="DoorClosed" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -48,12 +49,12 @@ texture = ExtResource("4_rdqwc")
 
 [node name="Interact" parent="." instance=ExtResource("5_sj7hi")]
 unique_name_in_owner = true
-visible = false
-position = Vector2(-20, 23)
+position = Vector2(0, 10)
+scale = Vector2(0.333, 0.333)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interact"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_x13lo")
-position = Vector2(40, -74)
-scale = Vector2(2, 2)
+position = Vector2(0, -72.0721)
+scale = Vector2(3.003, 3.003)
 texture = ExtResource("3_xthm3")

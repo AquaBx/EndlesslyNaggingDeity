@@ -66,13 +66,12 @@ position = Vector2(-1, 4)
 
 [node name="Interact" parent="." instance=ExtResource("3_bn3a4")]
 unique_name_in_owner = true
-visible = false
-position = Vector2(0, 22)
+position = Vector2(0, -15)
 
 [node name="Glow" type="Sprite2D" parent="Interact"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_pem5t")
-position = Vector2(0, -44)
+position = Vector2(0, 30)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ch2ge")
 hframes = 6

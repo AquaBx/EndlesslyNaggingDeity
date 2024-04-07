@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dktekeg5qv7p6"]
 
 [ext_resource type="Script" path="res://scenes/Interact/Interact.gd" id="1_ee2xc"]
-[ext_resource type="Texture2D" uid="uid://cd4bwp080te2i" path="res://assets/BtnA.png" id="2_i3wtl"]
-[ext_resource type="Texture2D" uid="uid://cxe0ird7wndq4" path="res://assets/BtnE.png" id="3_upbm0"]
-[ext_resource type="FontFile" uid="uid://ccvrnng0q27fm" path="res://assets/PixelifySans-Regular.ttf" id="4_k6v20"]
+[ext_resource type="Texture2D" uid="uid://y8w8tbvphkmr" path="res://assets/BtnA.png" id="2_i3wtl"]
+[ext_resource type="Texture2D" uid="uid://dgeegu8iqnr21" path="res://assets/BtnE.png" id="3_upbm0"]
+[ext_resource type="FontFile" uid="uid://dprp6lyo3bems" path="res://assets/PixelifySans-Regular.ttf" id="4_k6v20"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d1kw8"]
 font = ExtResource("4_k6v20")

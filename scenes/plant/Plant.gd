@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 signal plant_cut
 var is_cut = false
 
@@ -28,5 +27,3 @@ func action(player):
 	await get_tree().create_timer(1.).timeout
 	is_cut = false
 	$Node2D/Sprite.set("frame",0)
-
-	

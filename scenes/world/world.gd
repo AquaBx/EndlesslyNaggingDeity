@@ -15,6 +15,7 @@ func deathloupe(death_message: String):
 	_on_player_death(death_message)
 	await get_tree().create_timer(2.).timeout
 	$House.set_day(false)
+	get_node("Interactable/Niche").set_night()
 	material.set_shader_parameter("day",false)
 
 func _on_player_death(death_message: String):
@@ -39,13 +40,13 @@ func _on_player_death(death_message: String):
 	%Player.get_node("Dino").show()
 
 	%Player.show()
-	%Player.frozen = false
 	await get_tree().create_timer(2.).timeout
 
 	%DeathLabel.hide()
 	%DeathLabel.set("theme_override_colors/font_color",Color(255, 255, 255, 1))
 
 	if death_message != "Dieu est content de vous 😊" and first_death:
+		print("passe")
 		first_death = false
 		god_descends()
 
@@ -58,7 +59,12 @@ func god_descends():
 	var god = preload("res://god.tscn").instantiate()
 	god.global_position = %Player.global_position + Vector2(0,-25)
 	add_child(god)
-	await get_tree().create_timer(12).timeout
+	await get_tree().create_timer(5.5).timeout
+	print("avant le dialogue")
+	$DialogueCenter.play_dialogue("narrateur", "died_from_door")
+	print("après le dialogue")
+	await get_tree().create_timer(7.5).timeout
+	
 	%Player.frozen = false
 	god.queue_free()
 	
