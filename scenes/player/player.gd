@@ -42,3 +42,7 @@ func _on_action_zone_body_exited(_body):
 	if m_object != null:
 		m_object.unglow()
 	m_object = null
+
+func _on_interior_detect_area_exited(_area: Area2D) -> void:
+	# on quitte la maison
+	$Camera2D.make_current()
