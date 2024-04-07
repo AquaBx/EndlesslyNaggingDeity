@@ -1,17 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://61orhw0dtqrt"]
+[gd_scene load_steps=4 format=3 uid="uid://bps0el8daeilj"]
 
-[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="1_mthh7"]
-[ext_resource type="Texture2D" uid="uid://cig3np8q1hn52" path="res://assets/lampadaire.png" id="2_fpk51"]
+[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="1_mthh7"]
+[ext_resource type="Texture2D" uid="uid://bbd1cwdfoekch" path="res://assets/lampadaire.png" id="2_fpk51"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0huh"]
 radius = 9.05539
 
 [node name="Area2D" type="Area2D"]
 position = Vector2(3, -1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -2)
-shape = SubResource("CircleShape2D_w0huh")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -25,3 +21,9 @@ texture = ExtResource("1_mthh7")
 texture_filter = 1
 position = Vector2(-3, -24)
 texture = ExtResource("2_fpk51")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3, -2)
+shape = SubResource("CircleShape2D_w0huh")

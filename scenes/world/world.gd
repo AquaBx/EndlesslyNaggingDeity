@@ -1,19 +1,28 @@
 extends Node2D
+var shader = preload("res://scenes/nuit.gdshader")
 
 var first_death = true
 
 func _ready():
+	%Player.global_position = %PlayerSpawn.global_position
 	#%DeathScreen.get_child(0).color = Color(0,0,0,0)
 	#%DeathLabel.hide()
+	$House.set_day(true)
+	material.set_shader_parameter("day",true)
 	$HouseInteriorCamera.make_current()
 
+func deathloupe(death_message: String):
+	_on_player_death(death_message)
+	await get_tree().create_timer(2.).timeout
+	$House.set_day(false)
+	material.set_shader_parameter("day",false)
+
 func _on_player_death(death_message: String):
-	
-	print("Salut, je suis mort ", death_message, " je suis déjà mort : first_death = ", first_death)
+
 	%Player.frozen = true
 	%DeathLabel.text = death_message
 	
-	%DeathScreenAnimationPlayer.play("fade in")	
+	%DeathScreenAnimationPlayer.play("fade in")
 
 	await get_tree().create_timer(1.).timeout
 	
@@ -26,11 +35,16 @@ func _on_player_death(death_message: String):
 	%Player.get_node("Dino").rotation = 0
 	if not first_death or death_message == "Dieu est content de vous 😊":
 		%Player.frozen = false
+
 	%Player.get_node("Dino").show()
-	
+
+	%Player.show()
+	%Player.frozen = false
 	await get_tree().create_timer(2.).timeout
+
 	%DeathLabel.hide()
 	%DeathLabel.set("theme_override_colors/font_color",Color(255, 255, 255, 1))
+
 	if death_message != "Dieu est content de vous 😊" and first_death:
 		first_death = false
 		god_descends()

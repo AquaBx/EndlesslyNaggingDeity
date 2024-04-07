@@ -1,16 +1,15 @@
 extends StaticBody2D
 
-
 signal player_dead
 
 func _ready():
-	%Interact.visible = false
+	%Interact.hide()
 	
 func glow():
-	%Interact.visible = true
+	%Interact.show()
 	
 func unglow():
-	%Interact.visible = false
+	%Interact.hide()
 
 func action(player):
 	print("collided")
@@ -18,16 +17,16 @@ func action(player):
 	player.frozen = true
 	await get_tree().create_timer(.5).timeout
 	unglow()
-	%DoorClosed.visible = false
-	%DoorOpen.visible = true
-	%BloodSplash.visible = true
-	player.visible = false
+	%DoorClosed.hide()
+	%DoorOpen.show()
+	%BloodSplash.show()
+	player.hide()
 	$AudioStreamPlayer2D.play()
 	
 	await get_tree().create_timer(2.).timeout
 	player_dead.emit("Tu est mort à cause d'une porte ! Dieu décida donc de détruire les portes.")
 	
 	await get_tree().create_timer(1).timeout
-	
+  
 	player.visible = true
 	queue_free()

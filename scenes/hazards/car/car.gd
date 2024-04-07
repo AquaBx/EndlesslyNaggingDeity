@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-static var car_speed = 200
+static var car_speed = 400
 var direction = 1  # 1 is for right
 
 func _physics_process(delta):

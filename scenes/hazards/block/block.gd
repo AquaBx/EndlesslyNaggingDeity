@@ -3,7 +3,7 @@ extends StaticBody2D
 signal player_death
 
 func action(player):
-	%Glow.hide()
+	%Interact.hide()
 	player.frozen = true
 	player.get_node("Dino").play_deathblock_animation()
 	await get_tree().create_timer(.25).timeout
@@ -14,7 +14,7 @@ func action(player):
 	queue_free()
 
 func glow():
-	%Glow.show()
+	%Interact.show()
 
 func unglow():
-	%Glow.hide()
+	%Interact.hide()
