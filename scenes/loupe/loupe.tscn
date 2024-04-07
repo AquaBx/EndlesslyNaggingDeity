@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjhdovtkoafey"]
+[gd_scene load_steps=11 format=3 uid="uid://bjhdovtkoafey"]
 
 [ext_resource type="Script" path="res://scenes/loupe/loupe.gd" id="1_uk2fa"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_1570u"]
-[ext_resource type="Texture2D" uid="uid://b7pnsiuc7gxnr" path="res://assets/loupe.png" id="2_ch2ge"]
+[ext_resource type="Texture2D" uid="uid://qi4a85dns7fw" path="res://assets/loupe.png" id="2_ch2ge"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_bn3a4"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="5_mopti"]
+[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_mebci"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcgg5"]
 radius = 5.0
@@ -74,3 +75,9 @@ position = Vector2(0, -44)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ch2ge")
 hframes = 6
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 4)
+scale = Vector2(-0.662978, 0.42706)
+texture = ExtResource("6_mebci")
