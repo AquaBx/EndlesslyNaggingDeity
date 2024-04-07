@@ -31,7 +31,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("interact") and m_object:
-		m_object.action()
+		m_object.action(self)
 
 func _on_action_zone_body_entered(body):
 	if body.has_method("action") and body.has_method("glow"):
