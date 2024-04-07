@@ -222,11 +222,9 @@ use_parent_material = true
 script = ExtResource("2_55r2h")
 
 [node name="Gauche" type="AudioStreamPlayer2D" parent="Dino"]
-stream = ExtResource("4_yeqpe")
 volume_db = -5.0
 
 [node name="Droite" type="AudioStreamPlayer2D" parent="Dino"]
-stream = ExtResource("5_0k54i")
 volume_db = -5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dino"]
@@ -272,7 +270,6 @@ shape = SubResource("RectangleShape2D_hfiv7")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_1i81q")
 volume_db = 12.0
 
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]

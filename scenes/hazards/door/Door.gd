@@ -29,6 +29,5 @@ func action(player):
 	
 	await get_tree().create_timer(1).timeout
 	
-	player.frozen = false
 	player.visible = true
 	queue_free()

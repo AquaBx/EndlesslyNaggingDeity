@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://qicqb3g6owtj"]
+[gd_scene load_steps=22 format=3 uid="uid://qicqb3g6owtj"]
 
 [ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vok7g"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
 [ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="13_j0mbw"]
 [ext_resource type="PackedScene" uid="uid://b0b2vluqwafga" path="res://scenes/props/Beennn.tscn" id="14_mvakx"]
-[ext_resource type="PackedScene" uid="uid://61orhw0dtqrt" path="res://scenes/lampadaire.tscn" id="15_7bdgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2ac6"]
 size = Vector2(4000, 156)
@@ -116,12 +115,13 @@ offset_bottom = 701.0
 color = Color(0.921569, 0.980392, 0.894118, 1)
 
 [node name="HouseInteriorCamera" type="Camera2D" parent="."]
-position = Vector2(65, 309)
-zoom = Vector2(4.4, 4.4)
+position = Vector2(5, 340)
+scale = Vector2(9.522, 3.881)
+zoom = Vector2(3.585, 3.585)
 
 [node name="House" parent="." instance=ExtResource("5_pwkoy")]
-position = Vector2(24, 323)
-scale = Vector2(1.34286, 1.34286)
+position = Vector2(5, 340)
+scale = Vector2(1.51352, 1.51352)
 
 [node name="PlayerSpawn" type="Marker2D" parent="House"]
 unique_name_in_owner = true
@@ -129,7 +129,7 @@ position = Vector2(0, 32)
 
 [node name="Player" parent="." instance=ExtResource("6_1w2bk")]
 unique_name_in_owner = true
-position = Vector2(23, 373)
+position = Vector2(5, 399)
 
 [node name="Road" type="Sprite2D" parent="."]
 z_index = -1
@@ -180,7 +180,7 @@ position = Vector2(791, 360)
 scale = Vector2(1.41281, 1.41281)
 
 [node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
-position = Vector2(24, 333)
+position = Vector2(4, 356)
 
 [node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player", "CarSpawnWest", "CarSpawnEast") instance=ExtResource("7_otisb")]
 position = Vector2(0, 0)
@@ -302,9 +302,6 @@ position = Vector2(-1712, 199)
 [node name="CarSpawnEast" type="Marker2D" parent="."]
 position = Vector2(3178, 175)
 
-[connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
-[connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
-
 [node name="Shadow" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3, 5)
@@ -316,123 +313,66 @@ position = Vector2(113, 131)
 scale = Vector2(0.72, 0.72)
 
 [node name="Beennn" parent="Props" instance=ExtResource("14_mvakx")]
-scale = Vector2(1, 1)
 
 [node name="Beennn2" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(26.3889, 0)
-scale = Vector2(1, 1)
 
 [node name="Beennn3" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(-102.778, -109.722)
-scale = Vector2(1, 1)
 
 [node name="Beennn4" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(-370.833, -38.8889)
-scale = Vector2(1, 1)
 
 [node name="Beennn5" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(-370.833, -23.6111)
-scale = Vector2(1, 1)
 
 [node name="Beennn6" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(-370.833, -9.72222)
-scale = Vector2(1, 1)
 
 [node name="Beennn7" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(306.944, -69.4444)
-scale = Vector2(1, 1)
 
 [node name="Beennn8" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(536.111, 4.16667)
-scale = Vector2(1, 1)
 
 [node name="Beennn9" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(119.444, 234.722)
-scale = Vector2(1, 1)
 
 [node name="Beennn10" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(145.833, 240.278)
-scale = Vector2(1, 1)
 
 [node name="Beennn11" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(126.389, 250)
-scale = Vector2(1, 1)
 
 [node name="Beennn12" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(298.611, 230.556)
-scale = Vector2(1, 1)
 
 [node name="Beennn13" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(288.889, 244.444)
-scale = Vector2(1, 1)
 
 [node name="Beennn14" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(958.333, -4.16667)
-scale = Vector2(1, 1)
 
 [node name="Beennn15" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(1275, -131.944)
-scale = Vector2(1, 1)
 
 [node name="Beennn16" parent="Props" instance=ExtResource("14_mvakx")]
 position = Vector2(759.722, 300)
-scale = Vector2(1, 1)
 
 [node name="Beennn" parent="Props/Beennn16" instance=ExtResource("14_mvakx")]
 position = Vector2(24.9999, -4.16667)
-scale = Vector2(1, 1)
 
 [node name="Beennn" parent="Props/Beennn16/Beennn" instance=ExtResource("14_mvakx")]
 position = Vector2(25, 0)
-scale = Vector2(1, 1)
 
 [node name="Beennn" parent="Props/Beennn16/Beennn/Beennn" instance=ExtResource("14_mvakx")]
 position = Vector2(-36.1111, 16.6667)
-scale = Vector2(1, 1)
 
 [node name="Beennn" parent="Props/Beennn16/Beennn/Beennn/Beennn" instance=ExtResource("14_mvakx")]
 position = Vector2(29.1667, -1.38889)
-scale = Vector2(1, 1)
 
-[node name="Area2D" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(138.889, 8.33334)
-
-[node name="Area2D2" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(405.556, 11.1111)
-
-[node name="Area2D3" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(713.889, -20.8333)
-
-[node name="Area2D4" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(831.944, 8.33334)
-
-[node name="Area2D5" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(-334.722, 8.33334)
-
-[node name="Area2D6" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(-693.056, 8.33334)
-
-[node name="Area2D7" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(-655.556, 176.389)
-
-[node name="Area2D8" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(-47.2222, 129.167)
-
-[node name="Area2D9" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(330.556, 175)
-
-[node name="Area2D10" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(-368.056, 169.444)
-
-[node name="Area2D11" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(569.444, 169.444)
-
-[node name="Area2D12" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(1137.5, 152.778)
-
-[node name="Area2D13" parent="Props" instance=ExtResource("15_7bdgl")]
-position = Vector2(1341.67, -1.38889)
-
+[connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
+[connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
 [connection signal="player_dead" from="House/Door" to="." method="_on_player_death"]
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="plant_cut" from="Interactable/Plant" to="." method="_on_player_death"]
