@@ -1,6 +1,8 @@
 extends Node2D
 var shader = preload("res://scenes/nuit.gdshader")
 
+var first_death = true
+
 func _ready():
 	%Player.global_position = %PlayerSpawn.global_position
 	#%DeathScreen.get_child(0).color = Color(0,0,0,0)
@@ -16,7 +18,7 @@ func deathloupe(death_message: String):
 	material.set_shader_parameter("day",false)
 
 func _on_player_death(death_message: String):
-	print(death_message)
+
 	%Player.frozen = true
 	%DeathLabel.text = death_message
 	
@@ -28,9 +30,11 @@ func _on_player_death(death_message: String):
 
 	await get_tree().create_timer(2.).timeout
 	%DeathScreenAnimationPlayer.play("fade out")
-	
+
 	%Player.global_position = %PlayerSpawn.global_position
 	%Player.get_node("Dino").rotation = 0
+	if not first_death or death_message == "Dieu est content de vous 😊":
+		%Player.frozen = false
 
 	%Player.get_node("Dino").show()
 
@@ -40,9 +44,22 @@ func _on_player_death(death_message: String):
 
 	%DeathLabel.hide()
 	%DeathLabel.set("theme_override_colors/font_color",Color(255, 255, 255, 1))
-	print("passe")
 
+	if death_message != "Dieu est content de vous 😊" and first_death:
+		first_death = false
+		god_descends()
 
 func _on_interior_detect_area_entered(_area: Area2D) -> void:
 	# the player entered the house
 	$HouseInteriorCamera.make_current()
+	
+func god_descends():
+	%Player.frozen = true
+	var god = preload("res://god.tscn").instantiate()
+	god.global_position = %Player.global_position + Vector2(0,-25)
+	add_child(god)
+	await get_tree().create_timer(12).timeout
+	%Player.frozen = false
+	god.queue_free()
+	
+	
