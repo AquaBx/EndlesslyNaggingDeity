@@ -15,6 +15,7 @@ func deathloupe(death_message: String):
 	material.set_shader_parameter("day",false)
 
 func _on_player_death(death_message: String):
+	print(death_message)
 	%Player.frozen = true
 	%DeathLabel.text = death_message
 	
