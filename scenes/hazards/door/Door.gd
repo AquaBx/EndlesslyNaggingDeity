@@ -22,6 +22,7 @@ func action(player):
 	%DoorOpen.visible = true
 	%BloodSplash.visible = true
 	player.visible = false
+	$AudioStreamPlayer2D.play()
 	
 	await get_tree().create_timer(2.).timeout
 	player_dead.emit("Tu est mort à cause d'une porte ! Dieu décida donc de détruire les portes.")

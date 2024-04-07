@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/loupe/loupe.gd" id="1_uk2fa"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_1570u"]
-[ext_resource type="Texture2D" uid="uid://d3l01fhjfw0nt" path="res://assets/loupe.png" id="2_ch2ge"]
+[ext_resource type="Texture2D" uid="uid://b7pnsiuc7gxnr" path="res://assets/loupe.png" id="2_ch2ge"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_bn3a4"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="5_mopti"]
 
