@@ -58,6 +58,7 @@ libraries = {
 texture_filter = 1
 texture = ExtResource("2_ch2ge")
 hframes = 6
+frame = 2
 
 [node name="AnchorLoupe" type="Marker2D" parent="."]
 unique_name_in_owner = true
