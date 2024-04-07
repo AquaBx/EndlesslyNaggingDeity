@@ -1,0 +1,160 @@
+[gd_scene load_steps=18 format=3 uid="uid://ba8bn52fly1gy"]
+
+[ext_resource type="Script" path="res://scenes/niche/Niche.gd" id="1_kf1v7"]
+[ext_resource type="Texture2D" uid="uid://cdoqwwiyy56tq" path="res://assets/duck_niche.png" id="2_5h38d"]
+[ext_resource type="Script" path="res://scenes/niche/Jour.gd" id="2_lh5i1"]
+[ext_resource type="Texture2D" uid="uid://cvco4xu3xe822" path="res://assets/dog_niche.png" id="3_khcxh"]
+[ext_resource type="Texture2D" uid="uid://cb7xt8ko3t7sd" path="res://assets/dog.png" id="4_ocps3"]
+[ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_3h6k3"]
+[ext_resource type="Shader" path="res://utils/glow.gdshader" id="6_kqd2q"]
+[ext_resource type="Texture2D" uid="uid://oglc1js0tv5a" path="res://assets/dog_niche_alpha.png" id="8_k6w4y"]
+[ext_resource type="Texture2D" uid="uid://brnmlwu1dy6cv" path="res://assets/loup_garou.png" id="9_y8xsw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn67y"]
+size = Vector2(49, 38)
+
+[sub_resource type="Animation" id="Animation_5ooq6"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_l6u3x"]
+resource_name = "idle"
+length = 1.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpqry"]
+_data = {
+"RESET": SubResource("Animation_5ooq6"),
+"idle": SubResource("Animation_l6u3x")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8nt8"]
+shader = ExtResource("6_kqd2q")
+shader_parameter/line_color = Vector4(1, 1, 0, 1)
+shader_parameter/line_thickness = 1.0
+
+[sub_resource type="Animation" id="Animation_u7jc2"]
+resource_name = "dogo"
+length = 1.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w0svf"]
+_data = {
+"dogo": SubResource("Animation_u7jc2")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b272l"]
+shader = ExtResource("6_kqd2q")
+shader_parameter/line_color = Vector4(1, 1, 0, 1)
+shader_parameter/line_thickness = 1.0
+
+[node name="Niche" type="StaticBody2D"]
+y_sort_enabled = true
+use_parent_material = true
+collision_layer = 3
+script = ExtResource("1_kf1v7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-0.5, 12)
+shape = SubResource("RectangleShape2D_vn67y")
+
+[node name="Jour" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+y_sort_enabled = true
+script = ExtResource("2_lh5i1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jour"]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("2_5h38d")
+hframes = 9
+frame = 8
+
+[node name="DayAnimationPlayer" type="AnimationPlayer" parent="Jour"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_rpqry")
+}
+
+[node name="Nuit" type="Node2D" parent="."]
+unique_name_in_owner = true
+use_parent_material = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Nuit"]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_a8nt8")
+use_parent_material = true
+texture = ExtResource("3_khcxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nuit"]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("4_ocps3")
+hframes = 8
+frame = 1
+
+[node name="NightAnimationPlayer" type="AnimationPlayer" parent="Nuit"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_w0svf")
+}
+
+[node name="Interact" parent="." instance=ExtResource("5_3h6k3")]
+unique_name_in_owner = true
+position = Vector2(-10, 38)
+
+[node name="Glow" type="Sprite2D" parent="Interact"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_b272l")
+position = Vector2(18, -78)
+scale = Vector2(2, 2)
+texture = ExtResource("8_k6w4y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ImageFin" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_y8xsw")

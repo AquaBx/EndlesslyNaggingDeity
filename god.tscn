@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cap7tgt2ydxe8"]
 
-[ext_resource type="Texture2D" uid="uid://cxc11i523tchn" path="res://assets/duck.png" id="1_4l56v"]
+[ext_resource type="Texture2D" uid="uid://33dyoduyuq2i" path="res://assets/duck.png" id="1_4l56v"]
 [ext_resource type="Script" path="res://god.gd" id="1_vbeh1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8nymo"]
@@ -31,7 +31,7 @@ script = ExtResource("1_vbeh1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -200)
+position = Vector2(0, -196)
 texture = ExtResource("1_4l56v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
