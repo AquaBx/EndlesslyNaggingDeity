@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c30dm700paorp"]
 
-[ext_resource type="Texture2D" uid="uid://7l6xb17t8rqs" path="res://assets/bat_B.png" id="1_rqqla"]
+[ext_resource type="Texture2D" path="res://assets/bat_B.png" id="1_rqqla"]
 [ext_resource type="Texture2D" path="res://assets/square_shadow.png" id="2_wo4gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5535"]
