@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_vfevw"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://cjw5f4xn5xj73" path="res://assets/maskvide.png" id="2_jdqvr"]
-[ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
-[ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://scenes/player/step1.wav" id="4_yeqpe"]
-[ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://scenes/player/step2.wav" id="5_0k54i"]
-[ext_resource type="AudioStream" uid="uid://c52a7mnaln5a2" path="res://assets/fire.wav" id="5_1i81q"]
-[ext_resource type="Texture2D" uid="uid://b68frw3hl0qkl" path="res://assets/shadow.png" id="6_p5pty"]
+[ext_resource type="Texture2D" uid="uid://cismcwbafogcs" path="res://assets/maskvide.png" id="2_jdqvr"]
+[ext_resource type="Texture2D" uid="uid://cfc1d4efi0ul" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://dfncsncsqlc7v" path="res://scenes/player/step1.wav" id="4_yeqpe"]
+[ext_resource type="AudioStream" uid="uid://bywos0xeh1hux" path="res://scenes/player/step2.wav" id="5_0k54i"]
+[ext_resource type="AudioStream" uid="uid://dkf020xxk6vif" path="res://assets/fire.wav" id="5_1i81q"]
+[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="6_p5pty"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_atyps"]
 shader = ExtResource("1_vfevw")
@@ -203,7 +203,7 @@ _data = {
 radius = 26.0768
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfiv7"]
-size = Vector2(26, 8)
+size = Vector2(12, 8)
 
 [node name="Player" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_atyps")
@@ -219,7 +219,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_hgsaf")
 
@@ -255,11 +254,11 @@ frame = 16
 
 [node name="ActionZone" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionZone"]
+visible = false
 position = Vector2(14, 0)
 rotation = -1.57079
 shape = SubResource("CircleShape2D_sfa70")
@@ -267,7 +266,6 @@ debug_color = Color(0, 0.623529, 0.529412, 0.419608)
 
 [node name="BuildingZone" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
 collision_layer = 4
 collision_mask = 0
 

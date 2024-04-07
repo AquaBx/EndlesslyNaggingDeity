@@ -1,8 +1,8 @@
 extends Node2D
 var shader = preload("res://scenes/nuit.gdshader")
 
-
 func _ready():
+	%Player.global_position = %PlayerSpawn.global_position
 	#%DeathScreen.get_child(0).color = Color(0,0,0,0)
 	#%DeathLabel.hide()
 	$House.set_day(true)
@@ -11,6 +11,7 @@ func _ready():
 
 func deathloupe(death_message: String):
 	_on_player_death(death_message)
+	await get_tree().create_timer(2.).timeout
 	$House.set_day(false)
 	material.set_shader_parameter("day",false)
 

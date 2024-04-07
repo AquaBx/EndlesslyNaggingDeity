@@ -1,24 +1,24 @@
-[gd_scene load_steps=26 format=3 uid="uid://bhmvf4mf8bjc7"]
+[gd_scene load_steps=28 format=3 uid="uid://qicqb3g6owtj"]
 
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_6schm"]
 [ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vok7g"]
 [ext_resource type="PackedScene" uid="uid://c30dm700paorp" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
-[ext_resource type="Texture2D" uid="uid://cjw5f4xn5xj73" path="res://assets/maskvide.png" id="2_iyly2"]
+[ext_resource type="Texture2D" uid="uid://cismcwbafogcs" path="res://assets/maskvide.png" id="2_iyly2"]
 [ext_resource type="PackedScene" uid="uid://c8csrmegbsxhf" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
 [ext_resource type="PackedScene" uid="uid://deym8dkb2pokv" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
-[ext_resource type="PackedScene" uid="uid://d1qoilh7r5m2j" path="res://scenes/house/house.tscn" id="5_pwkoy"]
+[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
-[ext_resource type="Texture2D" uid="uid://dhxu32jeyxlyq" path="res://assets/road.png" id="7_s70g1"]
+[ext_resource type="Texture2D" uid="uid://krvjqa0x3wih" path="res://assets/road.png" id="7_s70g1"]
 [ext_resource type="PackedScene" uid="uid://m17wjiq3t5l1" path="res://scenes/hazards/block/block.tscn" id="8_3iyxq"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
 [ext_resource type="PackedScene" uid="uid://dpnojl70n0bw7" path="res://scenes/echaffaudage/echauf2.tscn" id="9_q5ncd"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
+[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="13_j0mbw"]
 [ext_resource type="PackedScene" uid="uid://dw6ogyreqsc7r" path="res://scenes/pool.tscn" id="14_2o8j1"]
-[ext_resource type="Texture2D" uid="uid://b68frw3hl0qkl" path="res://assets/shadow.png" id="13_j0mbw"]
 [ext_resource type="PackedScene" uid="uid://b0b2vluqwafga" path="res://scenes/props/Beennn.tscn" id="14_mvakx"]
-[ext_resource type="PackedScene" path="res://scenes/lampadaire.tscn" id="15_7bdgl"]
+[ext_resource type="PackedScene" uid="uid://bps0el8daeilj" path="res://scenes/lampadaire.tscn" id="15_7bdgl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtvfj"]
 shader = ExtResource("1_6schm")
@@ -139,9 +139,12 @@ zoom = Vector2(4.4, 4.4)
 position = Vector2(24, 323)
 scale = Vector2(1.34286, 1.34286)
 
+[node name="Exterior" parent="House" index="2"]
+visible = false
+
 [node name="PlayerSpawn" type="Marker2D" parent="House"]
 unique_name_in_owner = true
-position = Vector2(-87.1275, 33.5105)
+position = Vector2(-40.2127, 34.2552)
 
 [node name="Player" parent="." instance=ExtResource("6_1w2bk")]
 unique_name_in_owner = true
@@ -211,7 +214,6 @@ use_parent_material = true
 position = Vector2(867, 6)
 
 [node name="StaticBody2D" parent="Interactable" instance=ExtResource("9_q5ncd")]
-y_sort_enabled = true
 position = Vector2(1052, 283)
 
 [node name="Batiments" type="Node2D" parent="."]
@@ -290,9 +292,9 @@ position = Vector2(605, 38)
 use_parent_material = true
 position = Vector2(313, 10)
 
-
 [node name="Pool" parent="Batiments" instance=ExtResource("14_2o8j1")]
-position = Vector2(1070, 386)
+position = Vector2(1116, 386)
+collision_mask = 1
 
 [node name="Maison Rouge2" parent="Batiments" instance=ExtResource("3_hlfdj")]
 use_parent_material = true
@@ -402,6 +404,14 @@ position = Vector2(288.889, 244.444)
 use_parent_material = true
 position = Vector2(958.333, -4.16667)
 
+[node name="Beennn18" parent="Props/Beennn14" instance=ExtResource("14_mvakx")]
+use_parent_material = true
+position = Vector2(-148.611, 300)
+
+[node name="Beennn17" parent="Props" instance=ExtResource("14_mvakx")]
+use_parent_material = true
+position = Vector2(784.722, 295.833)
+
 [node name="Beennn15" parent="Props" instance=ExtResource("14_mvakx")]
 use_parent_material = true
 position = Vector2(1275, -131.944)
@@ -409,26 +419,14 @@ position = Vector2(1275, -131.944)
 [node name="Beennn20" parent="Props" instance=ExtResource("14_mvakx")]
 use_parent_material = true
 position = Vector2(802.778, 311.111)
-scale = Vector2(1, 1)
-
-[node name="Beennn19" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(773.611, 312.5)
-scale = Vector2(1, 1)
-
-[node name="Beennn18" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(809.722, 295.833)
-scale = Vector2(1, 1)
-
-[node name="Beennn17" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(784.722, 295.833)
-scale = Vector2(1, 1)
 
 [node name="Beennn16" parent="Props" instance=ExtResource("14_mvakx")]
 use_parent_material = true
 position = Vector2(759.722, 300)
+
+[node name="Beennn19" parent="Props" instance=ExtResource("14_mvakx")]
+use_parent_material = true
+position = Vector2(773.611, 312.5)
 
 [node name="Area2D" parent="Props" instance=ExtResource("15_7bdgl")]
 use_parent_material = true

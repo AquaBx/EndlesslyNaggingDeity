@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://n2f2rfa0ocab" path="res://assets/pool_danger_shadow.png" id="3_u8nru"]
 [ext_resource type="Texture2D" uid="uid://cfn1bc7xxfksb" path="res://assets/pool_danger.png" id="4_uii2c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mxtqa"]
-radius = 52.0384
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0rhc"]
+size = Vector2(91, 50)
 
 [node name="Pool" type="Area2D"]
 texture_filter = 1
@@ -26,8 +26,9 @@ texture = ExtResource("3_u8nru")
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("4_uii2c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0)
-rotation = 0.11654
-scale = Vector2(2.0373, 0.898733)
-shape = SubResource("CircleShape2D_mxtqa")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, -2)
+scale = Vector2(1.98269, 1.60904)
+shape = SubResource("RectangleShape2D_r0rhc")

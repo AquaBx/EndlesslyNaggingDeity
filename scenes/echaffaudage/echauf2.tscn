@@ -57,10 +57,13 @@ shader_parameter/line_thickness = 1.0
 radius = 4.0
 
 [node name="Echaff" type="StaticBody2D"]
+y_sort_enabled = true
 position = Vector2(11, 0)
 script = ExtResource("1_noe0i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
 position = Vector2(19, 7)
 shape = SubResource("RectangleShape2D_v24qi")
 
@@ -70,8 +73,11 @@ shape = SubResource("RectangleShape2D_v24qi")
 
 [node name="Node2D" type="Node2D" parent="."]
 unique_name_in_owner = true
+y_sort_enabled = true
+texture_filter = 1
 
 [node name="Shadow" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
 position = Vector2(-11, 14)
 rotation = -0.00858836
 scale = Vector2(170.506, -1.28975)
@@ -79,11 +85,11 @@ texture = ExtResource("1_0p8sx")
 hframes = 26
 
 [node name="Echaffaudage" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-8, -19)
 texture = ExtResource("2_dn5md")
 hframes = 26
-frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 unique_name_in_owner = true
@@ -94,9 +100,11 @@ libraries = {
 [node name="Interact" parent="." instance=ExtResource("3_bacho")]
 unique_name_in_owner = true
 visible = false
+y_sort_enabled = true
 position = Vector2(-23, -76)
 
 [node name="Glow" type="Sprite2D" parent="Interact"]
+y_sort_enabled = true
 texture_filter = 1
 material = SubResource("ShaderMaterial_kc1ta")
 position = Vector2(30, 114)

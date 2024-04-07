@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/loupe/loupe.gd" id="1_uk2fa"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_1570u"]
-[ext_resource type="Texture2D" uid="uid://d3l01fhjfw0nt" path="res://assets/loupe.png" id="2_ch2ge"]
+[ext_resource type="Texture2D" uid="uid://dg7vdixdlaqm1" path="res://assets/loupe.png" id="2_ch2ge"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_bn3a4"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="5_mopti"]
-[ext_resource type="Texture2D" uid="uid://dtaa0uf58cgud" path="res://assets/shadow.png" id="6_mebci"]
+[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="6_mebci"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcgg5"]
 radius = 5.0
