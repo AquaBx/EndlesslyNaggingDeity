@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="1_ul0go"]
 [ext_resource type="PackedScene" uid="uid://db737kd26u4hp" path="res://scenes/object/object.tscn" id="2_ro6h2"]
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="3_jf8db"]
-[ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="4_byp18"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="5_7hmr3"]
+[ext_resource type="PackedScene" uid="uid://m17wjiq3t5l1" path="res://scenes/hazards/block/block.tscn" id="6_0awx5"]
 
 [node name="SceneTom" type="Node2D"]
 y_sort_enabled = true
-scale = Vector2(3, 3)
+scale = Vector2(1.5, 1.5)
 
 [node name="Loupe" parent="." instance=ExtResource("5_7hmr3")]
 y_sort_enabled = true
@@ -18,10 +18,10 @@ position = Vector2(120.333, 370)
 position = Vector2(183, 352.667)
 
 [node name="Player" parent="." instance=ExtResource("1_ul0go")]
-position = Vector2(155, 231)
+position = Vector2(105.333, 113.667)
 
 [node name="Object" parent="." instance=ExtResource("2_ro6h2")]
 position = Vector2(525, 212)
 
-[node name="CarSpawner" parent="." instance=ExtResource("4_byp18")]
-position = Vector2(-112.667, 232.667)
+[node name="Block" parent="." instance=ExtResource("6_0awx5")]
+position = Vector2(252, 90)

@@ -8,13 +8,11 @@ func _ready():
 	%Interact.visible = false
 
 func glow():
-	print("glowin")
 	if not is_cut:
-		%Glow.show()
-	%Interact.visible = true
+		%Interact.show()
 
 func unglow():
-	%Glow.hide()
+	%Interact.hide()
 	%Interact.visible = false
 
 func action(player):

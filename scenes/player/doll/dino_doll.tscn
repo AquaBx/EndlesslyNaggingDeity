@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3jvq7n3dwtrg"]
+
+[ext_resource type="Script" path="res://scenes/player/doll/dino_doll.gd" id="1_2ty5e"]
+[ext_resource type="Texture2D" path="res://assets/dino1.png" id="1_de8a8"]
+
+[sub_resource type="Curve2D" id="Curve2D_72f23"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.998871, 1.99774, -0.998871, -1.99774, 2, -85, -5.99323, 22.974, 5.99323, -22.974, 0, -188, 1.99774, -21.4757, -1.99774, 21.4757, 1, -323)
+}
+point_count = 5
+
+[node name="DinoDoll" type="Node2D"]
+z_index = 10
+script = ExtResource("1_2ty5e")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_72f23")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(1, -323)
+rotation = -2.75382
+progress = 326.425
+rotates = false
+loop = false
+
+[node name="doll" type="Sprite2D" parent="Path2D/PathFollow2D"]
+unique_name_in_owner = true
+texture_filter = 1
+rotation = 2.75762
+texture = ExtResource("1_de8a8")

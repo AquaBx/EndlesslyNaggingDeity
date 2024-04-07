@@ -12,5 +12,9 @@ func play_drive_animation():
 func play_deathloupe_animation():
 	$AnimationPlayer.play("deathloupe")
 
+func play_deathblock_animation():
+	print("animBlock")
+	$AnimationPlayer.play("deathblock")
+
 func play_animation_loop():
 	$AnimationPlayer.play("pickup")

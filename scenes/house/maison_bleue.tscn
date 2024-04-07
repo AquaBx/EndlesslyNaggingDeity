@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c30dm700paorp"]
+[gd_scene load_steps=4 format=3 uid="uid://c30dm700paorp"]
 
-[ext_resource type="Texture2D" uid="uid://cbp5rf6cuev7i" path="res://assets/bat_B.png" id="1_rqqla"]
+[ext_resource type="Texture2D" uid="uid://7l6xb17t8rqs" path="res://assets/bat_B.png" id="1_rqqla"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_wo4gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5535"]
 size = Vector2(120, 97)
@@ -15,3 +16,10 @@ texture = ExtResource("1_rqqla")
 visible = false
 position = Vector2(0, 36.5)
 shape = SubResource("RectangleShape2D_s5535")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(0, 107)
+scale = Vector2(7.5, 5.42188)
+texture = ExtResource("2_wo4gq")

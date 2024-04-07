@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpqngcmkmtkxk"]
+[gd_scene load_steps=9 format=3 uid="uid://cpqngcmkmtkxk"]
 
 [ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
 [ext_resource type="Texture2D" uid="uid://00mvmqm1gwe3" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
+[ext_resource type="Texture2D" uid="uid://4y6icbp186ao" path="res://assets/door-top.png" id="3_330l1"]
+[ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="4_qtn6r"]
+[ext_resource type="AudioStream" uid="uid://llpl4ww6y3gq" path="res://assets/error.mp3" id="5_a0oer"]
+[ext_resource type="Texture2D" uid="uid://dirjjelvxr5bg" path="res://assets/square_shadow.png" id="5_nvlog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sotft"]
 size = Vector2(238, 119)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nne0u"]
-size = Vector2(18, 39)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0spir"]
+light_mode = 2
 
 [node name="House" type="Node2D"]
+use_parent_material = true
 script = ExtResource("1_b4ad7")
 
 [node name="InteriorDetect" type="Area2D" parent="."]
@@ -38,36 +43,64 @@ texture = ExtResource("2_rn4df")
 hframes = 4
 frame = 2
 
+[node name="IntWalls2" type="Sprite2D" parent="Interior"]
+texture_filter = 1
+texture = ExtResource("2_rn4df")
+hframes = 4
+frame = 2
+
 [node name="Mur" type="CollisionPolygon2D" parent="Interior"]
 visible = false
 polygon = PackedVector2Array(-12, -59, -12, -20, -104, -20, -104, 56, 105, 56, 105, -20, 12, -20, 12, -59, 119, -59, 119, 60, -119, 60, -119, -59)
 
-[node name="Door" type="StaticBody2D" parent="Interior"]
-collision_layer = 0
-collision_mask = 0
-
-[node name="Door" type="Sprite2D" parent="Interior/Door"]
-texture_filter = 1
-texture = ExtResource("2_rn4df")
-hframes = 4
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interior/Door"]
+[node name="DoorTop" type="Node2D" parent="Interior"]
 visible = false
-position = Vector2(0, -39.5)
-shape = SubResource("RectangleShape2D_nne0u")
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Interior/DoorTop"]
+texture_filter = 1
+position = Vector2(0, -53.5)
+texture = ExtResource("3_330l1")
 
 [node name="Exterior" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
+visible = false
+use_parent_material = true
 
 [node name="ExtWalls" type="Sprite2D" parent="Exterior"]
 texture_filter = 1
+use_parent_material = true
 texture = ExtResource("2_rn4df")
 hframes = 4
+
+[node name="Polygon2D" type="Polygon2D" parent="Exterior"]
+material = SubResource("CanvasItemMaterial_0spir")
+use_parent_material = true
+color = Color(0.619608, 1, 1, 0.372549)
+polygon = PackedVector2Array(-104, 26, -104, 45, 59, 45, 59, 26)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Exterior"]
+material = SubResource("CanvasItemMaterial_0spir")
+use_parent_material = true
+color = Color(0.619608, 1, 1, 0.372549)
+polygon = PackedVector2Array(68, 26, 68, 45, 105, 45, 105, 26)
 
 [node name="Mur2" type="CollisionPolygon2D" parent="Exterior"]
 visible = false
 polygon = PackedVector2Array(-8, -59, -8, -20, -104, -20, -104, 56, 105, 56, 105, -20, 9, -20, 9, -59, 119, -59, 119, 60, -119, 60, -119, -59)
+
+[node name="Door" parent="." instance=ExtResource("4_qtn6r")]
+position = Vector2(0, -19.5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("5_a0oer")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(0, 71.25)
+scale = Vector2(14.875, 3.34375)
+texture = ExtResource("5_nvlog")
 
 [connection signal="area_entered" from="InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="InteriorDetect" to="." method="_on_interior_detect_area_exited"]

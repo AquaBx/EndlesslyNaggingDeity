@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="2_7hejq"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="3_kafph"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="3_yiq0n"]
-[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="4_gyl3i"]
+[ext_resource type="PackedScene" uid="uid://d1qoilh7r5m2j" path="res://scenes/house/house.tscn" id="4_gyl3i"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="6_1ki7j"]
 
 [sub_resource type="Animation" id="Animation_2sai3"]
@@ -97,6 +97,7 @@ position = Vector2(-469, 65)
 
 [node name="CarSpawner" parent="Interactable" instance=ExtResource("3_kafph")]
 position = Vector2(0, -43)
+player = NodePath("../../Player")
 
 [node name="Statics" type="Node2D" parent="."]
 
@@ -146,4 +147,7 @@ position = Vector2(-335, 80)
 
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
+[connection signal="player_dead" from="Statics/House/Door" to="." method="_on_player_death"]
 [connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
+
+[editable path="Statics/House"]

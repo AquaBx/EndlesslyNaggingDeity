@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 3500
-const FRICTION = 10
+const SPEED = 1000
+const FRICTION = 5
 const SEUIL = 349
 
 var m_object:Object
@@ -38,7 +38,11 @@ func _on_action_zone_body_entered(body):
 		m_object = body
 		m_object.glow()
 
-func _on_action_zone_body_exited(body):
+func _on_action_zone_body_exited(_body):
 	if m_object != null:
 		m_object.unglow()
 	m_object = null
+
+func _on_interior_detect_area_exited(_area: Area2D) -> void:
+	# on quitte la maison
+	$Camera2D.make_current()

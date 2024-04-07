@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://deym8dkb2pokv"]
+[gd_scene load_steps=3 format=3 uid="uid://deym8dkb2pokv"]
 
-[ext_resource type="Texture2D" uid="uid://b6tabmvur6e6u" path="res://assets/bat_C_2.png" id="1_n1xiv"]
+[ext_resource type="Texture2D" uid="uid://dy4dan5mmjot" path="res://assets/bat_C_2.png" id="1_n1xiv"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_4pl0g"]
 
 [node name="Maison Jaune" type="Sprite2D"]
 texture_filter = 1
@@ -11,3 +12,17 @@ texture = ExtResource("1_n1xiv")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(-85, -24, -85, 72, 35, 72, 35, 68, 85, 68, 85, -8, 35, -8, 35, -24)
+
+[node name="Shadow2" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(59.9375, 82)
+scale = Vector2(3.11719, 3.58667)
+texture = ExtResource("2_4pl0g")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(-25, 94)
+scale = Vector2(7.5, 5.42188)
+texture = ExtResource("2_4pl0g")

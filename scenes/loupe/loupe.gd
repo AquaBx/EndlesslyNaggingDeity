@@ -13,7 +13,7 @@ func action(player):
 	player.get_node("Dino").play_deathloupe_animation()
 	await get_tree().create_timer(2.9).timeout
 		
-	interactloupe.emit("Il est mort avec une loupe, de ce fait, Dieu supprima la loupe !")
+	interactloupe.emit("Tu t'es brûlé avec une loupe ! Dieu supprima donc les loupes de ce monde.")
 	queue_free()
 	
 	
