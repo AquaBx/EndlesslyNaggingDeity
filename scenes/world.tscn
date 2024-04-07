@@ -1,14 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhmvf4mf8bjc7"]
+[gd_scene load_steps=20 format=3 uid="uid://qicqb3g6owtj"]
 
-[ext_resource type="PackedScene" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
+[ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vok7g"]
-[ext_resource type="PackedScene" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
-[ext_resource type="PackedScene" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
-[ext_resource type="PackedScene" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
-[ext_resource type="PackedScene" uid="uid://d1qoilh7r5m2j" path="res://scenes/house/house.tscn" id="5_pwkoy"]
+[ext_resource type="PackedScene" uid="uid://c30dm700paorp" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
+[ext_resource type="PackedScene" uid="uid://c8csrmegbsxhf" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
+[ext_resource type="PackedScene" uid="uid://deym8dkb2pokv" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
+[ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
-[ext_resource type="Texture2D" uid="uid://dhxu32jeyxlyq" path="res://assets/road.png" id="7_s70g1"]
+[ext_resource type="Texture2D" uid="uid://sp5ueyf1hviy" path="res://assets/road.png" id="7_s70g1"]
+[ext_resource type="PackedScene" uid="uid://m17wjiq3t5l1" path="res://scenes/hazards/block/block.tscn" id="8_3iyxq"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
 
@@ -165,8 +166,7 @@ shape = SubResource("RectangleShape2D_xhoka")
 [node name="Interactable" type="Node2D" parent="."]
 
 [node name="Loupe" parent="Interactable" instance=ExtResource("9_njd3f")]
-position = Vector2(331, 96)
-scale = Vector2(1.55995, 1.55995)
+position = Vector2(791, 349)
 
 [node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
 position = Vector2(137, 328)
@@ -176,6 +176,9 @@ position = Vector2(0, 0)
 player = NodePath("../../Player")
 CarSpawnWest = NodePath("../../CarSpawnWest")
 CarSpawnEast = NodePath("../../CarSpawnEast")
+
+[node name="Block" parent="Interactable" instance=ExtResource("8_3iyxq")]
+position = Vector2(867, 6)
 
 [node name="Batiments" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -283,5 +286,6 @@ position = Vector2(3178, 175)
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="_on_player_death"]
 [connection signal="plant_cut" from="Interactable/Plant" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
+[connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]
 
 [editable path="House"]
