@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/hazards/car/car.gd" id="1_sl1j0"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_0gb0j"]
-[ext_resource type="Texture2D" uid="uid://dyaskry2kuad7" path="res://assets/voiture.png" id="3_ka831"]
-[ext_resource type="AudioStream" uid="uid://e3pf2gxkaenj" path="res://scenes/hazards/car/car.wav" id="4_gwfp1"]
-[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="5_jo4tx"]
+[ext_resource type="Texture2D" uid="uid://dpapnpd0jiloj" path="res://assets/voiture.png" id="3_ka831"]
+[ext_resource type="AudioStream" uid="uid://codm4ewjrsv5f" path="res://scenes/hazards/car/car.wav" id="4_gwfp1"]
+[ext_resource type="Texture2D" uid="uid://dtaa0uf58cgud" path="res://assets/shadow.png" id="5_jo4tx"]
 
 [sub_resource type="Animation" id="Animation_mixmh"]
 resource_name = "drive"

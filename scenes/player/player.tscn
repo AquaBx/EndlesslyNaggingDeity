@@ -1,12 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=22 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
+[ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_vfevw"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://cfc1d4efi0ul" path="res://assets/dino.png" id="3_uqmll"]
-[ext_resource type="AudioStream" uid="uid://dfncsncsqlc7v" path="res://scenes/player/step1.wav" id="4_yeqpe"]
-[ext_resource type="AudioStream" uid="uid://bywos0xeh1hux" path="res://scenes/player/step2.wav" id="5_0k54i"]
-[ext_resource type="AudioStream" uid="uid://dkf020xxk6vif" path="res://assets/fire.wav" id="5_1i81q"]
-[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="6_p5pty"]
+[ext_resource type="Texture2D" uid="uid://cjw5f4xn5xj73" path="res://assets/maskvide.png" id="2_jdqvr"]
+[ext_resource type="Texture2D" uid="uid://of1dbbt4j7ml" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://d4nebidve2flb" path="res://scenes/player/step1.wav" id="4_yeqpe"]
+[ext_resource type="AudioStream" uid="uid://iptvrbkiw71r" path="res://scenes/player/step2.wav" id="5_0k54i"]
+[ext_resource type="AudioStream" uid="uid://c52a7mnaln5a2" path="res://assets/fire.wav" id="5_1i81q"]
+[ext_resource type="Texture2D" uid="uid://b68frw3hl0qkl" path="res://assets/shadow.png" id="6_p5pty"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_atyps"]
+shader = ExtResource("1_vfevw")
+shader_parameter/day = true
+shader_parameter/mask = ExtResource("2_jdqvr")
 
 [sub_resource type="Shader" id="Shader_fqgw5"]
 code = "shader_type canvas_item;
@@ -199,7 +206,7 @@ radius = 26.0768
 size = Vector2(26, 8)
 
 [node name="Player" type="CharacterBody2D"]
-use_parent_material = true
+material = SubResource("ShaderMaterial_atyps")
 collision_layer = 11
 script = ExtResource("1_n73ct")
 
@@ -234,6 +241,7 @@ libraries = {
 
 [node name="Shadow" type="Sprite2D" parent="Dino"]
 texture_filter = 1
+use_parent_material = true
 position = Vector2(1.19209e-07, 13)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("6_p5pty")
