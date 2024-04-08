@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://m17wjiq3t5l1"]
+[gd_scene load_steps=11 format=3 uid="uid://m17wjiq3t5l1"]
 
 [ext_resource type="Texture2D" uid="uid://cbo6jcbs351wr" path="res://assets/block.png" id="1_pfotk"]
 [ext_resource type="Script" path="res://scenes/hazards/block/block.gd" id="1_qamqr"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_rlppg"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_u4ou8"]
 [ext_resource type="Texture2D" uid="uid://7bilog434lrg" path="res://assets/block-statique.png" id="4_rf11e"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="6_qsxhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34xiv"]
 size = Vector2(56, 5)
@@ -45,10 +46,12 @@ scale = Vector2(0.482456, -0.434945)
 shape = SubResource("RectangleShape2D_34xiv")
 
 [node name="Node2D" type="Node2D" parent="."]
+use_parent_material = true
 position = Vector2(0, -35)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
+use_parent_material = true
 texture = ExtResource("1_pfotk")
 hframes = 8
 
@@ -69,3 +72,11 @@ material = SubResource("ShaderMaterial_mjsup")
 position = Vector2(-88, -116)
 scale = Vector2(2, 2)
 texture = ExtResource("4_rf11e")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+use_parent_material = true
+position = Vector2(-1.10865e-05, 12)
+scale = Vector2(4.33286, 1.38693)
+texture = ExtResource("6_qsxhe")

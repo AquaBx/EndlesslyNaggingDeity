@@ -61,9 +61,7 @@ func play_dialogue(character: String, id: String) -> void:
 	for line in dialogues[character][id]:
 		$Sprite2D/RichTextLabel.text = "[center]"
 		for char in line :
-			print(line)
 			$Sprite2D/RichTextLabel.text += char
-			print($Sprite2D/RichTextLabel.text)
 			if is_overrided:
 				return
 			await get_tree().create_timer(0.07).timeout
