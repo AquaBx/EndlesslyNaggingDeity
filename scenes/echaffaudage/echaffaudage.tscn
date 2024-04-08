@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://knil36ojrq85"]
 
 [ext_resource type="Script" path="res://scenes/echaffaudage/echaffaudage.gd" id="1_coblc"]
-[ext_resource type="Texture2D" uid="uid://qv6c5h8vfxur" path="res://assets/echaffaudage.png" id="1_qp8wo"]
-[ext_resource type="Texture2D" uid="uid://cf6ioisk2qemf" path="res://assets/square_shadow.png" id="1_tjlb7"]
+[ext_resource type="Texture2D" uid="uid://23tv6jyr86b2" path="res://assets/echaffaudage.png" id="1_qp8wo"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="1_tjlb7"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="2_g1vr4"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_otl5y"]
-[ext_resource type="AudioStream" uid="uid://ba2x51af7a0p4" path="res://scenes/echaffaudage/Sans_titre.mp3" id="4_ynwc7"]
+[ext_resource type="AudioStream" uid="uid://bjh5wh4f7daq7" path="res://scenes/echaffaudage/Sans_titre.mp3" id="4_ynwc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s50yd"]
 size = Vector2(38, 20)

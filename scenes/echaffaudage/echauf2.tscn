@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://dpnojl70n0bw7"]
 
-[ext_resource type="Texture2D" uid="uid://cf6ioisk2qemf" path="res://assets/square_shadow.png" id="1_0p8sx"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="1_0p8sx"]
 [ext_resource type="Script" path="res://scenes/echaffaudage/echauf2.gd" id="1_noe0i"]
-[ext_resource type="Texture2D" uid="uid://qv6c5h8vfxur" path="res://assets/echaffaudage.png" id="2_dn5md"]
+[ext_resource type="Texture2D" uid="uid://23tv6jyr86b2" path="res://assets/echaffaudage.png" id="2_dn5md"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_bacho"]
-[ext_resource type="AudioStream" uid="uid://ba2x51af7a0p4" path="res://scenes/echaffaudage/Sans_titre.mp3" id="4_1xtbw"]
+[ext_resource type="AudioStream" uid="uid://bjh5wh4f7daq7" path="res://scenes/echaffaudage/Sans_titre.mp3" id="4_1xtbw"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="4_tjycj"]
 [ext_resource type="Script" path="res://scenes/echaffaudage/echaffaudage.gd" id="5_sjta3"]
 
