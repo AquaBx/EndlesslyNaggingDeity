@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://m17wjiq3t5l1"]
 
-[ext_resource type="Texture2D" uid="uid://cpc0mwhasrwgo" path="res://assets/block.png" id="1_pfotk"]
+[ext_resource type="Texture2D" uid="uid://cbo6jcbs351wr" path="res://assets/block.png" id="1_pfotk"]
 [ext_resource type="Script" path="res://scenes/hazards/block/block.gd" id="1_qamqr"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_rlppg"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="3_u4ou8"]
-[ext_resource type="Texture2D" uid="uid://clfmh4fsbj3r2" path="res://assets/block-statique.png" id="4_rf11e"]
+[ext_resource type="Texture2D" uid="uid://7bilog434lrg" path="res://assets/block-statique.png" id="4_rf11e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34xiv"]
 size = Vector2(56, 5)
@@ -40,7 +40,8 @@ collision_mask = 0
 script = ExtResource("1_qamqr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, 13)
+scale = Vector2(0.482456, -0.434945)
 shape = SubResource("RectangleShape2D_34xiv")
 
 [node name="Node2D" type="Node2D" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2pw0xcwxp4rs"]
 
 [ext_resource type="Script" path="res://scenes/hazards/door/Door.gd" id="1_r6ktq"]
-[ext_resource type="Texture2D" uid="uid://cft752n8ri044" path="res://assets/dino1.png" id="2_3pofd"]
-[ext_resource type="Texture2D" uid="uid://t8r3rumrhgcv" path="res://assets/door.png" id="3_xthm3"]
-[ext_resource type="Texture2D" uid="uid://d22hmfdaio1ak" path="res://assets/door-open.png" id="4_rdqwc"]
+[ext_resource type="Texture2D" uid="uid://cemb8bfkrmhxq" path="res://assets/dino1.png" id="2_3pofd"]
+[ext_resource type="Texture2D" uid="uid://lpqiyqhfgvnb" path="res://assets/door.png" id="3_xthm3"]
+[ext_resource type="Texture2D" uid="uid://cu2h3beblyhnm" path="res://assets/door-open.png" id="4_rdqwc"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sj7hi"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="5_sloko"]
 
