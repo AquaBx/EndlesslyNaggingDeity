@@ -481,6 +481,184 @@ y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-1.38889, -73.6111)
 
+[node name="Poto" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-44.4444, 172.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto2" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-377.778, 170.833)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto3" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-725, 166.667)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto4" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-1118.06, 163.889)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto5" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-1550, 163.889)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto7" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-1329.17, 31.9444)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto8" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-919.444, 34.7222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto9" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-544.444, 37.5)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto10" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-200, 34.7222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto11" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(158.333, 31.9444)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto12" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(356.944, 161.111)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto13" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(559.722, 33.3333)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto14" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(750, 158.333)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto15" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(972.222, 31.9444)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto16" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(1230.56, 147.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto17" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(1512.5, 36.1111)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto18" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(1779.17, 145.833)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto19" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2044.44, 27.7778)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto20" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2287.5, 147.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto21" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2522.22, 31.9444)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto22" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2715.28, 147.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="plot" type="Node2D" parent="Props"]
+
+[node name="plot" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1195.83, 205.556)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot2" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1209.72, 198.611)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot3" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1229.17, 268.056)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot4" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1218.06, 262.5)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot5" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1372.22, 190.278)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot6" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1261.11, 318.056)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot7" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1248.61, 323.611)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot8" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1315.28, 293.056)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot9" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1223.61, 359.722)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot10" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1436.11, 287.5)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot11" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1420.83, 290.278)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot12" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1506.94, 295.833)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot13" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1516.67, 301.389)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot14" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1544.44, 327.778)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot15" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1554.17, 334.722)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot16" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1570.83, 362.5)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot17" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1394.44, 240.278)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot18" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1275, 409.722)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot19" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1290.28, 413.889)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot20" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1461.11, 416.667)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot21" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1483.33, 420.833)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot22" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1513.89, 413.889)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot23" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1526.39, 406.944)
+scale = Vector2(1.38889, 1.38889)
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="NotificationCenter" parent="CanvasLayer2" instance=ExtResource("22_e8wcx")]
@@ -502,138 +680,6 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 size_flags_horizontal = 4
-
-[node name="Poto" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(80, 202)
-
-[node name="Poto2" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-160, 201)
-
-[node name="Poto3" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-410, 198)
-
-[node name="Poto4" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-693, 196)
-
-[node name="Poto5" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-1004, 196)
-
-[node name="Poto7" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-845, 101)
-
-[node name="Poto8" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-550, 103)
-
-[node name="Poto9" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-280, 105)
-
-[node name="Poto10" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(-32, 103)
-
-[node name="Poto11" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(226, 101)
-
-[node name="Poto12" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(369, 194)
-
-[node name="Poto13" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(515, 102)
-
-[node name="Poto14" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(652, 192)
-
-[node name="Poto15" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(812, 101)
-
-[node name="Poto16" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(998, 184)
-
-[node name="Poto17" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(1201, 104)
-
-[node name="Poto18" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(1393, 183)
-
-[node name="Poto19" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(1584, 98)
-
-[node name="Poto20" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(1759, 184)
-
-[node name="Poto21" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(1928, 101)
-
-[node name="Poto22" parent="." instance=ExtResource("21_2qnb2")]
-position = Vector2(2067, 184)
-
-[node name="plot" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(974, 279)
-
-[node name="plot2" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(984, 274)
-
-[node name="plot3" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(998, 324)
-
-[node name="plot4" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(990, 320)
-
-[node name="plot5" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1101, 268)
-
-[node name="plot6" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1021, 360)
-
-[node name="plot7" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1012, 364)
-
-[node name="plot8" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1060, 342)
-
-[node name="plot9" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(994, 390)
-
-[node name="plot10" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1147, 338)
-
-[node name="plot11" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1136, 340)
-
-[node name="plot12" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1198, 344)
-
-[node name="plot13" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1205, 348)
-
-[node name="plot14" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1225, 367)
-
-[node name="plot15" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1232, 372)
-
-[node name="plot16" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1244, 392)
-
-[node name="plot17" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1117, 304)
-
-[node name="plot18" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1031, 426)
-
-[node name="plot19" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1042, 429)
-
-[node name="plot20" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1165, 431)
-
-[node name="plot21" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1181, 434)
-
-[node name="plot22" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1203, 429)
-
-[node name="plot23" parent="." instance=ExtResource("23_ylk2e")]
-position = Vector2(1212, 424)
 
 [connection signal="first_exit" from="House" to="." method="_on_house_first_exit"]
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
