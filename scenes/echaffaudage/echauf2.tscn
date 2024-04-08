@@ -73,7 +73,6 @@ shader_parameter/line_thickness = 1.0
 radius = 4.0
 
 [node name="Echaff" type="StaticBody2D"]
-z_index = 10
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(11, 0)

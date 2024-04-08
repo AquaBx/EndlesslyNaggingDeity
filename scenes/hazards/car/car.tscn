@@ -35,11 +35,13 @@ radius = 6.425
 height = 17.0
 
 [node name="Car" type="StaticBody2D"]
+y_sort_enabled = true
 use_parent_material = true
 script = ExtResource("1_sl1j0")
 
 [node name="Car" type="Node2D" parent="."]
 unique_name_in_owner = true
+y_sort_enabled = true
 use_parent_material = true
 script = ExtResource("2_0gb0j")
 
@@ -84,6 +86,7 @@ autoplay = true
 max_distance = 500.0
 
 [node name="Shadow" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 use_parent_material = true
 position = Vector2(-2, 13)
