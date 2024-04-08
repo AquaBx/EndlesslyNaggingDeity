@@ -5,7 +5,7 @@ var first_death = true
 
 var succes = 0
 
-const TEST = false
+const TEST = true
 
 func _ready():
 	%Player.global_position = %PlayerSpawn.global_position
