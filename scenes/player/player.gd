@@ -73,3 +73,19 @@ func set_day(c : bool):
 func _on_interior_detect_area_exited(_area: Area2D) -> void:
 	# on quitte la maison
 	$Camera2D.make_current()
+
+
+func _on_oob_zone_body_entered(body):
+	if position.x < 0 :
+		$Camera2D.position_smoothing_enabled = false
+		$Camera2D.position_smoothing_speed = 100000
+		position.x = 2437
+		await get_tree().create_timer(0.0001).timeout
+		$Camera2D.position_smoothing_enabled = true
+		$Camera2D.position_smoothing_speed = 15
+	else : if position.x > 0 :
+		await get_tree().create_timer(0.0001).timeout
+		$Camera2D.position_smoothing_enabled = false
+		$Camera2D.position_smoothing_speed = 100000
+		position.x = -1321.5
+		

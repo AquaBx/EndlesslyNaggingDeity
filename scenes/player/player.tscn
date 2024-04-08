@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=22 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_vfevw"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://fuv13m5hmias" path="res://scenes/player/step2.wav" id="5_0k54i"]
 [ext_resource type="AudioStream" uid="uid://bm2xiaup14rnn" path="res://assets/fire.wav" id="5_1i81q"]
 [ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_p5pty"]
-[ext_resource type="AudioStream" uid="uid://b65810bidjndn" path="res://scenes/player/musique.mp3" id="10_k3elp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_atyps"]
 shader = ExtResource("1_vfevw")
@@ -265,6 +264,14 @@ rotation = -1.57079
 shape = SubResource("CircleShape2D_sfa70")
 debug_color = Color(0, 0.623529, 0.529412, 0.419608)
 
+[node name="OOBZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OOBZone"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_hfiv7")
+
 [node name="BuildingZone" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 4
@@ -279,11 +286,8 @@ shape = SubResource("RectangleShape2D_hfiv7")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 12.0
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_k3elp")
-autoplay = true
-
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="ActionZone" to="." method="_on_action_zone_body_exited"]
+[connection signal="body_entered" from="OOBZone" to="." method="_on_oob_zone_body_entered"]
 [connection signal="body_entered" from="BuildingZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="BuildingZone" to="." method="_on_action_zone_body_exited"]

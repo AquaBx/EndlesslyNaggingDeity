@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw6ogyreqsc7r"]
+[gd_scene load_steps=6 format=3 uid="uid://frghqb4jumc6"]
 
-[ext_resource type="Texture2D" uid="uid://jw313vhkmlyq" path="res://assets/pool_top.png" id="1_fn7t2"]
-[ext_resource type="Texture2D" uid="uid://dfjsnadkpl5al" path="res://assets/pool_bottom.png" id="2_j10kn"]
-[ext_resource type="Texture2D" uid="uid://n2f2rfa0ocab" path="res://assets/pool_danger_shadow.png" id="3_u8nru"]
-[ext_resource type="Texture2D" uid="uid://cfn1bc7xxfksb" path="res://assets/pool_danger.png" id="4_uii2c"]
+[ext_resource type="Texture2D" uid="uid://de7wk3q4fgq5y" path="res://assets/pool_top.png" id="1_fn7t2"]
+[ext_resource type="Texture2D" uid="uid://dyxfpjpi80gj5" path="res://assets/pool_bottom.png" id="2_j10kn"]
+[ext_resource type="Texture2D" uid="uid://twcio7d2p8m2" path="res://assets/pool_danger_shadow.png" id="3_u8nru"]
+[ext_resource type="Texture2D" uid="uid://mgpakw7wei3p" path="res://assets/pool_danger.png" id="4_uii2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0rhc"]
 size = Vector2(91, 50)

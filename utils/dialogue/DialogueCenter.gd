@@ -39,7 +39,7 @@ const dialogues = {
 	"narrateur": {
 		"died_from_door": ["Tu n'étais pas censé mourir !",
 						   "Ne me rajoute pas de travail\r pour te ressuciter comme ça !",
-						   "Ta quête est vitale pour ton monde...",
+						   "Ta quête est vitale\rpour ton monde...",
 						   "...alors ne me force pas\r à faire disparaitre\r d'autres bouts de l'existence.",
 						   "Contrairement à la mort,\r quand ils disparaissent\r je ne peux pas les ramener."],
 		"died_from_car": [""],
@@ -69,7 +69,26 @@ func play_dialogue(character: String, id: String) -> void:
 		
 	self.visible = false
 	is_playing = false
+	
+func set_dot() :
+	self.visible = true
+	var line = "..."
+	if is_playing:
+		emit_signal("overide_msg")
+		await get_tree().create_timer(0.4).timeout
+	is_playing = true
+	is_overrided = false
+	$Sprite2D/RichTextLabel.text = "[center]"
+	for char in line :
+		$Sprite2D/RichTextLabel.text += char
+		if is_overrided:
+			return
+		await get_tree().create_timer(0.07).timeout
+	is_playing = false
+		
 
 
 func _on_overide_msg():
+	self.visible = true
 	is_overrided = true
+	

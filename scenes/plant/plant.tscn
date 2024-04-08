@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://bo8nlgfjpcuko"]
 
 [ext_resource type="Script" path="res://scenes/plant/Plant.gd" id="1_rp5fc"]
-[ext_resource type="Texture2D" uid="uid://c7f7etlcfdrid" path="res://assets/plante.png" id="2_ufejm"]
-[ext_resource type="Texture2D" uid="uid://ba6xvs4i2xn60" path="res://assets/plante-statique.png" id="3_r4tu1"]
+[ext_resource type="Texture2D" uid="uid://bd2q8qyd20cdr" path="res://assets/plante.png" id="2_ufejm"]
+[ext_resource type="Texture2D" uid="uid://tnmdaa6qyv88" path="res://assets/plante-statique.png" id="3_r4tu1"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="3_t2nts"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_sy6nk"]
-[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="6_3cpke"]
-[ext_resource type="AudioStream" uid="uid://bxijeacnm6djw" path="res://assets/plant.wav" id="6_llbsr"]
+[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_3cpke"]
+[ext_resource type="AudioStream" uid="uid://f8a3bwax7m4y" path="res://assets/plant.wav" id="6_llbsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmkf2"]
 radius = 11.0
@@ -52,6 +52,7 @@ shader_parameter/line_color = Vector4(1, 1, 0, 1)
 shader_parameter/line_thickness = 1.0
 
 [node name="Plant" type="StaticBody2D"]
+y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_rp5fc")
 
@@ -60,6 +61,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_nmkf2")
 
 [node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Anim" type="AnimationPlayer" parent="Node2D"]
 unique_name_in_owner = true

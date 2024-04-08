@@ -69,31 +69,34 @@ shader_parameter/line_color = Vector4(1, 1, 0, 1)
 shader_parameter/line_thickness = 1.0
 
 [node name="Echaffaudage" type="Area2D"]
-y_sort_enabled = true
 collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_coblc")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(19, 7)
-shape = SubResource("RectangleShape2D_s50yd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-41, 8)
-shape = SubResource("RectangleShape2D_s50yd")
-
-[node name="Node2D" type="Node2D" parent="StaticBody2D"]
-
-[node name="Shadow" type="Sprite2D" parent="StaticBody2D/Node2D"]
+[node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(-11, 14)
 rotation = -0.00858836
 scale = Vector2(170.506, -1.28975)
 texture = ExtResource("1_tjlb7")
 hframes = 26
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+use_parent_material = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(19, 3)
+shape = SubResource("RectangleShape2D_s50yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-41, 4)
+shape = SubResource("RectangleShape2D_s50yd")
+
+[node name="Node2D" type="Node2D" parent="StaticBody2D"]
+y_sort_enabled = true
+
 [node name="Echaffaudage" type="Sprite2D" parent="StaticBody2D/Node2D"]
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-8, -19)
 texture = ExtResource("1_qp8wo")
@@ -108,6 +111,7 @@ libraries = {
 [node name="Interact" parent="StaticBody2D" instance=ExtResource("2_g1vr4")]
 unique_name_in_owner = true
 visible = false
+y_sort_enabled = true
 position = Vector2(-23, -76)
 
 [node name="Glow" type="Sprite2D" parent="StaticBody2D/Interact"]
@@ -119,3 +123,5 @@ texture = ExtResource("1_qp8wo")
 hframes = 26
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="set_foreground" from="." to="." method="_on_set_foreground"]
