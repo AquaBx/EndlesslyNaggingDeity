@@ -46,3 +46,5 @@ text = "texte"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[connection signal="overide_msg" from="." to="." method="_on_overide_msg"]
