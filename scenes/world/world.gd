@@ -5,7 +5,7 @@ var first_death = true
 
 var succes = 0
 
-const TEST = true
+const TEST = false
 
 func _ready():
 	%Player.global_position = %PlayerSpawn.global_position
@@ -17,8 +17,9 @@ func _ready():
 	if not TEST:
 		%Player.frozen=true
 		god_mission()
-		await get_tree().create_timer(8).timeout
+		await get_tree().create_timer(22).timeout
 		%Player.frozen=false
+	
 	
 
 func deathloupe(death_message: String):
@@ -84,14 +85,14 @@ func god_mission():
 	
 func god_descends():
 	%Player.frozen = true
-	var god = preload("res://god.tscn").instantiate()
-	god.global_position = %Player.global_position + Vector2(0,-25)
-	add_child(god)
-	await get_tree().create_timer(5.5).timeout
+	%DialogueCenter.set_dot()
+	var god = preload("res://god_canvas.tscn").instantiate()
+	$CanvasLayer2.add_child(god)
+	await get_tree().create_timer(5).timeout
 	print("avant le dialogue")
 	%DialogueCenter.play_dialogue("narrateur", "died_from_door")
 	print("après le dialogue")
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(23).timeout
 	%Player.frozen = false
 	god.queue_free()
 	
@@ -103,3 +104,7 @@ func succes_1():
 
 func _on_house_first_exit():
 	%DialogueCenter.play_dialogue("dieu", "exit")
+
+
+func _on_main_theme_finished():
+	%main_theme.play()

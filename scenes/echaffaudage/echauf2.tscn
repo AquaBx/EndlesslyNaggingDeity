@@ -73,24 +73,27 @@ shader_parameter/line_thickness = 1.0
 radius = 4.0
 
 [node name="Echaff" type="StaticBody2D"]
+z_index = 10
 y_sort_enabled = true
+use_parent_material = true
 position = Vector2(11, 0)
 script = ExtResource("1_noe0i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(19, 7)
+position = Vector2(19, 2)
 shape = SubResource("RectangleShape2D_v24qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-41, 8)
+position = Vector2(-41, 3)
 shape = SubResource("RectangleShape2D_v24qi")
 
 [node name="Node2D" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
 texture_filter = 1
+use_parent_material = true
 
 [node name="Shadow" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
@@ -118,6 +121,7 @@ libraries = {
 unique_name_in_owner = true
 visible = false
 y_sort_enabled = true
+use_parent_material = true
 position = Vector2(-23, -76)
 
 [node name="Glow" type="Sprite2D" parent="Interact"]
@@ -130,12 +134,15 @@ texture = ExtResource("2_dn5md")
 hframes = 26
 
 [node name="echaf" type="StaticBody2D" parent="Interact"]
+y_sort_enabled = true
+use_parent_material = true
 position = Vector2(46, 152)
 scale = Vector2(2, 2)
 collision_layer = 2
 script = ExtResource("5_sjta3")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Interact/echaf"]
+use_parent_material = true
 position = Vector2(-11, 8)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_j2ip0")
@@ -143,3 +150,4 @@ shape = SubResource("CircleShape2D_j2ip0")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="echauff_tombe" from="Interact/echaf" to="." method="_on_echaf_echauff_tombe"]
+[connection signal="set_foreground" from="Interact/echaf" to="." method="_on_echaf_set_foreground"]

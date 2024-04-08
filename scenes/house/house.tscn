@@ -72,6 +72,7 @@ texture = ExtResource("3_330l1")
 
 [node name="Exterior" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
+z_index = 1
 
 [node name="ExtWalls" type="Sprite2D" parent="Exterior"]
 texture_filter = 1
