@@ -673,6 +673,25 @@ offset_right = -576.0
 offset_bottom = -324.0
 size_flags_horizontal = 4
 
+[node name="Container" type="Container" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_theme" type="AudioStreamPlayer2D" parent="CanvasLayer2/Container"]
+unique_name_in_owner = true
+position = Vector2(-200, -115)
+stream = ExtResource("25_s4gli")
+autoplay = true
+
 [node name="StaticBody2D" parent="." instance=ExtResource("23_bw0ro")]
 use_parent_material = true
 position = Vector2(1116, 386)
@@ -680,11 +699,6 @@ position = Vector2(1116, 386)
 [node name="Bar" parent="." instance=ExtResource("24_7atts")]
 position = Vector2(943, -145)
 scale = Vector2(1.19766, 1.19766)
-
-[node name="main_theme" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("25_s4gli")
-autoplay = true
 
 [connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
 [connection signal="first_exit" from="House" to="." method="_on_house_first_exit"]
@@ -696,7 +710,7 @@ autoplay = true
 [connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]
 [connection signal="played_ded_echaff" from="Interactable/StaticBody2D" to="." method="_on_player_death"]
 [connection signal="ded_niche" from="Interactable/Niche" to="." method="_on_player_death"]
-[connection signal="finished" from="main_theme" to="." method="_on_main_theme_finished"]
+[connection signal="finished" from="CanvasLayer2/Container/main_theme" to="." method="_on_main_theme_finished"]
 
 [editable path="House"]
 [editable path="Player"]

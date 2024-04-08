@@ -27,7 +27,7 @@ func action(player):
 	fallen = true
 	player.frozen = true
 	var old_zoom = player.get_node("Camera2D").zoom
-	player.get_node("Camera2D").zoom = Vector2(7, 7)
+	player.get_node("Camera2D").zoom = Vector2(6, 6)
 	await get_tree().create_timer(2).timeout
 	player.get_node("Dino").hide()
 	player.get_node("Camera2D").zoom = old_zoom
