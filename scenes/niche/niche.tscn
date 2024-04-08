@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://ba8bn52fly1gy"]
+[gd_scene load_steps=19 format=3 uid="uid://ba8bn52fly1gy"]
 
 [ext_resource type="Script" path="res://scenes/niche/Niche.gd" id="1_kf1v7"]
-[ext_resource type="Texture2D" uid="uid://cdoqwwiyy56tq" path="res://assets/duck_niche.png" id="2_5h38d"]
+[ext_resource type="Texture2D" uid="uid://ddea8qjalbjgv" path="res://assets/duck_niche.png" id="2_5h38d"]
 [ext_resource type="Script" path="res://scenes/niche/Jour.gd" id="2_lh5i1"]
-[ext_resource type="Texture2D" uid="uid://cvco4xu3xe822" path="res://assets/dog_niche.png" id="3_khcxh"]
-[ext_resource type="Texture2D" uid="uid://cb7xt8ko3t7sd" path="res://assets/dog.png" id="4_ocps3"]
+[ext_resource type="Texture2D" uid="uid://dkwxg5cw065ds" path="res://assets/dog_niche.png" id="3_khcxh"]
+[ext_resource type="Texture2D" uid="uid://dtgexbw7takur" path="res://assets/dog.png" id="4_ocps3"]
 [ext_resource type="PackedScene" uid="uid://dktekeg5qv7p6" path="res://scenes/Interact/interact.tscn" id="5_3h6k3"]
 [ext_resource type="Shader" path="res://utils/glow.gdshader" id="6_kqd2q"]
-[ext_resource type="Texture2D" uid="uid://oglc1js0tv5a" path="res://assets/dog_niche_alpha.png" id="8_k6w4y"]
-[ext_resource type="Texture2D" uid="uid://brnmlwu1dy6cv" path="res://assets/loup_garou.png" id="9_y8xsw"]
+[ext_resource type="Texture2D" uid="uid://ws3wi3mtd1gd" path="res://assets/dog_niche_alpha.png" id="8_k6w4y"]
+[ext_resource type="Texture2D" uid="uid://dqnu6akw5fb7h" path="res://assets/loup_garou.png" id="9_y8xsw"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="10_q37q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn67y"]
 size = Vector2(49, 38)
@@ -149,6 +150,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("8_k6w4y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ImageFin" type="TextureRect" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -158,3 +160,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_y8xsw")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+use_parent_material = true
+position = Vector2(-1.495, 41)
+scale = Vector2(3.18, 2.50188)
+texture = ExtResource("10_q37q1")

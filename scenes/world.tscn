@@ -203,7 +203,7 @@ position = Vector2(3, 11)
 
 [node name="Loupe" parent="Interactable" instance=ExtResource("9_njd3f")]
 use_parent_material = true
-position = Vector2(776, 360)
+position = Vector2(117, 345)
 scale = Vector2(1.41281, 1.41281)
 
 [node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player", "CarSpawnWest", "CarSpawnEast") instance=ExtResource("7_otisb")]
@@ -566,6 +566,8 @@ position = Vector2(2715.28, 147.222)
 scale = Vector2(1.16963, 1.16963)
 
 [node name="plot" type="Node2D" parent="Props"]
+y_sort_enabled = true
+use_parent_material = true
 
 [node name="plot" parent="Props/plot" instance=ExtResource("23_ylk2e")]
 position = Vector2(1195.83, 205.556)
@@ -680,6 +682,9 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 size_flags_horizontal = 4
+
+[node name="plot" parent="." instance=ExtResource("23_ylk2e")]
+position = Vector2(94, 341)
 
 [connection signal="first_exit" from="House" to="." method="_on_house_first_exit"]
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
