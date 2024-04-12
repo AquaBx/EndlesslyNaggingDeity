@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=23 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_vfevw"]
@@ -205,6 +205,9 @@ radius = 26.0768
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfiv7"]
 size = Vector2(12, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jv8l"]
+radius = 79.0063
+
 [node name="Player" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_atyps")
 collision_layer = 11
@@ -281,6 +284,14 @@ collision_mask = 0
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_hfiv7")
 
+[node name="DestructionZone" type="Area2D" parent="."]
+collision_layer = 1025
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestructionZone"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_4jv8l")
+
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -291,3 +302,4 @@ volume_db = 12.0
 [connection signal="body_entered" from="OOBZone" to="." method="_on_oob_zone_body_entered"]
 [connection signal="body_entered" from="BuildingZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="BuildingZone" to="." method="_on_action_zone_body_exited"]
+[connection signal="body_entered" from="DestructionZone" to="." method="_on_destruction_zone_body_entered"]

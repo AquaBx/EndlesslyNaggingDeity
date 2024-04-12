@@ -3,13 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://b1eenxqnrnp52" path="res://assets/bat_C_1.png" id="1_rq8p8"]
 [ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_0ulgn"]
 
-[node name="Maison Rouge" type="Sprite2D"]
+[node name="maison_rouge" type="StaticBody2D"]
+collision_layer = 2049
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_rq8p8")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-85, -24, -85, 72, 35, 72, 35, 68, 85, 68, 85, -8, 35, -8, 35, -24)
 

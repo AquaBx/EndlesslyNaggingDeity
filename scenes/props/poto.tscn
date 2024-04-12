@@ -10,6 +10,7 @@ radius = 8.0
 y_sort_enabled = true
 use_parent_material = true
 scale = Vector2(0.842131, 0.842131)
+collision_layer = 2049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

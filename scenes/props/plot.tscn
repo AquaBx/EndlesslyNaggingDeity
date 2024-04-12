@@ -12,6 +12,7 @@ radius = 6.0
 [node name="plot" type="StaticBody2D"]
 y_sort_enabled = true
 use_parent_material = true
+collision_layer = 2049
 
 [node name="Node2D" type="Node2D" parent="."]
 use_parent_material = true

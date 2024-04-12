@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cpqngcmkmtkxk"]
 
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_55a30"]
-[ext_resource type="Script" path="res://scenes/house/house.gd" id="1_b4ad7"]
+[ext_resource type="Script" path="res://scenes/house.gd" id="2_pfkl2"]
 [ext_resource type="Texture2D" uid="uid://081wxlk07qal" path="res://scenes/house/spawn_house.png" id="2_rn4df"]
 [ext_resource type="Texture2D" uid="uid://c2rl6hvpkw24p" path="res://assets/door-top.png" id="3_330l1"]
 [ext_resource type="PackedScene" uid="uid://b2pw0xcwxp4rs" path="res://scenes/hazards/door/door.tscn" id="4_qtn6r"]
@@ -23,7 +23,7 @@ shader_parameter/mask = ExtResource("5_5k6on")
 
 [node name="House" type="Node2D"]
 material = SubResource("ShaderMaterial_wk826")
-script = ExtResource("1_b4ad7")
+script = ExtResource("2_pfkl2")
 
 [node name="InteriorDetect" type="Area2D" parent="."]
 visible = false
@@ -100,5 +100,3 @@ texture = ExtResource("5_nvlog")
 
 [connection signal="area_entered" from="InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="InteriorDetect" to="." method="_on_interior_detect_area_exited"]
-[connection signal="body_entered" from="InteriorDetect" to="." method="_on_interior_detect_body_entered"]
-[connection signal="body_exited" from="InteriorDetect" to="." method="_on_interior_detect_body_exited"]

@@ -39,7 +39,7 @@ size = Vector2(4000, 156)
 size = Vector2(4000, 157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhoka"]
-size = Vector2(159.5, 620)
+size = Vector2(159.5, 1226.09)
 
 [sub_resource type="Animation" id="Animation_2sai3"]
 length = 0.001
@@ -138,8 +138,8 @@ z_index = -20
 z_as_relative = false
 use_parent_material = true
 offset_left = -1717.0
-offset_top = -392.0
-offset_right = 3403.0
+offset_top = -883.0
+offset_right = 5703.0
 offset_bottom = 701.0
 color = Color(0.921569, 0.980392, 0.894118, 1)
 
@@ -201,7 +201,7 @@ shape = SubResource("RectangleShape2D_d2ac6")
 [node name="NorthWall" type="StaticBody2D" parent="Border"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/NorthWall"]
-position = Vector2(541, -306.5)
+position = Vector2(541, -783)
 shape = SubResource("RectangleShape2D_unan1")
 
 [node name="WestWall" type="StaticBody2D" parent="Border"]
@@ -209,7 +209,8 @@ scale = Vector2(1, 1.17827)
 collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/WestWall"]
-position = Vector2(-1438, 82)
+position = Vector2(-1438, -109.108)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xhoka")
 
 [node name="EastWall" type="StaticBody2D" parent="Border"]
@@ -217,7 +218,7 @@ scale = Vector2(1.00272, 1.16799)
 collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/EastWall"]
-position = Vector2(2546.07, 82)
+position = Vector2(2546.07, -29.9383)
 shape = SubResource("RectangleShape2D_xhoka")
 
 [node name="Interactable" type="Node2D" parent="."]
@@ -811,7 +812,7 @@ position = Vector2(1145, -613)
 position = Vector2(769, -555)
 
 [node name="Maison Rouge4" parent="." instance=ExtResource("3_hlfdj")]
-position = Vector2(266, -384)
+position = Vector2(266, -207)
 
 [node name="Maison Bleue5" parent="." instance=ExtResource("2_2ek0f")]
 position = Vector2(854, -698)
@@ -848,6 +849,7 @@ position = Vector2(948, -763)
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
 [connection signal="player_dead" from="House/Door" to="." method="_on_player_death"]
+[connection signal="destruction" from="Player" to="." method="_on_player_destruction"]
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="deathloupe"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]

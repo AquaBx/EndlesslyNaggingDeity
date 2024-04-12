@@ -35,6 +35,7 @@ y_sort_enabled = true
 use_parent_material = true
 position = Vector2(0, -5)
 scale = Vector2(1.38056, 1.38056)
+collision_layer = 2049
 script = ExtResource("1_cqlnj")
 
 [node name="Car" type="Node2D" parent="."]
