@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://qicqb3g6owtj"]
+[gd_scene load_steps=38 format=3 uid="uid://qicqb3g6owtj"]
 
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_6schm"]
 [ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dggguknydts80" path="res://scenes/props/plot.tscn" id="23_ylk2e"]
 [ext_resource type="PackedScene" uid="uid://chcvwmx45u2rc" path="res://scenes/props/Bar.tscn" id="24_7atts"]
 [ext_resource type="AudioStream" uid="uid://b65810bidjndn" path="res://scenes/player/musique.mp3" id="25_s4gli"]
+[ext_resource type="Shader" path="res://scenes/dark_alley.gdshader" id="26_5eshf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtvfj"]
 shader = ExtResource("1_6schm")
@@ -116,6 +117,17 @@ _data = {
 "fade out": SubResource("Animation_jgw0c")
 }
 
+[sub_resource type="Gradient" id="Gradient_murpl"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yntfm"]
+gradient = SubResource("Gradient_murpl")
+fill_from = Vector2(0.475, 0.185)
+fill_to = Vector2(0.505, 0.955)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbsto"]
+shader = ExtResource("26_5eshf")
+shader_parameter/gradient = SubResource("GradientTexture2D_yntfm")
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_wtvfj")
@@ -134,7 +146,6 @@ color = Color(0.921569, 0.980392, 0.894118, 1)
 [node name="Plant" parent="." instance=ExtResource("10_8fvrx")]
 use_parent_material = true
 position = Vector2(4.99998, 361)
-scale = Vector2(1, 1)
 
 [node name="CarSpawnWest" type="Marker2D" parent="."]
 position = Vector2(-1712, 148)
@@ -155,7 +166,7 @@ scale = Vector2(1.51352, 1.51352)
 visible = false
 
 [node name="Door" parent="House" index="3"]
-position = Vector2(0, -18.4999)
+position = Vector2(21.8035, -19.8213)
 
 [node name="PlayerSpawn" type="Marker2D" parent="House"]
 unique_name_in_owner = true
@@ -271,7 +282,7 @@ position = Vector2(1036, -140)
 
 [node name="Maison Jaune2" parent="Batiments" instance=ExtResource("4_7701m")]
 use_parent_material = true
-position = Vector2(769, -226)
+position = Vector2(794, -244)
 
 [node name="Immeuble 3" parent="Batiments" instance=ExtResource("1_08rpx")]
 use_parent_material = true
@@ -340,6 +351,10 @@ position = Vector2(-267, 283)
 [node name="Immeuble 5" parent="Batiments" instance=ExtResource("1_08rpx")]
 use_parent_material = true
 position = Vector2(-366, 309)
+
+[node name="Immeuble 6" parent="Batiments" instance=ExtResource("1_08rpx")]
+use_parent_material = true
+position = Vector2(1327, 446)
 
 [node name="Death_screen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -740,6 +755,93 @@ position = Vector2(1116, 386)
 [node name="Bar" parent="." instance=ExtResource("24_7atts")]
 position = Vector2(943, -145)
 scale = Vector2(1.19766, 1.19766)
+
+[node name="Maison Bleue 3" parent="." instance=ExtResource("2_2ek0f")]
+use_parent_material = true
+position = Vector2(1411, 274)
+
+[node name="Maison Rouge 3" parent="." instance=ExtResource("3_hlfdj")]
+use_parent_material = true
+position = Vector2(1258, 239)
+
+[node name="Maison Bleue" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1099, -244)
+
+[node name="Maison Bleue2" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(788, -346)
+
+[node name="Maison Rouge" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1104, -329)
+
+[node name="Maison Bleue3" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1031, -401)
+
+[node name="Maison Jaune" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(810, -419)
+
+[node name="Background2" type="ColorRect" parent="."]
+z_index = -19
+z_as_relative = false
+material = SubResource("ShaderMaterial_fbsto")
+offset_left = 832.0
+offset_top = -672.0
+offset_right = 1044.0
+offset_bottom = -175.0
+color = Color(0.156863, 0, 0.12549, 1)
+
+[node name="Immeuble" parent="." instance=ExtResource("1_08rpx")]
+position = Vector2(1090, -508)
+
+[node name="Maison Rouge2" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1090, -543)
+
+[node name="Maison Bleue4" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(843, -483)
+
+[node name="Immeuble2" parent="." instance=ExtResource("1_08rpx")]
+position = Vector2(806, -615)
+
+[node name="Immeuble3" parent="." instance=ExtResource("1_08rpx")]
+position = Vector2(1085, -678)
+
+[node name="Maison Jaune2" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(1145, -613)
+
+[node name="Maison Rouge3" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(769, -555)
+
+[node name="Maison Rouge4" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(266, -384)
+
+[node name="Maison Bleue5" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(854, -698)
+
+[node name="Maison Jaune3" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(713, -485)
+
+[node name="Maison Bleue6" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1206, -558)
+
+[node name="Maison Jaune4" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(1158, -430)
+
+[node name="Maison Rouge5" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1210, -512)
+
+[node name="Maison Bleue7" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(737, -628)
+
+[node name="Maison Rouge6" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(746, -434)
+
+[node name="Maison Bleue8" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1199, -455)
+
+[node name="Maison Jaune5" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(1062, -698)
+
+[node name="Immeuble4" parent="." instance=ExtResource("1_08rpx")]
+position = Vector2(948, -763)
 
 [connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
 [connection signal="first_exit" from="House" to="." method="_on_house_first_exit"]
