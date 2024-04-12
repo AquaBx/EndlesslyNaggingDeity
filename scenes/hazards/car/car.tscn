@@ -37,6 +37,7 @@ height = 17.0
 [node name="Car" type="StaticBody2D"]
 y_sort_enabled = true
 use_parent_material = true
+collision_layer = 2049
 script = ExtResource("1_sl1j0")
 
 [node name="Car" type="Node2D" parent="."]

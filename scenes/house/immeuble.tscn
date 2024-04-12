@@ -3,20 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://btv81scisdbcl" path="res://assets/bat_A.png" id="1_4kdkf"]
 [ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_m626n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_irobv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q521"]
 size = Vector2(120, 120)
 
-[node name="Immeuble" type="Sprite2D"]
+[node name="Immeuble" type="StaticBody2D"]
+collision_layer = 2049
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_4kdkf")
 
-[node name="Hitbox" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-visible = false
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 60)
-shape = SubResource("RectangleShape2D_irobv")
+shape = SubResource("RectangleShape2D_2q521")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -2

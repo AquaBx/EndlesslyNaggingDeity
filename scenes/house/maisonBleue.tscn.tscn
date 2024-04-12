@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://deym8dkb2pokv"]
+[gd_scene load_steps=3 format=3 uid="uid://dmns40363x6dx"]
 
-[ext_resource type="Texture2D" uid="uid://dy4dan5mmjot" path="res://assets/bat_C_2.png" id="1_n1xiv"]
-[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_4pl0g"]
+[ext_resource type="Texture2D" uid="uid://b1eenxqnrnp52" path="res://assets/bat_C_1.png" id="1_5guc0"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="1_i7h70"]
 
-[node name="maison_jaune" type="StaticBody2D"]
+[node name="maison_rouge" type="StaticBody2D"]
 collision_layer = 2049
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_n1xiv")
+texture = ExtResource("1_5guc0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -20,7 +20,7 @@ texture_filter = 1
 use_parent_material = true
 position = Vector2(59.9375, 82)
 scale = Vector2(3.11719, 3.58667)
-texture = ExtResource("2_4pl0g")
+texture = ExtResource("1_i7h70")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -2
@@ -28,4 +28,4 @@ texture_filter = 1
 use_parent_material = true
 position = Vector2(-25, 94)
 scale = Vector2(7.5, 5.42188)
-texture = ExtResource("2_4pl0g")
+texture = ExtResource("1_i7h70")

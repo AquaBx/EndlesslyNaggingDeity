@@ -9,6 +9,7 @@ size = Vector2(61, 8)
 [node name="Bar" type="StaticBody2D"]
 y_sort_enabled = true
 use_parent_material = true
+collision_layer = 2049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 4)

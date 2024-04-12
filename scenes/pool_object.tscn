@@ -18,6 +18,7 @@ radius = 18.0278
 radius = 30.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 2049
 
 [node name="Node2D" type="Node2D" parent="."]
 use_parent_material = true

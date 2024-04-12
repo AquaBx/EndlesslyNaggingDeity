@@ -108,3 +108,9 @@ func _on_house_first_exit():
 
 func _on_main_theme_finished():
 	%main_theme.play()
+
+
+
+
+func _on_player_destruction(body):
+	body.queue_free()

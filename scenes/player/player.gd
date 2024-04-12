@@ -8,6 +8,8 @@ var m_object:Object
 var frozen: bool = false
 var colliding_objects = []
 
+signal destruction
+
 func _physics_process(delta):
 	if(self.frozen): return
 	
@@ -89,3 +91,7 @@ func _on_oob_zone_body_entered(body):
 		$Camera2D.position_smoothing_speed = 100000
 		position.x = -1321.5
 		
+
+
+func _on_destruction_zone_body_entered(body):
+	destruction.emit(body)
