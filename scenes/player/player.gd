@@ -97,13 +97,40 @@ func _on_oob_zone_body_entered(body):
 func _on_destruction_zone_body_entered(body):
 	destruction.emit(body)
 	
+func zone_bumb(unit):
+	print("bumb")
+
+	
+		
+	
+	
 func destruction_zone_on():
 	dark_dino = true
-	%DestructionZone.monitorable = true
-	%DestructionZone.monitoring = true
+	position = Vector2(954,-554)
+	velocity = Vector2(0,0)
 	%Dino/corrupted.show()
+	var old_zoom = $Camera2D.zoom
+	$Camera2D.zoom = Vector2(7, 7)
+	var old_scale = %Dino/corrupt_circle.scale
+	var unit = old_scale/10
+	%Dino/corrupt_circle.scale = unit
 	%Dino/corrupt_circle.show()
 	%circle_anim.play("circle")
+	for i in range (10):
+		for j in range (5):
+			%Dino/corrupt_circle.scale += 2*unit/5
+			await get_tree().create_timer(0.1).timeout
+		for j in range (5):
+			%Dino/corrupt_circle.scale -= unit/5
+			await get_tree().create_timer(0.1).timeout
+	%Dino/corrupt_circle.scale = old_scale
+	
+	
+	%DestructionZone.monitorable = true
+	%DestructionZone.monitoring = true
+	
+	$Camera2D.zoom = old_zoom
+	frozen = false
 	
 func stop_action():
 	%ActionZone.monitorable = false

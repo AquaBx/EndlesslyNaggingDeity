@@ -829,7 +829,7 @@ position = Vector2(1199, -455)
 
 [node name="Bug" parent="." instance=ExtResource("27_qwgbi")]
 unique_name_in_owner = true
-position = Vector2(-45, 201)
+position = Vector2(-96, 348)
 
 [node name="Immeuble4" parent="." instance=ExtResource("28_nwgxh")]
 position = Vector2(954, -768)

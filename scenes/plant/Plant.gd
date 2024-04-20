@@ -2,9 +2,8 @@ extends StaticBody2D
 
 signal plant_cut
 var is_cut = false
-var is_end_mode = true
+var is_end_mode = false
 signal end
-var is_dead = false
 
 func _ready():
 	%Interact.visible = false
