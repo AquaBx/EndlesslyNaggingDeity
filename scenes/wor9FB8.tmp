@@ -260,7 +260,6 @@ visible = true
 visible = false
 
 [node name="Batiments" type="Node2D" parent="."]
-unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 
@@ -403,7 +402,6 @@ scale = Vector2(1.61547, 1.61547)
 texture = ExtResource("13_j0mbw")
 
 [node name="Props" type="Node2D" parent="."]
-unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(113, 131)

@@ -7,6 +7,7 @@ const SEUIL = 349
 var m_object:Object
 var frozen: bool = false
 var colliding_objects = []
+var dark_dino = false
 
 signal destruction
 
@@ -95,3 +96,21 @@ func _on_oob_zone_body_entered(body):
 
 func _on_destruction_zone_body_entered(body):
 	destruction.emit(body)
+	
+func destruction_zone_on():
+	dark_dino = true
+	%DestructionZone.monitorable = true
+	%DestructionZone.monitoring = true
+	%Dino/corrupted.show()
+	%Dino/corrupt_circle.show()
+	%circle_anim.play("circle")
+	
+func stop_action():
+	%ActionZone.monitorable = false
+	%ActionZone.monitoring = false
+	
+func show_zone():
+	if dark_dino :
+		%Dino/corrupt_circle.show()
+func hide_zone():
+	%Dino/corrupt_circle.hide()
