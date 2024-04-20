@@ -113,7 +113,25 @@ func _on_player_destruction(body):
 
 
 func _on_bug_end_game():
+	%Death_screen.visible = true
+	%DeathLabel.text = "La corruption source de destruction offrit alors une ultime solution au petit dinosaure\r Une solution qui lui permettrait de tout arreter."
+	%DeathLabel.hide()
 	%Plant.end_mode()
+	%Player.frozen=true
+	
+	for i in range(100):
+		%Bug.scale_up()
+		await get_tree().create_timer(0.005).timeout
+		if i == 60:
+			%DeathScreenAnimationPlayer.play("fade in")
+	%DeathLabel.show()
+	
+	await get_tree().create_timer(5.).timeout
+	
+	%DeathScreenAnimationPlayer.play("fade out")
+		
+	%Player.destruction_zone_on()
+	%Bug.hide()
 
 
 func _on_plant_end():

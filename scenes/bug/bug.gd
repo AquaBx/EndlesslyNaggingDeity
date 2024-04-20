@@ -22,14 +22,9 @@ func unglow():
 	%Interact.visible = false
 
 func action(player):
-	player.frozen=true
 	is_cut = true
-	
 	unglow()
-	
-	await get_tree().create_timer(2.).timeout
-		
-	player.frozen=false
-	player.destruction_zone_on()
 	end_game.emit()
-	hide()
+	
+func scale_up():
+	$Node2D.scale += Vector2(0.1,0.1)
