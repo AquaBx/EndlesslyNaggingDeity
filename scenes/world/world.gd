@@ -99,8 +99,6 @@ func god_descends():
 func succes_1():
 	print("succes 1")
 	%DialogueCenter.play_dialogue("dieu", "success_number_1")
-	
-
 
 func _on_house_first_exit():
 	%DialogueCenter.play_dialogue("dieu", "exit")
@@ -110,7 +108,39 @@ func _on_main_theme_finished():
 	%main_theme.play()
 
 
-
-
 func _on_player_destruction(body):
 	body.queue_free()
+
+
+func _on_bug_end_game():
+	%Plant.end_mode()
+
+
+func _on_plant_end():
+	%Player.frozen = true
+	%Player.stop_action()
+	var old_zoom = %HouseInteriorCamera.zoom
+	%DialogueCenter.play_dialogue("dieu", "end_1")
+	%HouseInteriorCamera.zoom = Vector2(7, 7)
+	await get_tree().create_timer(11).timeout
+	%Plant.end_anim()
+	await get_tree().create_timer(1).timeout
+	%Plant.hide()
+	%Plant.queue_free()
+	await get_tree().create_timer(27.5).timeout
+	%House.hide()
+	%House.almost_destroyed = true
+	%House.queue_free()
+	%Props.queue_free()
+	%Batiments.queue_free()
+	%main_theme.queue_free()
+	await get_tree().create_timer(1).timeout
+	%DialogueCenter.play_dialogue("dieu", "end_2")
+	await get_tree().create_timer(3).timeout
+	$Background.hide()
+	await get_tree().create_timer(1).timeout
+	%DialogueCenter.play_dialogue("dieu", "end_3")
+	await get_tree().create_timer(5).timeout
+	$CanvasLayer2/DialogueCenter.queue_free()
+	get_tree().quit()
+	

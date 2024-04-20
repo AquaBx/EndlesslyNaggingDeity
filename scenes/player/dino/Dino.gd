@@ -18,3 +18,4 @@ func play_deathblock_animation():
 
 func play_animation_loop():
 	$AnimationPlayer.play("pickup")
+

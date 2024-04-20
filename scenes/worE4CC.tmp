@@ -146,6 +146,7 @@ color = Color(0.921569, 0.980392, 0.894118, 1)
 
 [node name="Plant" parent="." instance=ExtResource("10_8fvrx")]
 unique_name_in_owner = true
+use_parent_material = true
 position = Vector2(4.99998, 361)
 
 [node name="CarSpawnWest" type="Marker2D" parent="."]
@@ -155,13 +156,11 @@ position = Vector2(-1712, 148)
 position = Vector2(3178, 124)
 
 [node name="HouseInteriorCamera" type="Camera2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(5, 353)
 scale = Vector2(9.522, 3.881)
 zoom = Vector2(3.585, 3.585)
 
 [node name="House" parent="." instance=ExtResource("5_pwkoy")]
-unique_name_in_owner = true
 position = Vector2(5, 347)
 scale = Vector2(1.51352, 1.51352)
 
@@ -260,7 +259,6 @@ visible = true
 visible = false
 
 [node name="Batiments" type="Node2D" parent="."]
-unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 
@@ -403,7 +401,6 @@ scale = Vector2(1.61547, 1.61547)
 texture = ExtResource("13_j0mbw")
 
 [node name="Props" type="Node2D" parent="."]
-unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(113, 131)
@@ -851,7 +848,6 @@ position = Vector2(948, -763)
 [node name="Bug" parent="." instance=ExtResource("27_qwgbi")]
 position = Vector2(-108, 336)
 
-[connection signal="end" from="Plant" to="." method="_on_plant_end"]
 [connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
 [connection signal="first_exit" from="House" to="." method="_on_house_first_exit"]
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
