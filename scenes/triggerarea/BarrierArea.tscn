@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8jfd2xc23a3p"]
+
+[ext_resource type="Script" path="res://scenes/triggerarea/BarrierArea.gd" id="1_0ntce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5lyu"]
+
+[node name="BarierArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 8192
+script = ExtResource("1_0ntce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e5lyu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

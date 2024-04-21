@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="6_qsxhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34xiv"]
-size = Vector2(56, 5)
+size = Vector2(5.19999, 5)
 
 [sub_resource type="Animation" id="Animation_n0cxn"]
 resource_name = "mariojump"

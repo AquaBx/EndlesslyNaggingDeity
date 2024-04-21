@@ -36,6 +36,39 @@ const dialogues = {
 		"success_number_9": [""],
 		"success_number_10": [""],
 		
+		"corruption": ["NON!!!",
+					   "Je ne peut pas te laisser\rcorrompre ce monde",
+					   "Je detruirais tout avant \r que tu puisse\r le corrompre",],
+					
+		"entered_dog_area":["Oh, qu'il est mignon quand il dors.",
+							"Surtout ne le reveille pas !"],
+							
+		"entered_wolf_area":["Parfait !\rIl est reveiller maintenant\r :'\\ ",],
+					
+		"entered_work_area":["Des travaux ...",
+							"Ca n'a pas l'air très solide"],
+							
+		"entered_block_area":["J'ai rajouter ces blocs\rflottants car je\rm'ennuyais",
+							"Heureusement,\r ils ne sont pas dangereux"],
+					
+		"entered_loupe_area":["Fait attention !",
+							"Tu risquerais de te bruler"],
+							
+		"entered_faraway_area":["Pourquoi voudrais tu partir par la ?",
+							"C'est inutile."],
+							
+		"entered_barrier_area":["Il y a quelque chose\rde dangereux pour le monde\rlui même la bas.",
+							"N'essai même pas d'y aller."],
+							
+		"entered_corruption_area":["Arrête toi et fait demi-tour !",],
+		
+		"entered_corruption2_area":["La corruption ...","Elle est si forte.","C'est ta faute !","Tu m'a forcer à tout détruire\r lui ouvrant une porte pour\r entrer dans ce monde."],
+		
+		"pressed corruption":["NOOOOOOOOOOOOOOOOOOOO\rOOOOOOOOOOOOOOOOOOOON",],
+		
+		"entered_end_area":["Ne vas pas la ...",
+							"Tu ne veut pas faire ça."],
+		
 		"end_1": ["Tu ne vas pas faire ça pas vrai ?",
 				  "Bien sur que non tu est \r un gentil dinosaure.",
 				  "On a vecu tellement de\r moment ensemble et ...\r ...........................\r ................. \r ....... \r ...",
@@ -104,4 +137,14 @@ func set_dot() :
 func _on_overide_msg():
 	self.visible = true
 	is_overrided = true
+	
+func stop_msg():
+	if is_playing:
+		emit_signal("overide_msg")
+		await get_tree().create_timer(0.0001).timeout
+		self.visible = false
+		await get_tree().create_timer(0.4).timeout
+	is_overrided = false
+	is_playing = false
+	
 	

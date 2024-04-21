@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rp2m25fq34yq"]
+
+[ext_resource type="Script" path="res://scenes/triggerarea/FarawayArea.gd" id="1_rvuee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5lyu"]
+
+[node name="FarawayArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 8192
+script = ExtResource("1_rvuee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e5lyu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
