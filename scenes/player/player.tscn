@@ -237,6 +237,21 @@ _data = {
 "walk": SubResource("Animation_72td6")
 }
 
+[sub_resource type="Animation" id="Animation_4mihm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corrupt_circle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_gsjtv"]
 resource_name = "circle"
 length = 0.6
@@ -254,21 +269,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_4mihm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("corrupt_circle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n4t01"]
 _data = {
 "RESET": SubResource("Animation_4mihm"),
@@ -282,11 +282,11 @@ radius = 26.0768
 size = Vector2(12, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4jv8l"]
-radius = 79.0063
+radius = 72.4164
 
 [node name="Player" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_atyps")
-collision_layer = 11
+collision_layer = 8203
 script = ExtResource("1_n73ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -318,7 +318,8 @@ libraries = {
 }
 
 [node name="corrupt_circle" type="Sprite2D" parent="Dino"]
-visible = false
+z_index = -15
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 14)
 scale = Vector2(2.63009, 2.79741)
@@ -342,7 +343,6 @@ frame = 5
 [node name="corrupted" type="Sprite2D" parent="Dino"]
 visible = false
 texture_filter = 1
-use_parent_material = true
 texture = ExtResource("10_h780s")
 hframes = 39
 
@@ -393,7 +393,8 @@ collision_mask = 2048
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DestructionZone"]
-position = Vector2(0, 9)
+position = Vector2(0, 12.49)
+scale = Vector2(1, 0.833467)
 shape = SubResource("CircleShape2D_4jv8l")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]

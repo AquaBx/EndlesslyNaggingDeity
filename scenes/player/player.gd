@@ -110,7 +110,7 @@ func destruction_zone_on():
 	velocity = Vector2(0,0)
 	%Dino/corrupted.show()
 	var old_zoom = $Camera2D.zoom
-	$Camera2D.zoom = Vector2(7, 7)
+	$Camera2D.zoom = Vector2(5, 5)
 	var old_scale = %Dino/corrupt_circle.scale
 	var unit = old_scale/10
 	%Dino/corrupt_circle.scale = unit
@@ -119,12 +119,20 @@ func destruction_zone_on():
 	for i in range (10):
 		for j in range (5):
 			%Dino/corrupt_circle.scale += 2*unit/5
+			if j == 4:
+				$Camera2D.zoom = Vector2(5.5, 5.5)
 			await get_tree().create_timer(0.1).timeout
+		$Camera2D.zoom = Vector2(5.25,5.25)
 		for j in range (5):
 			%Dino/corrupt_circle.scale -= unit/5
+			if j==1:
+				$Camera2D.zoom = Vector2(5.5,5.5)
+			elif j==2:
+				$Camera2D.zoom = Vector2(5,5)
 			await get_tree().create_timer(0.1).timeout
+			
 	%Dino/corrupt_circle.scale = old_scale
-	
+	await get_tree().create_timer(2).timeout
 	
 	%DestructionZone.monitorable = true
 	%DestructionZone.monitoring = true

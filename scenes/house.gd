@@ -29,3 +29,7 @@ func set_day(c:bool):
 
 func _on_player_death():
 	pass # Replace with function body.
+	
+func door_glow():
+	print("House: door_glow")
+	$Door.s_glow()

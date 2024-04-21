@@ -24,6 +24,7 @@ offset_bottom = 21.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="."]
+use_parent_material = true
 
 [connection signal="timeout" from="Timer" to="." method="spawn_car"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

@@ -74,6 +74,7 @@ collision_mask = 0
 script = ExtResource("1_coblc")
 
 [node name="Shadow" type="Sprite2D" parent="."]
+use_parent_material = true
 position = Vector2(-11, 14)
 rotation = -0.00858836
 scale = Vector2(170.506, -1.28975)

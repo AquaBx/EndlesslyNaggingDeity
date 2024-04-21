@@ -7,6 +7,7 @@
 size = Vector2(120, 97)
 
 [node name="maison_bleue" type="StaticBody2D"]
+use_parent_material = true
 collision_layer = 2049
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -19,6 +20,7 @@ texture = ExtResource("2_wo4gq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+use_parent_material = true
 texture = ExtResource("1_rqqla")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

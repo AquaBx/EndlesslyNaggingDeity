@@ -2,6 +2,7 @@ extends StaticBody2D
 
 signal ded_niche
 var is_day = true
+var dead = false
 
 func set_night():
 	print("CEST LA BUIT")
@@ -25,9 +26,11 @@ func glow():
 		%Interact.show()
 
 func unglow():
-	%Interact.hide()
+	if not dead:
+		%Interact.hide()
 	
 func action(player):
+	dead = true
 	print("action")
 	if is_day: return 
 	unglow()

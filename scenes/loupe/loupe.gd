@@ -1,6 +1,7 @@
 extends Node2D
 
 signal interactloupe
+var dead = false
 
 func _ready():
 	%Interact.visible = false
@@ -8,6 +9,7 @@ func _ready():
 	
 
 func action(player):
+	dead = true
 	visible=false
 	player.frozen = true
 	player.get_node("Dino").play_deathloupe_animation()
@@ -23,5 +25,6 @@ func glow():
 	%Interact.visible = true
 	
 func unglow():
-	%Interact.visible = false
+	if not dead:
+		%Interact.visible = false
 
