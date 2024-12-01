@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7kc4phwe3whs"]
+
+[ext_resource type="Script" path="res://scenes/hazards/car/car.gd" id="1_cqlnj"]
+[ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_ccixo"]
+[ext_resource type="Texture2D" uid="uid://ctqqix5ehg82a" path="res://assets/trike.png" id="3_aw3y8"]
+[ext_resource type="AudioStream" uid="uid://e3pf2gxkaenj" path="res://scenes/hazards/car/car.wav" id="4_6r13a"]
+[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="5_14ak6"]
+
+[sub_resource type="Animation" id="Animation_mixmh"]
+resource_name = "drive"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mmbjx"]
+_data = {
+"drive": SubResource("Animation_mixmh")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61xx0"]
+radius = 9.01388
+
+[node name="trike" type="StaticBody2D"]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(0, -5)
+scale = Vector2(1.38056, 1.38056)
+collision_layer = 2049
+script = ExtResource("1_cqlnj")
+
+[node name="Car" type="Node2D" parent="."]
+unique_name_in_owner = true
+use_parent_material = true
+script = ExtResource("2_ccixo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car"]
+root_node = NodePath("../Shadow")
+libraries = {
+"": SubResource("AnimationLibrary_mmbjx")
+}
+
+[node name="Shadow" type="Sprite2D" parent="Car"]
+use_parent_material = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Car"]
+texture_filter = 1
+use_parent_material = true
+texture = ExtResource("3_aw3y8")
+flip_h = true
+hframes = 6
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 6)
+shape = SubResource("CircleShape2D_61xx0")
+
+[node name="lifespan" type="Timer" parent="."]
+wait_time = 80.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6r13a")
+volume_db = -15.0
+autoplay = true
+max_distance = 500.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(0.999998, 14)
+scale = Vector2(1.375, 0.6875)
+texture = ExtResource("5_14ak6")
+
+[connection signal="timeout" from="lifespan" to="." method="_on_lifespan_timeout"]

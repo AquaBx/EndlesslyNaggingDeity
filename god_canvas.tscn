@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://1cawj1pn77ax"]
+
+[ext_resource type="PackedScene" uid="uid://cap7tgt2ydxe8" path="res://god.tscn" id="1_wqr16"]
+
+[node name="GodCanvas" type="CanvasLayer"]
+layer = 3
+
+[node name="GodBody" parent="." instance=ExtResource("1_wqr16")]
+position = Vector2(579, 421)
+scale = Vector2(3.89015, 3.89015)

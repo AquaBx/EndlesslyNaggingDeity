@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://gmg71yk5wc2o"]
+
+[ext_resource type="Script" path="res://scenes/hazards/car/CarSpawner.gd" id="1_54xmx"]
+[ext_resource type="Script" path="res://scenes/hazards/car/Timer.gd" id="2_hvwmo"]
+
+[node name="CarSpawner" type="Node2D"]
+light_mask = 0
+visibility_layer = 2
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-7, -2)
+script = ExtResource("1_54xmx")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("2_hvwmo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 21.0
+offset_bottom = 21.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="spawn_car"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://utils/dialogue/DialogueCenter.gd" id="1_n8q2f"]
 [ext_resource type="Shader" path="res://utils/dialogue/DialogueCenter.gdshader" id="1_yp2q0"]
-[ext_resource type="Texture2D" uid="uid://dpty2yjosoq4e" path="res://assets/dialog-banner.png" id="2_mf6pg"]
-[ext_resource type="FontFile" uid="uid://dprp6lyo3bems" path="res://assets/PixelifySans-Regular.ttf" id="3_g5h7r"]
+[ext_resource type="Texture2D" uid="uid://sb2pn5utft5y" path="res://assets/dialog-banner.png" id="2_mf6pg"]
+[ext_resource type="FontFile" uid="uid://d1akjcmehjqm5" path="res://assets/PixelifySans-Regular.ttf" id="3_g5h7r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_11ft7"]
 resource_local_to_scene = true
@@ -22,30 +22,30 @@ grow_vertical = 2
 script = ExtResource("1_n8q2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.682353)
 position = Vector2(566, 111)
 texture = ExtResource("2_mf6pg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
+z_index = 7
 texture_filter = 1
 material = SubResource("ShaderMaterial_11ft7")
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -894.0
-offset_top = -34.0
-offset_right = -471.0
-offset_bottom = -34.0
-grow_horizontal = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -93.5
+offset_right = 722.0
+offset_bottom = 60.5
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-size_flags_horizontal = 6
-size_flags_vertical = 6
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_g5h7r")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
-text = "[center]Ligne de test"
+text = "texte"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[connection signal="overide_msg" from="." to="." method="_on_overide_msg"]

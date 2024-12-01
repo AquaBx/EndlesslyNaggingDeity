@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://chcvwmx45u2rc"]
+
+[ext_resource type="Texture2D" uid="uid://cosgmgrurqkwx" path="res://assets/grille.png" id="1_217j4"]
+[ext_resource type="Texture2D" uid="uid://dkk257hoov2l" path="res://assets/square_shadow.png" id="2_2sayv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo541"]
+size = Vector2(61, 8)
+
+[node name="Bar" type="StaticBody2D"]
+y_sort_enabled = true
+use_parent_material = true
+collision_layer = 2049
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_yo541")
+
+[node name="Node2D" type="Node2D" parent="."]
+use_parent_material = true
+
+[node name="Been" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(0, -23)
+texture = ExtResource("1_217j4")
+
+[node name="Shadow" type="Sprite2D" parent="Node2D"]
+z_index = -2
+texture_filter = 1
+use_parent_material = true
+position = Vector2(-0.485, 9)
+scale = Vector2(3.79, 0.529)
+texture = ExtResource("2_2sayv")
+
+[node name="Shadow2" type="Sprite2D" parent="Node2D"]
+z_index = -2
+texture_filter = 1
+use_parent_material = true
+position = Vector2(0, 17)
+scale = Vector2(3.79, 0.529)
+texture = ExtResource("2_2sayv")
+
+[node name="Shadow3" type="Sprite2D" parent="Node2D"]
+z_index = -2
+texture_filter = 1
+use_parent_material = true
+position = Vector2(0, 31)
+scale = Vector2(3.59788, 0.529)
+texture = ExtResource("2_2sayv")

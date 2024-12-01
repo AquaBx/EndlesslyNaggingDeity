@@ -1,15 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbetcucbuq726"]
+[gd_scene load_steps=28 format=3 uid="uid://dbetcucbuq726"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_n73ct"]
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_vfevw"]
 [ext_resource type="Script" path="res://scenes/player/dino/Dino.gd" id="2_55r2h"]
-[ext_resource type="Texture2D" uid="uid://cismcwbafogcs" path="res://assets/maskvide.png" id="2_jdqvr"]
-[ext_resource type="Texture2D" uid="uid://cfc1d4efi0ul" path="res://assets/dino.png" id="3_uqmll"]
-[ext_resource type="AudioStream" uid="uid://dfncsncsqlc7v" path="res://scenes/player/step1.wav" id="4_yeqpe"]
-[ext_resource type="AudioStream" uid="uid://bywos0xeh1hux" path="res://scenes/player/step2.wav" id="5_0k54i"]
-[ext_resource type="AudioStream" uid="uid://dkf020xxk6vif" path="res://assets/fire.wav" id="5_1i81q"]
-[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="6_p5pty"]
-[ext_resource type="AudioStream" uid="uid://05jk8th58ja1" path="res://scenes/player/musique.mp3" id="10_k3elp"]
+[ext_resource type="Texture2D" uid="uid://i28xak8j24cs" path="res://assets/maskvide.png" id="2_jdqvr"]
+[ext_resource type="Texture2D" uid="uid://35fprd68i1gp" path="res://assets/dino.png" id="3_uqmll"]
+[ext_resource type="AudioStream" uid="uid://d2uyi1oa3x042" path="res://scenes/player/step1.wav" id="4_yeqpe"]
+[ext_resource type="AudioStream" uid="uid://fuv13m5hmias" path="res://scenes/player/step2.wav" id="5_0k54i"]
+[ext_resource type="AudioStream" uid="uid://bm2xiaup14rnn" path="res://assets/fire.wav" id="5_1i81q"]
+[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="6_p5pty"]
+[ext_resource type="Texture2D" uid="uid://cx3kjd74q47n8" path="res://assets/corrupt_circle.png" id="8_ljwlh"]
+[ext_resource type="Texture2D" uid="uid://usw8a075u3gi" path="res://assets/corrupted_dino.png" id="10_h780s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_atyps"]
 shader = ExtResource("1_vfevw")
@@ -58,6 +59,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("corrupted:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_mqdnb"]
 resource_name = "deathblock"
@@ -93,7 +106,7 @@ length = 3.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("normal:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -124,10 +137,22 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("normal:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("corrupted:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
@@ -140,7 +165,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("normal:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -190,6 +215,18 @@ tracks/3/keys = {
 "times": PackedFloat32Array()
 }
 tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("corrupted:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11, 12, 13]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlbt8"]
 _data = {
@@ -200,15 +237,56 @@ _data = {
 "walk": SubResource("Animation_72td6")
 }
 
+[sub_resource type="Animation" id="Animation_4mihm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corrupt_circle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gsjtv"]
+resource_name = "circle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corrupt_circle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4t01"]
+_data = {
+"RESET": SubResource("Animation_4mihm"),
+"circle": SubResource("Animation_gsjtv")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfa70"]
 radius = 26.0768
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfiv7"]
 size = Vector2(12, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jv8l"]
+radius = 72.4164
+
 [node name="Player" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_atyps")
-collision_layer = 11
+collision_layer = 8203
 script = ExtResource("1_n73ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -239,6 +317,15 @@ libraries = {
 "": SubResource("AnimationLibrary_dlbt8")
 }
 
+[node name="corrupt_circle" type="Sprite2D" parent="Dino"]
+z_index = -15
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, 14)
+scale = Vector2(2.63009, 2.79741)
+texture = ExtResource("8_ljwlh")
+hframes = 6
+
 [node name="Shadow" type="Sprite2D" parent="Dino"]
 texture_filter = 1
 use_parent_material = true
@@ -246,15 +333,28 @@ position = Vector2(1.19209e-07, 13)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("6_p5pty")
 
-[node name="Sprite2D" type="Sprite2D" parent="Dino"]
+[node name="normal" type="Sprite2D" parent="Dino"]
 texture_filter = 1
 use_parent_material = true
 texture = ExtResource("3_uqmll")
 hframes = 37
-frame = 16
+frame = 5
+
+[node name="corrupted" type="Sprite2D" parent="Dino"]
+visible = false
+texture_filter = 1
+texture = ExtResource("10_h780s")
+hframes = 39
+
+[node name="circle_anim" type="AnimationPlayer" parent="Dino"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_n4t01")
+}
 
 [node name="ActionZone" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -265,8 +365,18 @@ rotation = -1.57079
 shape = SubResource("CircleShape2D_sfa70")
 debug_color = Color(0, 0.623529, 0.529412, 0.419608)
 
+[node name="OOBZone" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OOBZone"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_hfiv7")
+
 [node name="BuildingZone" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 collision_layer = 4
 collision_mask = 0
 
@@ -274,16 +384,27 @@ collision_mask = 0
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_hfiv7")
 
+[node name="DestructionZone" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 7)
+scale = Vector2(1.13234, 0.720576)
+collision_layer = 1025
+collision_mask = 2048
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestructionZone"]
+position = Vector2(0, 12.49)
+scale = Vector2(1, 0.833467)
+shape = SubResource("CircleShape2D_4jv8l")
+
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 12.0
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_k3elp")
-autoplay = true
-
 [connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="ActionZone" to="." method="_on_action_zone_body_exited"]
+[connection signal="body_entered" from="OOBZone" to="." method="_on_oob_zone_body_entered"]
 [connection signal="body_entered" from="BuildingZone" to="." method="_on_action_zone_body_entered"]
 [connection signal="body_exited" from="BuildingZone" to="." method="_on_action_zone_body_exited"]
+[connection signal="body_entered" from="DestructionZone" to="." method="_on_destruction_zone_body_entered"]

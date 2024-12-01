@@ -1,27 +1,46 @@
-[gd_scene load_steps=31 format=3 uid="uid://qicqb3g6owtj"]
+[gd_scene load_steps=53 format=3 uid="uid://qicqb3g6owtj"]
 
 [ext_resource type="Shader" path="res://scenes/nuit.gdshader" id="1_6schm"]
 [ext_resource type="PackedScene" uid="uid://dy07gw77tsaue" path="res://scenes/house/immeuble.tscn" id="1_08rpx"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vok7g"]
 [ext_resource type="PackedScene" uid="uid://c30dm700paorp" path="res://scenes/house/maison_bleue.tscn" id="2_2ek0f"]
-[ext_resource type="Texture2D" uid="uid://cismcwbafogcs" path="res://assets/maskvide.png" id="2_iyly2"]
+[ext_resource type="Texture2D" uid="uid://i28xak8j24cs" path="res://assets/maskvide.png" id="2_iyly2"]
 [ext_resource type="PackedScene" uid="uid://c8csrmegbsxhf" path="res://scenes/house/maison_rouge.tscn" id="3_hlfdj"]
 [ext_resource type="PackedScene" uid="uid://deym8dkb2pokv" path="res://scenes/house/maison_jaune.tscn" id="4_7701m"]
 [ext_resource type="PackedScene" uid="uid://cpqngcmkmtkxk" path="res://scenes/house/house.tscn" id="5_pwkoy"]
 [ext_resource type="PackedScene" uid="uid://dbetcucbuq726" path="res://scenes/player/player.tscn" id="6_1w2bk"]
 [ext_resource type="PackedScene" uid="uid://gmg71yk5wc2o" path="res://scenes/hazards/car/CarSpawner.tscn" id="7_otisb"]
-[ext_resource type="Texture2D" uid="uid://krvjqa0x3wih" path="res://assets/road.png" id="7_s70g1"]
+[ext_resource type="Texture2D" uid="uid://bypliyhhfywf6" path="res://assets/road.png" id="7_s70g1"]
 [ext_resource type="PackedScene" uid="uid://m17wjiq3t5l1" path="res://scenes/hazards/block/block.tscn" id="8_3iyxq"]
 [ext_resource type="PackedScene" uid="uid://bjhdovtkoafey" path="res://scenes/loupe/loupe.tscn" id="9_njd3f"]
 [ext_resource type="PackedScene" uid="uid://dpnojl70n0bw7" path="res://scenes/echaffaudage/echauf2.tscn" id="9_q5ncd"]
 [ext_resource type="PackedScene" uid="uid://bo8nlgfjpcuko" path="res://scenes/plant/plant.tscn" id="10_8fvrx"]
 [ext_resource type="PackedScene" uid="uid://ba8bn52fly1gy" path="res://scenes/niche/niche.tscn" id="12_n2p2g"]
-[ext_resource type="Texture2D" uid="uid://dwxmcb085iauk" path="res://assets/shadow.png" id="13_j0mbw"]
-[ext_resource type="PackedScene" uid="uid://dw6ogyreqsc7r" path="res://scenes/pool.tscn" id="14_2o8j1"]
+[ext_resource type="Texture2D" uid="uid://enjsee3pjqbk" path="res://assets/shadow.png" id="13_j0mbw"]
 [ext_resource type="PackedScene" uid="uid://b0b2vluqwafga" path="res://scenes/props/Beennn.tscn" id="14_mvakx"]
-[ext_resource type="PackedScene" uid="uid://bps0el8daeilj" path="res://scenes/lampadaire.tscn" id="15_7bdgl"]
+[ext_resource type="PackedScene" uid="uid://dewknfq2kxbxf" path="res://scenes/props/poto.tscn" id="21_2qnb2"]
 [ext_resource type="PackedScene" uid="uid://bs7x2qm5xqr0l" path="res://utils/dialogue/DialogueCenter.tscn" id="21_ceb3x"]
 [ext_resource type="PackedScene" uid="uid://d3jht7vcxvoiw" path="res://utils/notification/NotificationCenter.tscn" id="22_e8wcx"]
+[ext_resource type="PackedScene" uid="uid://xij014eqlil1" path="res://scenes/pool_object.tscn" id="23_bw0ro"]
+[ext_resource type="PackedScene" uid="uid://dggguknydts80" path="res://scenes/props/plot.tscn" id="23_ylk2e"]
+[ext_resource type="PackedScene" uid="uid://chcvwmx45u2rc" path="res://scenes/props/Bar.tscn" id="24_7atts"]
+[ext_resource type="AudioStream" uid="uid://b65810bidjndn" path="res://scenes/player/musique.mp3" id="25_s4gli"]
+[ext_resource type="Shader" path="res://scenes/dark_alley.gdshader" id="26_5eshf"]
+[ext_resource type="PackedScene" uid="uid://2v64n1tiq5kn" path="res://scenes/bug/bug.tscn" id="27_qwgbi"]
+[ext_resource type="PackedScene" uid="uid://cchryf43gaaje" path="res://scenes/house/immeuble_corrompu.tscn" id="28_nwgxh"]
+[ext_resource type="PackedScene" uid="uid://c3mf4h87arogk" path="res://scenes/house/maison_jaune_corrompue.tscn" id="29_nmpkj"]
+[ext_resource type="PackedScene" uid="uid://crj1xrpet7qgw" path="res://scenes/house/maison_bleue_corrompue.tscn" id="30_mbvwu"]
+[ext_resource type="PackedScene" uid="uid://bfedkkrnmfuua" path="res://scenes/props/CorruptedBeennn.tscn" id="31_0rmuo"]
+[ext_resource type="PackedScene" uid="uid://dlk1tio4nrybt" path="res://scenes/triggerarea/HouseArea.tscn" id="32_we2lw"]
+[ext_resource type="PackedScene" uid="uid://fy2o370b1oel" path="res://scenes/triggerarea/LoupeArea.tscn" id="33_w2mp0"]
+[ext_resource type="PackedScene" uid="uid://cnq4bkgn0p30i" path="res://scenes/triggerarea/WorkArea.tscn" id="34_1o80e"]
+[ext_resource type="PackedScene" uid="uid://dkdah3htmmsgw" path="res://scenes/triggerarea/dog_area.tscn" id="34_del07"]
+[ext_resource type="PackedScene" uid="uid://6rye1ksn7xhf" path="res://scenes/triggerarea/WolfArea.tscn" id="36_2v2ap"]
+[ext_resource type="PackedScene" uid="uid://b1frvwpwiwjt6" path="res://scenes/triggerarea/BlockArea.tscn" id="37_3ydqn"]
+[ext_resource type="PackedScene" uid="uid://c8jfd2xc23a3p" path="res://scenes/triggerarea/BarrierArea.tscn" id="38_t005y"]
+[ext_resource type="PackedScene" uid="uid://dmhnwqd7jjlbw" path="res://scenes/triggerarea/CorruptionArea.tscn" id="39_ojop2"]
+[ext_resource type="PackedScene" uid="uid://fix1q4ptt1v7" path="res://scenes/triggerarea/CorruptionArea2.tscn" id="40_1jefr"]
+[ext_resource type="PackedScene" uid="uid://rp2m25fq34yq" path="res://scenes/triggerarea/FarawayArea.tscn" id="41_wrsib"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtvfj"]
 shader = ExtResource("1_6schm")
@@ -35,7 +54,7 @@ size = Vector2(4000, 156)
 size = Vector2(4000, 157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhoka"]
-size = Vector2(159.5, 620)
+size = Vector2(159.5, 1226.09)
 
 [sub_resource type="Animation" id="Animation_2sai3"]
 length = 0.001
@@ -54,7 +73,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("%DeathLabel:theme_override_colors/font_color")
+tracks/1/path = NodePath("DeathLabel:theme_override_colors/font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -96,7 +115,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("%DeathLabel:theme_override_colors/font_color")
+tracks/1/path = NodePath("DeathLabel:theme_override_colors/font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -113,6 +132,18 @@ _data = {
 "fade out": SubResource("Animation_jgw0c")
 }
 
+[sub_resource type="Gradient" id="Gradient_murpl"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yntfm"]
+gradient = SubResource("Gradient_murpl")
+fill_from = Vector2(0.475, 0.185)
+fill_to = Vector2(0.505, 0.955)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbsto"]
+shader = ExtResource("26_5eshf")
+shader_parameter/gradient = SubResource("GradientTexture2D_yntfm")
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_wtvfj")
@@ -123,23 +154,29 @@ z_index = -20
 z_as_relative = false
 use_parent_material = true
 offset_left = -1717.0
-offset_top = -392.0
-offset_right = 3403.0
+offset_top = -883.0
+offset_right = 5703.0
 offset_bottom = 701.0
 color = Color(0.921569, 0.980392, 0.894118, 1)
 
+[node name="Plant" parent="." instance=ExtResource("10_8fvrx")]
+unique_name_in_owner = true
+position = Vector2(4.99998, 361)
+
 [node name="CarSpawnWest" type="Marker2D" parent="."]
-position = Vector2(-1712, 187)
+position = Vector2(-1712, 148)
 
 [node name="CarSpawnEast" type="Marker2D" parent="."]
-position = Vector2(3178, 167)
+position = Vector2(2761, 124)
 
 [node name="HouseInteriorCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(5, 353)
 scale = Vector2(9.522, 3.881)
 zoom = Vector2(3.585, 3.585)
 
 [node name="House" parent="." instance=ExtResource("5_pwkoy")]
+unique_name_in_owner = true
 position = Vector2(5, 347)
 scale = Vector2(1.51352, 1.51352)
 
@@ -155,12 +192,12 @@ unique_name_in_owner = true
 position = Vector2(5, 399)
 
 [node name="Road" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -20
 z_as_relative = false
 texture_filter = 1
 texture_repeat = 2
 use_parent_material = true
-position = Vector2(643, 195)
+position = Vector2(642, 142)
 scale = Vector2(1.28, 1)
 texture = ExtResource("7_s70g1")
 region_enabled = true
@@ -173,181 +210,157 @@ use_parent_material = true
 scale = Vector2(1.00671, 1.15101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/SouthWall"]
-position = Vector2(541, 470)
+position = Vector2(541, 491.742)
 shape = SubResource("RectangleShape2D_d2ac6")
 
 [node name="NorthWall" type="StaticBody2D" parent="Border"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/NorthWall"]
-position = Vector2(541, -306.5)
+position = Vector2(541, -783)
 shape = SubResource("RectangleShape2D_unan1")
 
 [node name="WestWall" type="StaticBody2D" parent="Border"]
 scale = Vector2(1, 1.17827)
+collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/WestWall"]
-position = Vector2(-1379.5, 82)
+position = Vector2(-1438, -109.108)
 shape = SubResource("RectangleShape2D_xhoka")
 
 [node name="EastWall" type="StaticBody2D" parent="Border"]
 scale = Vector2(1.00272, 1.16799)
+collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/EastWall"]
-position = Vector2(2461.25, 82)
+position = Vector2(2546.07, -29.9383)
 shape = SubResource("RectangleShape2D_xhoka")
 
 [node name="Interactable" type="Node2D" parent="."]
+y_sort_enabled = true
 use_parent_material = true
 position = Vector2(3, 11)
 
 [node name="Loupe" parent="Interactable" instance=ExtResource("9_njd3f")]
 use_parent_material = true
-position = Vector2(776, 360)
+position = Vector2(786, 348)
 scale = Vector2(1.41281, 1.41281)
 
-[node name="Plant" parent="Interactable" instance=ExtResource("10_8fvrx")]
-position = Vector2(2, 358)
-
 [node name="CarSpawner" parent="Interactable" node_paths=PackedStringArray("player", "CarSpawnWest", "CarSpawnEast") instance=ExtResource("7_otisb")]
-position = Vector2(0, 0)
+position = Vector2(0, -21)
 player = NodePath("../../Player")
 CarSpawnWest = NodePath("../../CarSpawnWest")
 CarSpawnEast = NodePath("../../CarSpawnEast")
 
 [node name="Block" parent="Interactable" instance=ExtResource("8_3iyxq")]
 use_parent_material = true
-position = Vector2(867, 6)
+position = Vector2(863, -32)
 
 [node name="StaticBody2D" parent="Interactable" instance=ExtResource("9_q5ncd")]
-use_parent_material = true
 position = Vector2(1052, 283)
-
-[node name="Node2D" parent="Interactable/StaticBody2D" index="2"]
-use_parent_material = true
 
 [node name="Echaffaudage" parent="Interactable/StaticBody2D/Node2D" index="1"]
 use_parent_material = true
 
 [node name="Niche" parent="Interactable" instance=ExtResource("12_n2p2g")]
-position = Vector2(255, 90)
+position = Vector2(255, 21)
+
+[node name="CanvasLayer" parent="Interactable/Niche" index="4"]
+visible = true
+
+[node name="ImageFin" parent="Interactable/Niche/CanvasLayer" index="0"]
+visible = false
 
 [node name="Batiments" type="Node2D" parent="."]
+unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 
 [node name="Maison Rouge" parent="Batiments" instance=ExtResource("3_hlfdj")]
-use_parent_material = true
-position = Vector2(1138, 54)
+position = Vector2(1104, 1)
 
 [node name="Maison Bleue" parent="Batiments" instance=ExtResource("2_2ek0f")]
-use_parent_material = true
-position = Vector2(-167, -55)
+position = Vector2(-168, -108)
 
 [node name="Immeuble" parent="Batiments" instance=ExtResource("1_08rpx")]
-use_parent_material = true
-position = Vector2(849, -91)
+position = Vector2(848, -144)
 
 [node name="Maison Jaune" parent="Batiments" instance=ExtResource("4_7701m")]
-use_parent_material = true
-position = Vector2(1311, 35)
+position = Vector2(1277, -18)
 
 [node name="Immeuble2" parent="Batiments" instance=ExtResource("1_08rpx")]
-use_parent_material = true
-position = Vector2(1070, -87)
+position = Vector2(1036, -140)
 
 [node name="Maison Jaune2" parent="Batiments" instance=ExtResource("4_7701m")]
-use_parent_material = true
-position = Vector2(770, -173)
+position = Vector2(794, -244)
 
 [node name="Immeuble 3" parent="Batiments" instance=ExtResource("1_08rpx")]
-use_parent_material = true
 position = Vector2(584, 309)
 
 [node name="Maison Bleue 3" parent="Batiments" instance=ExtResource("2_2ek0f")]
-use_parent_material = true
 position = Vector2(892, 292)
 
 [node name="Maison Bleue 4" parent="Batiments" instance=ExtResource("2_2ek0f")]
-use_parent_material = true
-position = Vector2(266, 365)
+position = Vector2(266, 361)
 
 [node name="Maison Rouge 3" parent="Batiments" instance=ExtResource("3_hlfdj")]
-use_parent_material = true
 position = Vector2(739, 257)
 
 [node name="Maison Jaune 2" parent="Batiments" instance=ExtResource("4_7701m")]
-use_parent_material = true
 position = Vector2(424, 316)
 
 [node name="Immeuble 1" parent="Batiments" instance=ExtResource("1_08rpx")]
-use_parent_material = true
-position = Vector2(58, -67)
+position = Vector2(57, -120)
 
 [node name="Immeuble 2" parent="Batiments" instance=ExtResource("1_08rpx")]
-use_parent_material = true
-position = Vector2(453, 15)
+position = Vector2(452, -38)
 
 [node name="Maison Bleue 1" parent="Batiments" instance=ExtResource("2_2ek0f")]
-use_parent_material = true
-position = Vector2(756, 46)
+position = Vector2(755, -7)
 
 [node name="Maison Bleue 2" parent="Batiments" instance=ExtResource("2_2ek0f")]
-use_parent_material = true
-position = Vector2(160, 48)
+position = Vector2(159, -5)
 
 [node name="Maison Rouge 1" parent="Batiments" instance=ExtResource("3_hlfdj")]
-use_parent_material = true
-position = Vector2(-59, 63)
+position = Vector2(-60, 10)
 
 [node name="Maison Rouge 2" parent="Batiments" instance=ExtResource("3_hlfdj")]
-use_parent_material = true
-position = Vector2(605, 38)
+position = Vector2(604, -15)
 
 [node name="Maison Jaune 1" parent="Batiments" instance=ExtResource("4_7701m")]
-use_parent_material = true
-position = Vector2(313, 10)
-
-[node name="Pool" parent="Batiments" instance=ExtResource("14_2o8j1")]
-use_parent_material = true
-position = Vector2(1116, 386)
-collision_mask = 1
-
-[node name="Node2D" parent="Batiments/Pool" index="0"]
-use_parent_material = true
-
-[node name="Sprite2D" parent="Batiments/Pool/Node2D" index="0"]
-use_parent_material = true
-
-[node name="Sprite2D3" parent="Batiments/Pool/Node2D" index="1"]
-use_parent_material = true
-
-[node name="Sprite2D2" parent="Batiments/Pool/Node2D" index="2"]
-use_parent_material = true
-
-[node name="Sprite2D4" parent="Batiments/Pool/Node2D" index="3"]
-use_parent_material = true
+position = Vector2(312, -43)
 
 [node name="Maison Rouge2" parent="Batiments" instance=ExtResource("3_hlfdj")]
-use_parent_material = true
 position = Vector2(669, 439)
 
 [node name="Maison Bleue 5" parent="Batiments" instance=ExtResource("2_2ek0f")]
-use_parent_material = true
 position = Vector2(518, 398)
 
 [node name="Immeuble 4" parent="Batiments" instance=ExtResource("1_08rpx")]
-use_parent_material = true
 position = Vector2(812, 515)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Maison Jaune 3" parent="Batiments" instance=ExtResource("4_7701m")]
+position = Vector2(-267, 283)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Immeuble 5" parent="Batiments" instance=ExtResource("1_08rpx")]
+position = Vector2(-366, 309)
+
+[node name="Immeuble 6" parent="Batiments" instance=ExtResource("1_08rpx")]
+position = Vector2(1327, 446)
+
+[node name="Death_screen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Death_screen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(29.12, 16.36)
 color = Color(0, 0, 0, 0)
 
-[node name="DeathLabel" type="Label" parent="CanvasLayer"]
+[node name="DeathLabel" type="Label" parent="Death_screen"]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -363,190 +376,541 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 
-[node name="DeathScreenAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="DeathScreenAnimationPlayer" type="AnimationPlayer" parent="Death_screen"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_5fvhu")
 }
 
 [node name="Shadow" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-3, 5)
 scale = Vector2(1.61547, 1.61547)
 texture = ExtResource("13_j0mbw")
 
 [node name="Props" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
 use_parent_material = true
 position = Vector2(113, 131)
 scale = Vector2(0.72, 0.72)
 
-[node name="Beennn" parent="Props" instance=ExtResource("14_mvakx")]
+[node name="Been" type="Node2D" parent="Props"]
+y_sort_enabled = true
 use_parent_material = true
 
-[node name="Beennn2" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(26.3889, 0)
+[node name="Beennn" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-36.1111, -79.1667)
 
-[node name="Beennn3" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(-102.778, -109.722)
+[node name="Beennn2" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(25, -73.6111)
 
-[node name="Beennn4" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(-370.833, -38.8889)
+[node name="Beennn3" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-104.167, -183.333)
 
-[node name="Beennn5" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(-370.833, -23.6111)
+[node name="Beennn4" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-372.222, -112.5)
 
-[node name="Beennn6" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(-370.833, -9.72222)
+[node name="Beennn5" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-372.222, -97.2222)
 
-[node name="Beennn7" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(306.944, -69.4444)
+[node name="Beennn6" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-372.222, -83.3333)
 
-[node name="Beennn8" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(536.111, 4.16667)
+[node name="Beennn7" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(305.555, -143.056)
 
-[node name="Beennn9" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(119.444, 234.722)
+[node name="Beennn8" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(534.722, -69.4445)
 
-[node name="Beennn10" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(145.833, 240.278)
+[node name="Beennn9" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(115.278, 266.667)
 
-[node name="Beennn11" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(126.389, 250)
+[node name="Beennn10" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(141.667, 272.223)
 
-[node name="Beennn12" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(298.611, 230.556)
+[node name="Beennn11" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(122.223, 281.945)
 
-[node name="Beennn13" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(288.889, 244.444)
+[node name="Beennn12" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(298.611, 265.278)
 
-[node name="Beennn14" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(958.333, -4.16667)
+[node name="Beennn13" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(288.889, 279.166)
 
-[node name="Beennn18" parent="Props/Beennn14" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(-148.611, 300)
+[node name="Beennn14" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(956.944, -77.7778)
 
-[node name="Beennn17" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
+[node name="Beennn18" parent="Props/Been/Beennn14" instance=ExtResource("14_mvakx")]
+position = Vector2(22.2227, 361.111)
+
+[node name="Beennn17" parent="Props/Been" instance=ExtResource("14_mvakx")]
 position = Vector2(784.722, 295.833)
 
-[node name="Beennn15" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
-position = Vector2(1275, -131.944)
+[node name="Beennn15" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(1227.78, -205.555)
 
-[node name="Beennn20" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
+[node name="Beennn20" parent="Props/Been" instance=ExtResource("14_mvakx")]
 position = Vector2(802.778, 311.111)
 
-[node name="Beennn22" parent="Props" instance=ExtResource("14_mvakx")]
-position = Vector2(-25, 162.5)
+[node name="Beennn22" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(11.1111, 52.7778)
 
-[node name="Beennn18" parent="Props" instance=ExtResource("14_mvakx")]
-position = Vector2(-47.2222, 152.778)
+[node name="Beennn18" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-5.55556, 118.056)
 
-[node name="Beennn21" parent="Props" instance=ExtResource("14_mvakx")]
+[node name="Beennn18" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(5.55555, -50)
 
-[node name="Beennn16" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
+[node name="Beennn19" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(16.6667, 6.94445)
+
+[node name="Beennn20" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(16.6667, -34.7222)
+
+[node name="Beennn21" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(13.8889, 22.2222)
+
+[node name="Beennn22" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(27.7778, 15.2778)
+
+[node name="Beennn18" parent="Props/Been/Beennn18/Beennn22" instance=ExtResource("14_mvakx")]
+position = Vector2(-33.3333, -40.2778)
+
+[node name="Beennn23" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(5.55555, -20.8333)
+
+[node name="Beennn24" parent="Props/Been/Beennn18" instance=ExtResource("14_mvakx")]
+position = Vector2(4.16667, 40.2778)
+
+[node name="Beennn18" parent="Props/Been/Beennn18/Beennn24" instance=ExtResource("14_mvakx")]
+position = Vector2(16.6667, 5.55556)
+
+[node name="Beennn21" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-22.2222, -68.0556)
+
+[node name="Beennn16" parent="Props/Been" instance=ExtResource("14_mvakx")]
 position = Vector2(759.722, 300)
 
-[node name="Beennn" parent="Props/Beennn16" instance=ExtResource("14_mvakx")]
+[node name="Beennn" parent="Props/Been/Beennn16" instance=ExtResource("14_mvakx")]
 position = Vector2(24.9999, -4.16667)
 
-[node name="Beennn" parent="Props/Beennn16/Beennn" instance=ExtResource("14_mvakx")]
+[node name="Beennn" parent="Props/Been/Beennn16/Beennn" instance=ExtResource("14_mvakx")]
 position = Vector2(25, 0)
 
-[node name="Beennn" parent="Props/Beennn16/Beennn/Beennn" instance=ExtResource("14_mvakx")]
+[node name="Beennn" parent="Props/Been/Beennn16/Beennn/Beennn" instance=ExtResource("14_mvakx")]
 position = Vector2(-36.1111, 16.6667)
 
-[node name="Beennn" parent="Props/Beennn16/Beennn/Beennn/Beennn" instance=ExtResource("14_mvakx")]
+[node name="Beennn" parent="Props/Been/Beennn16/Beennn/Beennn/Beennn" instance=ExtResource("14_mvakx")]
 position = Vector2(29.1667, -1.38889)
 
-[node name="Beennn19" parent="Props" instance=ExtResource("14_mvakx")]
-use_parent_material = true
+[node name="Beennn19" parent="Props/Been" instance=ExtResource("14_mvakx")]
 position = Vector2(773.611, 312.5)
 
-[node name="Area2D" parent="Props" instance=ExtResource("15_7bdgl")]
+[node name="Beennn23" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(104.167, 177.778)
+
+[node name="Beennn24" parent="Props/Been" instance=ExtResource("14_mvakx")]
+position = Vector2(-400, 175)
+
+[node name="lePoto" type="Node2D" parent="Props"]
+y_sort_enabled = true
 use_parent_material = true
-position = Vector2(138.889, 8.33334)
+position = Vector2(-1.38889, -73.6111)
 
-[node name="Area2D2" parent="Props" instance=ExtResource("15_7bdgl")]
+[node name="Poto" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-44.4444, 172.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto2" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-377.778, 170.833)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto3" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-725, 166.667)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto4" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-1118.06, 163.889)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto5" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-1550, 163.889)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto7" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-1329.17, 8.33332)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto8" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-919.444, 11.1111)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto9" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-544.444, 13.8889)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto10" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(-200, 11.1111)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto11" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(158.333, 8.33332)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto12" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(356.944, 161.111)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto13" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(559.722, 9.72221)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto14" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(750, 158.333)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto15" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(972.222, 8.33332)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto16" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(1230.56, 147.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto17" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(1512.5, 12.5)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto18" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(1779.17, 145.833)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto19" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2044.44, 4.16665)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto20" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2287.5, 147.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto21" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2522.22, 8.33332)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="Poto22" parent="Props/lePoto" instance=ExtResource("21_2qnb2")]
+position = Vector2(2715.28, 147.222)
+scale = Vector2(1.16963, 1.16963)
+
+[node name="plot" type="Node2D" parent="Props"]
+y_sort_enabled = true
 use_parent_material = true
-position = Vector2(405.556, 11.1111)
 
-[node name="Area2D3" parent="Props" instance=ExtResource("15_7bdgl")]
+[node name="plot" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1202.78, 213.889)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot2" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1212.5, 209.722)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot3" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1231.94, 251.389)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot4" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1220.83, 247.222)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot5" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1377.78, 243.056)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot6" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1263.89, 322.222)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot7" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1252.78, 327.778)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot8" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1318.06, 301.389)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot9" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1234.72, 369.444)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot10" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1434.72, 297.222)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot11" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1419.44, 298.611)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot12" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1476.39, 305.556)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot13" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1487.5, 312.5)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot14" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1494.44, 320.833)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot15" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1518.06, 337.5)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot16" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1551.39, 359.722)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot17" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1368.06, 247.222)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot18" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1275, 409.722)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot19" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1290.28, 413.889)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot20" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1461.11, 416.667)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot21" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1483.33, 420.833)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot22" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1513.89, 413.889)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="plot23" parent="Props/plot" instance=ExtResource("23_ylk2e")]
+position = Vector2(1526.39, 406.944)
+scale = Vector2(1.38889, 1.38889)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="NotificationCenter" parent="CanvasLayer2" instance=ExtResource("22_e8wcx")]
+visible = false
+z_index = 3
+
+[node name="DialogueCenter" parent="CanvasLayer2" instance=ExtResource("21_ceb3x")]
+unique_name_in_owner = true
+process_priority = 5
+visible = false
+z_index = 20
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+size_flags_horizontal = 4
+
+[node name="Container" type="Container" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_theme" type="AudioStreamPlayer2D" parent="CanvasLayer2/Container"]
+unique_name_in_owner = true
+position = Vector2(-200, -115)
+stream = ExtResource("25_s4gli")
+autoplay = true
+
+[node name="Pool" parent="." instance=ExtResource("23_bw0ro")]
+unique_name_in_owner = true
 use_parent_material = true
-position = Vector2(713.889, -20.8333)
+position = Vector2(1116, 386)
 
-[node name="Area2D4" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(831.944, 8.33334)
+[node name="Bar" parent="." instance=ExtResource("24_7atts")]
+unique_name_in_owner = true
+position = Vector2(943, -154)
+scale = Vector2(1.19766, 1.19766)
 
-[node name="Area2D5" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(-334.722, 8.33334)
+[node name="Maison Bleue 3" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1411, 274)
 
-[node name="Area2D6" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(-693.056, 8.33334)
+[node name="Maison Rouge 3" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1258, 239)
 
-[node name="Area2D7" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(-655.556, 176.389)
+[node name="Maison Bleue" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1099, -244)
 
-[node name="Area2D8" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(-47.2222, 129.167)
+[node name="Maison Bleue2" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(788, -346)
 
-[node name="Area2D9" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(330.556, 175)
+[node name="Maison Rouge" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1104, -329)
 
-[node name="Area2D10" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(-368.056, 169.444)
+[node name="Maison Jaune" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(810, -419)
 
-[node name="Area2D11" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(569.444, 169.444)
+[node name="Background2" type="ColorRect" parent="."]
+unique_name_in_owner = true
+z_index = -19
+z_as_relative = false
+material = SubResource("ShaderMaterial_fbsto")
+offset_left = 832.0
+offset_top = -672.0
+offset_right = 1069.0
+offset_bottom = -175.0
+color = Color(0.156863, 0, 0.12549, 1)
 
-[node name="Area2D12" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(1137.5, 152.778)
+[node name="Maison Rouge2" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1139, -548)
 
-[node name="Area2D13" parent="Props" instance=ExtResource("15_7bdgl")]
-use_parent_material = true
-position = Vector2(1341.67, -1.38889)
+[node name="Maison Bleue4" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(803, -483)
 
-[node name="DialogueCenter" parent="." instance=ExtResource("21_ceb3x")]
+[node name="Maison Rouge3" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(728, -555)
 
-[node name="NotificationCenter" parent="." instance=ExtResource("22_e8wcx")]
+[node name="Maison Rouge4" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(266, -207)
 
+[node name="Maison Jaune3" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(713, -485)
+
+[node name="Maison Bleue6" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1222, -597)
+
+[node name="Maison Jaune4" parent="." instance=ExtResource("4_7701m")]
+position = Vector2(1158, -430)
+
+[node name="Maison Rouge5" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(1250, -487)
+
+[node name="Maison Bleue7" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(737, -628)
+
+[node name="Maison Rouge6" parent="." instance=ExtResource("3_hlfdj")]
+position = Vector2(725, -437)
+
+[node name="Maison Bleue8" parent="." instance=ExtResource("2_2ek0f")]
+position = Vector2(1199, -455)
+
+[node name="Bug" parent="." instance=ExtResource("27_qwgbi")]
+unique_name_in_owner = true
+position = Vector2(952, -556)
+
+[node name="Immeuble4" parent="." instance=ExtResource("28_nwgxh")]
+position = Vector2(954, -768)
+
+[node name="Immeuble" parent="." instance=ExtResource("28_nwgxh")]
+position = Vector2(1107, -490)
+
+[node name="Immeuble2" parent="." instance=ExtResource("28_nwgxh")]
+position = Vector2(790, -648)
+
+[node name="Immeuble3" parent="." instance=ExtResource("28_nwgxh")]
+position = Vector2(1112, -703)
+
+[node name="maison_jaune" parent="." instance=ExtResource("29_nmpkj")]
+position = Vector2(1073, -708)
+
+[node name="maison_jaune2" parent="." instance=ExtResource("29_nmpkj")]
+position = Vector2(1184, -639)
+
+[node name="maison_bleue" parent="." instance=ExtResource("30_mbvwu")]
+position = Vector2(861, -713)
+
+[node name="maison_bleue2" parent="." instance=ExtResource("30_mbvwu")]
+position = Vector2(1029, -380)
+
+[node name="CB1" parent="." instance=ExtResource("31_0rmuo")]
+unique_name_in_owner = true
+position = Vector2(952, -580)
+
+[node name="CB2" parent="." instance=ExtResource("31_0rmuo")]
+unique_name_in_owner = true
+position = Vector2(1011, -567)
+
+[node name="CB3" parent="." instance=ExtResource("31_0rmuo")]
+unique_name_in_owner = true
+position = Vector2(892, -567)
+
+[node name="HouseArea" parent="." instance=ExtResource("32_we2lw")]
+unique_name_in_owner = true
+position = Vector2(3, 358)
+scale = Vector2(34.8128, 18.5302)
+
+[node name="LoupeArea" parent="." instance=ExtResource("33_w2mp0")]
+position = Vector2(881, 417)
+scale = Vector2(6.09839, 3.61133)
+
+[node name="DogArea" parent="." instance=ExtResource("34_del07")]
+unique_name_in_owner = true
+position = Vector2(258, 69)
+scale = Vector2(3.15397, 1.83811)
+
+[node name="WorkArea" parent="." instance=ExtResource("34_1o80e")]
+position = Vector2(1097, 353)
+scale = Vector2(21.5391, 17.819)
+
+[node name="WolfArea" parent="." instance=ExtResource("36_2v2ap")]
+unique_name_in_owner = true
+position = Vector2(258, 73)
+scale = Vector2(8.02557, 4.39395)
+
+[node name="BlockArea" parent="." instance=ExtResource("37_3ydqn")]
+position = Vector2(910, 46)
+scale = Vector2(11.88, 1)
+
+[node name="BarierArea" parent="." instance=ExtResource("38_t005y")]
+position = Vector2(943, -135)
+scale = Vector2(5.16, 1)
+
+[node name="CorruptionArea" parent="." instance=ExtResource("39_ojop2")]
+position = Vector2(946, -343)
+scale = Vector2(5.64, 1)
+
+[node name="CorruptionArea2" parent="." instance=ExtResource("40_1jefr")]
+position = Vector2(952, -549)
+scale = Vector2(11.5253, 7.74517)
+
+[node name="FarawayArea" parent="." instance=ExtResource("41_wrsib")]
+position = Vector2(-1164, -102)
+scale = Vector2(1, 72.96)
+
+[connection signal="end" from="Plant" to="." method="_on_plant_end"]
+[connection signal="plant_cut" from="Plant" to="." method="_on_player_death"]
+[connection signal="first_exit" from="House" to="." method="_on_house_first_exit"]
 [connection signal="area_entered" from="House/InteriorDetect" to="." method="_on_interior_detect_area_entered"]
 [connection signal="area_exited" from="House/InteriorDetect" to="Player" method="_on_interior_detect_area_exited"]
 [connection signal="player_dead" from="House/Door" to="." method="_on_player_death"]
+[connection signal="destruction" from="Player" to="." method="_on_player_destruction"]
 [connection signal="interactloupe" from="Interactable/Loupe" to="." method="deathloupe"]
-[connection signal="plant_cut" from="Interactable/Plant" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/CarSpawner" to="." method="_on_player_death"]
 [connection signal="player_death" from="Interactable/Block" to="." method="_on_player_death"]
 [connection signal="played_ded_echaff" from="Interactable/StaticBody2D" to="." method="_on_player_death"]
 [connection signal="ded_niche" from="Interactable/Niche" to="." method="_on_player_death"]
+[connection signal="finished" from="CanvasLayer2/Container/main_theme" to="." method="_on_main_theme_finished"]
+[connection signal="end_game" from="Bug" to="." method="_on_bug_end_game"]
 
 [editable path="House"]
 [editable path="Player"]
 [editable path="Interactable/StaticBody2D"]
 [editable path="Interactable/Niche"]
-[editable path="Batiments/Pool"]
